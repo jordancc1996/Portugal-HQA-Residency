@@ -20,13 +20,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   </div>
   <div class="border-b border-border bg-background">
     <div class="site-container flex min-w-0 items-center justify-between gap-3 py-4 sm:py-6">
-      <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5">
-        <svg class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5 text-text-primary no-underline hover:text-text-primary visited:text-text-primary">
+        <svg class="h-5 w-5 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path d="M5 3.2h8.4L7.8 10l5.6 6.8H5L10.2 10 5 3.2Z"></path>
         </svg>
-        <span class="wordmark font-serif text-base leading-none not-italic sm:text-lg lg:text-xl">
-          <span class="font-bold not-italic">Portugal</span>
-          <span class="font-normal not-italic"> HQA Residency</span>
+        <span class="wordmark font-serif text-base leading-none text-text-primary sm:text-lg lg:text-xl">
+          <span class="font-serif font-bold not-italic text-text-primary">Portugal</span>
+          <span class="font-serif font-normal not-italic text-text-primary"> HQA</span>
+          <span class="font-serif font-normal italic text-text-primary"> Residency</span>
         </span>
       </a>
       <nav aria-label="Primary" class="hidden items-center gap-6 lg:flex lg:gap-8">
