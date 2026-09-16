@@ -1,0 +1,65 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'Legal family',
+    hqa: 'National Portuguese residence for highly qualified activity.',
+    other: 'The EU Blue Card, an EU highly qualified employment permit implemented in Portuguese law.',
+  },
+  {
+    aspect: 'Typical host',
+    hqa: 'Portuguese company, university, or research host meeting HQA tests.',
+    other: 'A qualifying employment relationship that meets Blue Card contract and salary tests.',
+  },
+  {
+    aspect: 'Mobility',
+    hqa: 'Portuguese residence, with Schengen travel on the card under ordinary rules.',
+    other: 'EU rules on Blue Card mobility between member states, as implemented in 2026. Those are not HQA rights.',
+  },
+  {
+    aspect: 'University and research posts',
+    hqa: 'Often an HQA analysis, including the university pathway.',
+    other: 'May also fit Blue Card if the employment tests are met. The two headings are not interchangeable.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs EU Blue Card - National Route or EU Permit"
+  metaDescription="Portugal HQA visa vs EU Blue Card in 2026 is national highly qualified activity versus the EU employment permit. Read the table, then HQA eligibility."
+  crumbLabel="vs EU Blue Card"
+  otherLabel="EU Blue Card"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-eu-blue-card"
+  ctaLabel="Discuss HQA versus an EU Blue Card heading"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and the EU Blue Card?',
+      answer:
+        'HQA is national Portuguese residence for highly qualified activity. The EU Blue Card is an EU highly qualified employment permit implemented in Portuguese law. They are not the same statute.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'Use HQA when the Portuguese national highly qualified activity heading is the one the host will lodge. Use the EU Blue Card when the employment contract is built for that EU permit’s 2026 tests.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs EU Blue Card is a choice between national highly qualified activity residence and the EU Blue Card employment permit. Both can cover highly qualified work. They are not the same statute, salary test, or mobility story. Who may use HQA is on
+      <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+      Academic hosts are on the
+      <a href="/portugal-hqa-visa-university" class="inline-link">HQA visa university</a>
+      pathway. The program overview is the
+      <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+      guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use HQA when the Portuguese national highly qualified activity heading is the one the host and the post will actually lodge. Use the EU Blue Card when the employment contract is built for that EU permit’s 2026 tests. A university appointment can sit on either heading only if that heading’s tests are met. Do not assume a Blue Card is “HQA for the EU.”
+    </p>
+  </Fragment>
+</ComparisonLayout>

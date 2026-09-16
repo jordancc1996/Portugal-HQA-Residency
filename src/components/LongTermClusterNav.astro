@@ -1,0 +1,45 @@
+---
+import { longTermCluster } from '../data/sitemap';
+
+interface Props {
+  current: string;
+}
+
+const { current } = Astro.props;
+---
+
+<nav aria-label="Long-term status" class="border-t border-border pt-10">
+  <p class="font-sans text-sm font-semibold text-text-primary">After the temporary card</p>
+  <ul class="mt-4 flex flex-col gap-3">
+    {
+      longTermCluster.map((item) => (
+        <li>
+          {item.href === current ? (
+            <span class="font-sans text-sm text-text-secondary" aria-current="page">
+              {item.label}
+            </span>
+          ) : (
+            <a href={item.href} class="text-link">
+              {item.label} <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </li>
+      ))
+    }
+    <li>
+      <a href="/portugal-hqa-visa-renewal" class="text-link">
+        Renewal <span aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/portugal-hqa-visa-family" class="text-link">
+        Family coverage <span aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/portugal-hqa-visa" class="text-link">
+        Portugal HQA visa guide <span aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ul>
+</nav>

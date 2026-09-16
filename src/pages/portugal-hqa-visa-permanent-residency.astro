@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import LongTermClusterNav from '../components/LongTermClusterNav.astro';
+
+const title = 'Portugal HQA Visa Permanent Residency - After Legal Stay';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa permanent residency in 2026 follows a period of legal stay, not the first card. See timing and tests, then family and renewal context.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-renewal', label: 'Renewal' },
+            { label: 'Permanent residency' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa permanent residency is a later residence status after a period of legal stay in Portugal, not an automatic upgrade of the first highly qualified activity card. Count years only against the statute in force in 2026. Repeated
+          <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>
+          files keep the temporary card alive until that later application is the live file. Family members are assessed on their own cards; start from
+          <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
+          coverage.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What the timing test actually is</h2>
+          <p class="mt-6">
+            Permanent residence looks backward at legal residence already completed, including absences that may break or pause the count. The required period is set in immigration law as amended, not in a forum screenshot. Confirm the 2026 period and the absence rules before you treat a calendar as complete. Time spent waiting for a first decision is not always the same as time spent as a resident.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What else the file has to show</h2>
+          <p class="mt-6">
+            Expect updated identity and record evidence, proof of subsistence, and a residence history that matches the registered address. Highly qualified activity was the basis of the first permit. Permanent residence is a different heading: continued lawful stay, not a second copy of the original job test. Do not skip
+            <a href="/portugal-hqa-visa-renewal" class="inline-link">renewal</a>
+            on the assumption that a permanent-residence file is already in train.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Family clocks and the next statute</h2>
+          <p class="mt-6">
+            A spouse or child does not inherit the principal’s years. Each holder’s card and absences are counted separately. That is why
+            <a href="/portugal-hqa-visa-family" class="inline-link">family coverage</a>
+            has to be in place early if the household wants aligned long-term status. Permanent residence is still not nationality.             Naturalization is
+            <a href="/portugal-hqa-visa-citizenship" class="inline-link">HQA visa citizenship</a>.
+            If the household is still choosing a Portuguese heading rather than counting years already lived here, start with
+            <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">HQA visa vs Golden Visa</a>.
+            The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <LongTermClusterNav current="/portugal-hqa-visa-permanent-residency" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Count legal stay against the 2026 statute, not against the first visa vignette</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Periods, absences, and evidence lists change. A licensed professional should read your travel history and card dates against the current permanent-residence rules.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss whether permanent residence is the live file</a>
+      </div>
+    </section>
+  </article>
+</Layout>

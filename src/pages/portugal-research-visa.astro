@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ResearchClusterNav from '../components/ResearchClusterNav.astro';
+
+const title = 'Portugal Research Visa - Hosted Highly Qualified Research';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal research visa queries usually mean hosted highly qualified research in 2026, not a student stay. Open the research project and university pages next.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { label: 'Research visa' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal research visa is the phrase many scientists, postdoctoral researchers, and laboratory staff type when they have a Portuguese host and need residence to carry out research. In a large share of those files, the permit family is highly qualified activity residence (HQA), not a student visa and not a capital route. The search term names the work. It does not name a separate, simpler product.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>Who uses the Portugal research visa search</h2>
+          <p class="mt-6">
+            Typical searchers already have, or are negotiating, a relationship with a Portuguese research unit, laboratory, funded project, or university institute. They need to know which residence heading covers paid or hosted research, whether a grant letter is enough, and how a spouse would be treated. Those questions are research-specific. They are not a second copy of the general
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+          <p class="mt-4">
+            A degree program, an Erasmus stay, or a short visiting-scholar invitation may sit on a different permit. If the activity is study rather than highly qualified professional research, do not force this page’s heading onto the file. If the person will live on remote income without a Portuguese research host, this is also the wrong starting point.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What a research file still has to prove</h2>
+          <p class="mt-6">
+            A host letter, a grant award, or a university email is not, by itself, a residence decision. The case still has to show highly qualified activity, a host that can support the filing, and the applicant’s identity, record, and subsistence evidence. Salary floors and documentary lists change. Confirm the 2026 AIMA and consular instructions for research hosts rather than copying a colleague’s pack from a previous year.
+          </p>
+          <p class="mt-4">
+            English “research visa” language and the official highly qualified activity name can appear on the same file. See the
+            <a href="/portugal-highly-qualified-activity-visa" class="inline-link">Portugal Highly Qualified Activity visa</a>
+            terminology page if the host and the consulate are using different labels for the same role.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Project hosts and university hosts</h2>
+          <p class="mt-6">
+            Research posts are not identical. A person attached to a named project or laboratory needs different evidence than a person hired onto academic staff. Use the two pages below for those host types. Come back to the HQA visa guide only when you need the whole route (costs, family, and the generic application path) rather than the research-host question.
+          </p>
+        </section>
+
+        <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <a
+            href="/portugal-hqa-visa-research-project"
+            class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]"
+          >
+            <h3>Research project pathway</h3>
+            <p class="mt-4 flex-1">
+              Hosted laboratory and funded-project files: what a project letter usually has to show, and what it does not.
+            </p>
+            <span class="btn-primary mt-8 w-full gap-2">
+              Open the research project page
+              <span class="cluster-card-arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+          <a
+            href="/portugal-hqa-visa-university"
+            class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]"
+          >
+            <h3>University pathway</h3>
+            <p class="mt-4 flex-1">
+              Academic appointments and institute contracts, when the role is highly qualified activity rather than a student stay.
+            </p>
+            <span class="btn-primary mt-8 w-full gap-2">
+              Open the university page
+              <span class="cluster-card-arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+        </div>
+
+        <ResearchClusterNav current="/portugal-research-visa" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Check a research host against highly qualified activity tests</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. A grant or a university title does not decide the permit. Confirm the host type and the current research-host checklist with a licensed professional.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss a research host and residence options</a>
+      </div>
+    </section>
+  </article>
+</Layout>

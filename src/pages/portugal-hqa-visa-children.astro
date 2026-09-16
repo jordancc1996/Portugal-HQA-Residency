@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FamilyClusterNav from '../components/FamilyClusterNav.astro';
+
+const title = 'Portugal HQA Visa Children - Dependent Residence Coverage';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa children coverage in 2026 is dependent children on the principal file. Age and dependency tests still have to match the current list.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-family', label: 'Family' },
+            { label: 'Children' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa children coverage is how dependent children can be included on a highly qualified activity residence file. Age, custody, and dependency tests are set in the rules in force, not by a school enrolment letter alone. Confirm the 2026 list with the post. The principal still has to meet
+          <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
+          Return to the
+          <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
+          hub for the household map.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>Who counts as a child on this file</h2>
+          <p class="mt-6">
+            Typical coverage is minor children of the principal or of the included spouse, plus other dependents only if the current statute actually names them. Adult children in education, step-children, and children from prior relationships need the civil and custody documents the post lists. Do not copy an age cut-off from an old blog post. Read the 2026 instructions.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Evidence that usually travels with a child</h2>
+          <p class="mt-6">
+            Birth certificates, proof of parental relationship, and consent or custody papers when one parent is not travelling are the core. Passports, photographs, and any police certificate required by age still apply. Each child is a separate person on the file. If granted, each receives a residence card, not a stamp on the parent’s card. Later
+            <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">permanent residency</a>
+            is assessed on that child’s own stay, not only the principal’s.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Children and a spouse on the same move</h2>
+          <p class="mt-6">
+            Partner coverage is
+            <a href="/portugal-hqa-visa-spouse" class="inline-link">HQA visa spouse</a>.
+            Including both does not merge the evidence packs. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <FamilyClusterNav current="/portugal-hqa-visa-children" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Match age, custody, and dependency to the list the post is using</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Child categories change. A licensed professional should read birth and custody documents against the current family instructions.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss children coverage on this file</a>
+      </div>
+    </section>
+  </article>
+</Layout>

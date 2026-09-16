@@ -1,0 +1,63 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'Basis',
+    hqa: 'Highly qualified activity for a Portuguese host.',
+    other: 'Passive income or similar means that meet the D7 tests, without that host role.',
+  },
+  {
+    aspect: 'Where the work sits',
+    hqa: 'The activity is in Portugal, through the host.',
+    other: 'Income is typically earned outside Portuguese employment, subject to D7 rules in force.',
+  },
+  {
+    aspect: 'Who must qualify',
+    hqa: 'The worker or hosted professional, under HQA eligibility.',
+    other: 'The person who can show the D7 means and stay pattern.',
+  },
+  {
+    aspect: 'If there is no Portuguese host',
+    hqa: 'Usually the wrong heading.',
+    other: 'May still be the live analysis.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs D7 - Host Route or Passive Income"
+  metaDescription="Portugal HQA visa vs D7 in 2026 is a Portuguese host versus passive-income residence. Read the side-by-side table, then who qualifies before you file."
+  crumbLabel="vs D7"
+  otherLabel="D7"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-d7"
+  ctaLabel="Discuss HQA versus D7 for this household"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and the D7?',
+      answer:
+        'HQA stands or falls on highly qualified activity with a Portuguese host. D7 stands or falls on means and the stay pattern that heading requires.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'Use HQA when a Portuguese company, university, or research host will carry the activity. Use D7 when the person will live on qualifying passive or remote means without that host test.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs D7 is a choice between a Portuguese host and a passive-income residence permit. HQA stands or falls on highly qualified activity. D7 stands or falls on means and the stay pattern that heading requires. Do not treat a remote US salary as automatically one or the other. Who may use HQA is on
+      <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+      The program overview is the
+      <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+      guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use HQA when a Portuguese company, university, or research host will carry the activity. Use D7 when the person will live on qualifying passive or remote means without that host test. Confirm 2026 D7 income and insurance lists on the official tables. They are not HQA salary floors.
+    </p>
+  </Fragment>
+</ComparisonLayout>

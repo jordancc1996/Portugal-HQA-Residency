@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+
+const title = 'Portugal HQA Visa Residency Requirements - After Approval';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa residency requirements are the 2026 stay tests after approval: activity, absences, and registered address, before you plan a card renewal.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+            { label: 'After approval' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa residency requirements are the obligations that apply after highly qualified activity residence is granted. They are not a second copy of who qualified, and they are not the filing checklist. Admission tests live on
+          <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+          This page covers staying inside the permit until the next card event, which is usually a
+          <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>Staying within the permit</h2>
+          <p class="mt-6">
+            The card is issued for a stated activity with a stated host relationship. Changing employer, dropping the highly qualified role, or remaining in Portugal with no qualifying activity can put the permit outside its basis. Tax registration, social security, and a lawful Portuguese address often follow from actually living and working here. Those are not optional branding. Confirm current AIMA practice for host changes before you assume a new contract is a continuation of the same file.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Absences and address</h2>
+          <p class="mt-6">
+            Residence permits are built for residence in Portugal, not for an unused card in a drawer. Prolonged absence can affect renewal and later
+            <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">permanent residency</a>.
+            The exact day counts sit in the statute and in AIMA practice in force in 2026; do not copy a number from an old blog post. Keep the registered address current. Mail and official notices follow that address.
+          </p>
+          <p class="mt-4">
+            Travel inside Schengen on a Portuguese residence card is not the same as living abroad. If the household will spend most of the year outside Portugal, this route may be the wrong structure. That is a stay question, not an eligibility question.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>When renewal becomes the next file</h2>
+          <p class="mt-6">
+            Toward the end of the card’s validity, the live file is renewal: continued activity, absences, and updated evidence. Permanent residence and citizenship are later, separate statutes. Do not treat this page as a naturalization guide. For the cluster map, return to
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
+            For the program, including family cards issued after arrival, use the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide. Document categories for a first filing remain on
+            <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>.
+          </p>
+        </section>
+
+        <RequirementsClusterNav current="/portugal-hqa-visa-residency-requirements" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Keep the activity, the absences, and the address aligned with the card</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Stay rules and renewal clocks change. A licensed professional should read your travel pattern and host situation against the current statute.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss stay obligations after approval</a>
+      </div>
+    </section>
+  </article>
+</Layout>

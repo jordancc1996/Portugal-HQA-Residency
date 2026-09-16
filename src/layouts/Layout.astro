@@ -1,0 +1,91 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  breadcrumbs?: import('../lib/seo').Crumb[];
+  faqItems?: import('../lib/seo').FaqEntry[];
+}
+
+const { title, description, noindex = false, breadcrumbs, faqItems } = Astro.props;
+const weglotKey = import.meta.env.PUBLIC_WEGLOT_API_KEY ?? '';
+---
+
+<BaseLayout title={title} description={description} noindex={noindex} breadcrumbs={breadcrumbs} faqItems={faqItems}>
+  {/*
+    CODE: Weglot universal JS in <head> via this slot. Uses PUBLIC_WEGLOT_API_KEY (browser/client key only).
+    Never add Weglot's private account API key to client code.
+    DASHBOARD: origin language English; add pt, tr, zh, ar, vi; URL structure Subdirectories
+    (/pt/, /tr/, /zh/, /ar/, /vi/, English at root); Detect visitor's browser language OFF; hreflang ON.
+  */}
+  <Fragment slot="head">
+    <slot name="head" />
+    <script is:inline src="https://cdn.weglot.com/weglot.min.js" defer></script>
+    {/*
+      Deferred CDN script runs before DOMContentLoaded. Init listens for that event
+      so Weglot is present without a render-blocking head script.
+      Vite does not rewrite import.meta.env inside is:inline, so the public key
+      is read from import.meta.env.PUBLIC_WEGLOT_API_KEY in frontmatter and passed in.
+    */}
+    <script is:inline define:vars={{ weglotKey }}>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (weglotKey && typeof Weglot !== 'undefined') {
+          Weglot.initialize({
+            api_key: weglotKey,
+            hide_switcher: true,
+            autoSwitch: false,
+          });
+        }
+      });
+    </script>
+  </Fragment>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <Navbar />
+
+  <main id="main-content" class="min-w-0" tabindex="-1">
+    <slot />
+  </main>
+
+  <footer class="border-t border-border bg-background-alt">
+    <div class="site-container grid grid-cols-1 gap-10 py-24 md:grid-cols-12 md:py-32">
+      <div class="col-span-full min-w-0 md:col-span-5">
+        <p class="wordmark inline-block font-serif text-4xl leading-none not-italic text-text-primary md:text-5xl">
+          <span class="block">
+            <span class="font-bold not-italic">Portugal</span>
+            <span class="font-normal not-italic"> HQA</span>
+          </span>
+          <span class="mt-1 block text-right font-normal not-italic">Residency</span>
+        </p>
+        <p class="mt-4 max-w-md">
+          Information on Portugal's Highly Qualified Activity residence route. This site does not provide legal, tax, or immigration advice. Speak with a licensed professional about your circumstances.
+        </p>
+      </div>
+      <div class="col-span-full md:col-span-3">
+        <h3>Program</h3>
+        <ul class="mt-4 space-y-3">
+          <li><a href="/portugal-hqa-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA visa overview</a></li>
+          <li><a href="/portugal-hqa-visa-cost" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">Costs</a></li>
+          <li><a href="/portugal-hqa-visa-vs-d7" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs D7</a></li>
+          <li><a href="/portugal-hqa-visa-vs-golden-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs Golden Visa</a></li>
+        </ul>
+      </div>
+      <div class="col-span-full md:col-span-4">
+        <h3>Contact</h3>
+        <p class="mt-4">
+          {/* RTL FLAG: the → glyph is physical, not a logical "forward" arrow. */}
+          <a href="/contact" class="text-link">
+            Discuss Your Residency Options <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  import '../scripts/lang-switch.ts';
+</script>

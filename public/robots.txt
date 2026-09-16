@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /style-guide
+
+Sitemap: https://www.portugalhqaresidency.com/sitemap-index.xml

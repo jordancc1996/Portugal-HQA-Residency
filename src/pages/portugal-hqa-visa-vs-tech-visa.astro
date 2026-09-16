@@ -1,0 +1,63 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'What the name refers to',
+    hqa: 'A residence heading for highly qualified activity.',
+    other: 'In Portuguese practice, “Tech Visa” has been used for a company-certification and hiring facilitation aimed at tech talent. Confirm whether a separate 2026 window is open.',
+  },
+  {
+    aspect: 'What the worker still needs',
+    hqa: 'The HQA permit itself.',
+    other: 'A residence heading. Facilitation is not a card. Many tech hires still sit on highly qualified activity residence.',
+  },
+  {
+    aspect: 'Who is certified',
+    hqa: 'The person’s activity and host are tested.',
+    other: 'Where a Tech Visa company list exists, the employer’s certification is a hiring path, not the worker’s eligibility on its own.',
+  },
+  {
+    aspect: 'If the role is highly qualified tech work for a Portuguese host',
+    hqa: 'The HQA eligibility tests. That is the permit test.',
+    other: 'May describe the employer’s recruitment channel. It does not replace the permit heading.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs Tech Visa - Residence Heading or Hiring Path"
+  metaDescription="Portugal HQA visa vs Tech Visa in 2026 is the residence heading versus a tech-hiring facilitation. Read the table, then who qualifies for HQA this year."
+  crumbLabel="vs Tech Visa"
+  otherLabel="Tech Visa"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-tech-visa"
+  ctaLabel="Discuss whether HQA is the heading behind a tech hire"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and a Tech Visa?',
+      answer:
+        'HQA is a residence heading. In Portuguese practice, Tech Visa has often meant a hiring facilitation for certified tech employers. Facilitation is not a card.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'If the role meets HQA tests, HQA is the permit to analyse. Do not treat a Tech Visa brand name as a permit if that facilitation is not open in 2026.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs Tech Visa is a choice between the residence heading and a tech-hiring label. Searches for “Tech Visa” often mean a Portuguese facilitation for certified tech employers. The worker still needs a permit. In many files that permit is highly qualified activity residence. Who qualifies for HQA is on
+      <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+      The program overview is the
+      <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+      guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use this page when a recruiter said “Tech Visa” and you need to know which residence heading will actually be lodged. If the role meets HQA tests, eligibility is the next page. If the company is selling a facilitation that is not open in 2026, do not treat the brand name as a permit. Confirm the current official description before you sign an offer letter that assumes a vanished window.
+    </p>
+  </Fragment>
+</ComparisonLayout>

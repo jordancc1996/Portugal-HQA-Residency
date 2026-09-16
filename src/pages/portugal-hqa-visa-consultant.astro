@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProfessionalClusterNav from '../components/ProfessionalClusterNav.astro';
+
+const title = 'Portugal HQA Visa Consultant - Lawyer Versus Process Support';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa consultant support in 2026 is process and document logistics, not a substitute for a lawyer. Compare both, then cost and application.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-lawyer', label: 'Lawyer' },
+            { label: 'Consultant' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa consultant support is process and document logistics: checklists, translations, appointment calendars, and packing the file for the post. It is not a substitute for a
+          <a href="/portugal-hqa-visa-lawyer" class="inline-link">Portugal HQA visa lawyer</a>
+          when the question is legal. Some firms employ both under separate engagements. Know which invoice you are paying.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What a consultant can usefully do</h2>
+          <p class="mt-6">
+            A consultant can keep apostilles in date, chase criminal-record certificates, book biometrics, and align the pack with the
+            <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+            sequence. That work has a cost line on
+            <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
+            It does not decide whether the activity is highly qualified.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What only legal counsel should answer</h2>
+          <p class="mt-6">
+            Whether an unusual host, a change of employer, a prior refusal, or an in-country filing basis is lawful is a legal question. If the consultant’s contract disclaims legal advice, treat that clause as accurate. Instruct a lawyer for those facts. Requirements and eligibility remain the tests, not the consultant’s project plan.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Choosing one, the other, or both</h2>
+          <p class="mt-6">
+            A clean employed file may need neither. A clean file with a large document trail may need a consultant only. A disputed host or a mixed family pack may need a lawyer, with or without a consultant for logistics. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <ProfessionalClusterNav current="/portugal-hqa-visa-consultant" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Decide whether the next invoice is logistics, a legal opinion, or both</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. An advisor can say which function the file actually needs before you retain either.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss lawyer versus consultant for this file</a>
+      </div>
+    </section>
+  </article>
+</Layout>

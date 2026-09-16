@@ -1,0 +1,39 @@
+---
+import { languages } from '../data/languages';
+
+interface Props {
+  id: string;
+  variant?: 'desktop' | 'mobile';
+}
+
+const { id, variant = 'desktop' } = Astro.props;
+const buttonPad = variant === 'mobile' ? 'px-3 py-2' : 'px-2 py-1';
+---
+
+<div class="lang-switch relative z-[60]" id={id}>
+  <div
+    class="inline-flex items-center rounded-md bg-stone-100 px-1 py-1"
+    role="menu"
+    aria-label="Language"
+    aria-orientation="horizontal"
+  >
+    {
+      languages.map((language, index) => (
+        <button
+          type="button"
+          role="menuitem"
+          data-lang={language.code}
+          aria-current={language.code === 'en' ? 'true' : 'false'}
+          class:list={[
+            'font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 transition-colors duration-150 ease-out hover:text-stone-800 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none aria-[current=true]:text-brand',
+            buttonPad,
+            // RTL FLAG: border-l is physical, not border-inline-start.
+            index > 0 && 'border-l border-stone-300',
+          ]}
+        >
+          {language.label}
+        </button>
+      ))
+    }
+  </div>
+</div>

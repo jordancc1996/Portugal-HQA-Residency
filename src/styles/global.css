@@ -1,0 +1,402 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+@custom-variant hover {
+  @media (hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
+@font-face {
+  font-family: CleanAmpersand;
+  src: local("Inter"), local("Helvetica Neue"), local("Arial");
+  unicode-range: U+0026;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 88%;
+}
+
+/* Italic headings still use an upright sans ampersand. Avoids a faux-oblique Inter glyph against Playfair italic. */
+@font-face {
+  font-family: CleanAmpersand;
+  src: local("Inter"), local("Helvetica Neue"), local("Arial");
+  unicode-range: U+0026;
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  size-adjust: 88%;
+}
+
+.wordmark {
+  font-style: normal;
+  font-synthesis: none;
+}
+
+a.site-wordmark:link,
+a.site-wordmark:visited,
+a.site-wordmark:active,
+a.site-wordmark:hover,
+a.site-wordmark:focus-visible {
+  color: theme('colors.text-primary');
+  text-decoration: none;
+}
+
+a.site-wordmark svg {
+  color: theme('colors.brand.DEFAULT');
+}
+
+html {
+  font-family: theme('fontFamily.sans');
+  background-color: theme('colors.background.DEFAULT');
+  color: theme('colors.text-secondary');
+}
+
+body {
+  font-family: theme('fontFamily.sans');
+  font-size: 1rem;
+  line-height: 1.625;
+  color: theme('colors.text-secondary');
+  background-color: theme('colors.background.DEFAULT');
+  max-width: 100%;
+}
+
+main,
+article {
+  min-width: 0;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid theme('colors.brand.DEFAULT');
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background-color: theme('colors.background.DEFAULT');
+  color: theme('colors.text-primary');
+  padding: 0.5rem 0.75rem;
+  font-family: theme('fontFamily.sans');
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: theme('fontFamily.serif');
+  font-weight: 500;
+  color: theme('colors.text-primary');
+  font-synthesis: none;
+}
+
+h1 {
+  font-size: clamp(1.25rem, 0.7rem + 2.4vw, 3.75rem);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: clamp(1.375rem, 1rem + 2.2vw, 3rem);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 1.05rem + 0.9vw, 1.875rem);
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+p,
+li,
+td,
+th {
+  overflow-wrap: break-word;
+}
+
+a.nav-link:link,
+a.nav-link:visited,
+a.nav-link:active,
+button.nav-link {
+  color: #57534e;
+  text-decoration: none;
+  transition: color 150ms ease-out;
+}
+
+a.nav-link:hover,
+a.nav-link:focus-visible,
+button.nav-link:hover,
+button.nav-link:focus-visible,
+button.nav-link[aria-expanded='true'] {
+  color: #1c1917;
+}
+
+a.btn-primary:link,
+a.btn-primary:visited,
+a.btn-cta:link,
+a.btn-cta:visited {
+  color: #ffffff;
+}
+
+.weglot-container,
+.country-selector {
+  display: none !important;
+}
+
+.lang-switch [data-lang][aria-current='true'],
+.lang-switch [data-lang].is-active {
+  color: theme('colors.brand.DEFAULT');
+}
+
+.nav-chevron {
+  flex-shrink: 0;
+  color: #1c1917;
+  transition:
+    transform 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.nav-chevron.is-active {
+  color: theme('colors.brand.DEFAULT');
+}
+
+.mobile-nav-drawer details[open] summary .nav-chevron {
+  color: theme('colors.brand.DEFAULT');
+  transform: rotate(180deg);
+}
+
+.mobile-nav-drawer details[open] summary {
+  color: theme('colors.brand.DEFAULT');
+}
+
+.mobile-nav-drawer summary {
+  list-style: none;
+}
+
+.mobile-nav-drawer summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-drawer a:link,
+.mobile-nav-drawer a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .site-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    .site-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .btn-primary,
+  .btn-cta,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    border-radius: theme('borderRadius.pill');
+    padding: 0.75rem 1.5rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color 150ms ease-out,
+      border-color 150ms ease-out,
+      color 150ms ease-out,
+      transform 150ms ease-out;
+    will-change: transform;
+  }
+
+  .btn-primary {
+    background-color: theme('colors.brand.DEFAULT');
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary:hover {
+    background-color: theme('colors.brand.hover');
+    transform: scale(1.03);
+  }
+
+  .btn-cta {
+    background-color: theme('colors.cta.DEFAULT');
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary:focus-visible,
+  .btn-cta:focus-visible,
+  .btn-secondary:focus-visible {
+    outline: 2px solid theme('colors.text-primary');
+    outline-offset: 3px;
+  }
+
+  .btn-secondary {
+    background-color: #ffffff;
+    color: theme('colors.text-secondary');
+    border: 1px solid #d6d3d1;
+  }
+
+  .btn-secondary:hover {
+    border-color: #a8a29e;
+    color: theme('colors.text-primary');
+  }
+
+  .compare-scroll {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .compare-table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: theme('colors.text-secondary');
+  }
+
+  .compare-table th,
+  .compare-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 1rem 1.25rem 1rem 0;
+    border-bottom: 1px solid theme('colors.border');
+  }
+
+  .compare-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: theme('colors.text-primary');
+  }
+
+  .compare-table td:first-child {
+    color: theme('colors.text-primary');
+    font-weight: 600;
+    width: 22%;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: theme('borderRadius.lg');
+    box-shadow: theme('boxShadow.card');
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .cluster-card {
+    will-change: transform;
+  }
+
+  .cluster-card .cluster-card-arrow {
+    display: inline-block;
+    transition: transform 300ms ease-out;
+  }
+
+  @media (hover: hover) {
+    .cluster-card:hover {
+      translate: 0 -5px;
+      box-shadow: 0 12px 32px rgba(28, 25, 23, 0.1);
+      border-color: theme('colors.brand.DEFAULT');
+    }
+
+    .cluster-card:hover .cluster-card-arrow {
+      transform: translateX(3px);
+    }
+  }
+
+  .card-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: theme('borderRadius.pill');
+    background-color: theme('colors.brand.tint');
+    color: theme('colors.brand.DEFAULT');
+    padding: 0.125rem 0.625rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: theme('fontFamily.sans');
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: theme('colors.brand.DEFAULT');
+    text-decoration: none;
+    transition: color 150ms ease-out;
+  }
+
+  .text-link:hover {
+    color: theme('colors.brand.hover');
+  }
+
+  .text-link:link,
+  .text-link:visited {
+    color: theme('colors.brand.DEFAULT');
+  }
+
+  .text-link:hover,
+  .text-link:visited:hover {
+    color: theme('colors.brand.hover');
+  }
+
+  .inline-link {
+    color: theme('colors.brand.DEFAULT');
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease-out;
+  }
+
+  .text-link:focus-visible,
+  .inline-link:focus-visible {
+    outline: 2px solid theme('colors.brand.DEFAULT');
+    outline-offset: 2px;
+  }
+}

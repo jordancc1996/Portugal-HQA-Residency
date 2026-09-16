@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+
+const title = 'Portugal HQA Visa Documents - Filing Checklist';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa documents are the 2026 filing pack: identity, host, qualifications, and criminal-record evidence, listed before you lodge the application.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+            { label: 'Documents' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa documents are the evidence pack that accompanies a highly qualified activity filing, not the test of who qualifies. Use this page when eligibility is already the right heading and you need to know what usually has to be shown. Who qualifies is on
+          <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+          How the pack is lodged is on the
+          <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+          page.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What the pack usually contains</h2>
+          <p class="mt-6">
+            Most files combine four groups of evidence: the applicant’s identity and civil status; the host relationship (contract, binding offer, or equivalent host letter); proof that the activity is highly qualified (qualifications, role description, and, where required, pay at or above the published floor); and police, subsistence, and health-insurance items the consulate or AIMA lists for that year. Exact forms, apostille rules, and translation rules differ by post. Confirm the 2026 list for the office that will receive the file.
+          </p>
+          <p class="mt-4">
+            A grant letter or university email is not a complete pack. Hosted research still has to produce the identity and record set, not only the science.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>How documents are prepared</h2>
+          <p class="mt-6">
+            Foreign public documents often need legalization or an apostille, then a certified translation into Portuguese. Criminal-record certificates are time-limited. Substituting a CV for a diploma, or an informal email for a contract, is a common reason a post sends the file back. This page is a map of categories. It is not a substitute for the current consular PDF.
+          </p>
+          <p class="mt-4">
+            Family documents (marriage, birth, custody) belong with a family filing. Do not pad the principal’s pack with family certificates unless the same submission actually includes those people.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>When the checklist is complete</h2>
+          <p class="mt-6">
+            When the categories above are populated against the current list, the next step is lodging, not a second eligibility debate. Return to the
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>
+            hub if you still need the cluster map, or open the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide for cost and family context. Stay-after-approval rules are not document-checklist items; they are on
+            <a href="/portugal-hqa-visa-residency-requirements" class="inline-link">HQA visa residency requirements</a>.
+          </p>
+        </section>
+
+        <RequirementsClusterNav current="/portugal-hqa-visa-documents" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Build the pack against the post that will read it</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Document lists change by year and by consulate. A licensed professional should match certificates to the office of filing.
+        </p>
+        <a href="/contact" class="btn-cta">Review which documents your post is asking for</a>
+      </div>
+    </section>
+  </article>
+</Layout>

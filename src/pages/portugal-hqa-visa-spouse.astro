@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FamilyClusterNav from '../components/FamilyClusterNav.astro';
+
+const title = 'Portugal HQA Visa Spouse - Partner Residence Coverage';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa spouse coverage in 2026 is the partner on a highly qualified activity file. Proof of the relationship still has to meet the current list.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-family', label: 'Family' },
+            { label: 'Spouse' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa spouse coverage is the partner of a person who qualifies for highly qualified activity residence. Marriage is the usual proof. Other partnerships are only useful if the immigration rules in force recognize them. The principal still has to meet
+          <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
+          This page does not replace the
+          <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
+          hub.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What the relationship has to prove</h2>
+          <p class="mt-6">
+            Expect a marriage certificate or the partnership evidence the 2026 list actually names, legalized or apostilled, and translated where the post requires Portuguese. A wedding photograph, a joint lease, or a social-media history is not a substitute. Divorce, prior marriages, and name changes need the civil documents that explain the current status.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What spouse coverage does not do</h2>
+          <p class="mt-6">
+            It does not make the partner a highly qualified worker. It does not skip identity, police, or subsistence items listed for family members. It does not put the partner on the principal’s card. If granted, the spouse receives a separate residence card with its own validity and, later, its own path toward
+            <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Spouse and children on the same move</h2>
+          <p class="mt-6">
+            Children are a different spoke. If the household includes both a partner and dependents, read
+            <a href="/portugal-hqa-visa-children" class="inline-link">HQA visa children</a>
+            as well. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <FamilyClusterNav current="/portugal-hqa-visa-spouse" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Match the civil-status documents to the post that will read them</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Recognition of marriages and partnerships differs by issuing country and by the Portuguese rules in force. A licensed professional should read the certificates against the current family list.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss spouse coverage on this file</a>
+      </div>
+    </section>
+  </article>
+</Layout>

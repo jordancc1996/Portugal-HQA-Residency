@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProcessClusterNav from '../components/ProcessClusterNav.astro';
+
+const title = 'Portugal HQA Visa Processing Time - What Affects Speed';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa processing time in 2026 depends on the post, the pack, and AIMA queues. See what slows a file, then decide whether to instruct counsel.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-application', label: 'Application' },
+            { label: 'Processing time' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa processing time is the wait after a highly qualified activity file is lodged, not a guaranteed calendar. Consular queues, AIMA analysis, and card production each move on their own clocks. Figures change through 2026. Confirm the current estimate with the post that holds the file, not with a screenshot from a previous year. The lodging sequence is on the
+          <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+          page.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What usually sets the clock</h2>
+          <p class="mt-6">
+            The office of filing matters: a busy consulate is not the same desk as an in-country AIMA path. Completeness matters: missing legalizations or expired police certificates stop the file until they are replaced. Nationality, security checks, and whether family members are on the same submission add work. Peak seasons and staffing at AIMA change the back end after the visa is granted.
+          </p>
+          <p class="mt-4">
+            A published legal maximum, where one exists, is not the same as the practical wait. Treat any “average months” on a forum as anecdote.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What you can still control</h2>
+          <p class="mt-6">
+            You cannot buy a shorter AIMA queue. You can lodge a pack that matches the
+            <a href="/portugal-hqa-visa-documents" class="inline-link">document checklist</a>,
+            answer requests on the first reply, and avoid changing host or address mid-analysis without telling the desk. Upstream eligibility still sits on
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
+            If the file is already granted, stay rules are
+            <a href="/portugal-hqa-visa-residency-requirements" class="inline-link">HQA visa residency requirements</a>,
+            not processing time.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>When counsel is the next decision</h2>
+          <p class="mt-6">
+            A lawyer or consultant cannot invent a slot, but they can read a request letter, keep legalizations in date, and tell you whether silence is normal for that post. Use the
+            <a href="/portugal-hqa-visa-lawyer" class="inline-link">HQA visa lawyer and consultant</a>
+            page when you need that function.             After the card is in hand, the next process page is
+            <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>.
+            If a spouse or children will move on the same timeline, coverage is
+            <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>.
+            The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <ProcessClusterNav current="/portugal-hqa-visa-processing-time" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Read the queue against the post that actually holds the file</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Wait times move. An advisor can compare your post and your pack with current practice, including whether to instruct counsel.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss processing time and whether to instruct counsel</a>
+      </div>
+    </section>
+  </article>
+</Layout>

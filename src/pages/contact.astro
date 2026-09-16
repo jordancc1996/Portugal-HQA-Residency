@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Contact - Advisory Channel';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Contact Portugal HQA Residency through the advisory channel. This page has no intake form. Write only if the role, host, and household need a 2026 file review.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Contact' }]} />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Contact is a private advisory channel, not a public evaluation form. Write only when a Portuguese host, a highly qualified role, and a household already exist to discuss. There is no name, email, or phone intake on this page.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <p>
+          Use the engagement address supplied with your briefing, or ask host counsel already on the file to introduce the advisory desk. For the permit itself, start from the
+          <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+          guide.
+        </p>
+      </div>
+    </div>
+  </article>
+</Layout>

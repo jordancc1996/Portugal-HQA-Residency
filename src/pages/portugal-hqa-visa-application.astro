@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ProcessClusterNav from '../components/ProcessClusterNav.astro';
+
+const title = 'Portugal HQA Visa Application - Step-by-Step Filing';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa application in 2026 is the lodging path: pack, consulate or AIMA, biometrics, then the card. Follow the numbered steps before you file.';
+
+const steps = [
+  {
+    title: 'Confirm the role and the host',
+    text: 'Do not lodge until the activity and the Portuguese host fit highly qualified activity. That test lives on the requirements cluster, not on this page.',
+  },
+  {
+    title: 'Assemble the document pack',
+    text: 'Identity, host, qualifications, and record evidence must match the 2026 list for the office of filing. Incomplete packs are the usual reason a post stops the clock.',
+  },
+  {
+    title: 'Lodge at the consulate or in Portugal',
+    text: 'People outside Portugal usually file a visa at a consular post, then complete residence after entry. People who already have a lawful basis to file in-country follow the AIMA path named on the current form. The post, not this site, decides which window you use.',
+  },
+  {
+    title: 'Biometrics and analysis',
+    text: 'Fingerprints, a photograph, and file analysis happen after lodging. Requests for extra documents reset the practical wait. Family members included in the same move each have their own biometrics.',
+  },
+  {
+    title: 'Residence card issuance',
+    text: 'A positive decision leads to card production and collection or delivery under the rules of that desk. Timelines for this stage are on the processing-time page, not in the steps above.',
+  },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { label: 'Application' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa application is the lodging sequence for highly qualified activity residence: a complete pack, a consular or in-country filing, biometrics, then a residence card if the file is granted. It is not a second copy of who qualifies. Start from
+          <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>
+          and the
+          <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>
+          checklist, then use the steps below.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>The filing sequence</h2>
+          <ol class="mt-10 space-y-10">
+            {
+              steps.map((step, index) => (
+                <li class="grid grid-cols-1 gap-6 border-t border-border pt-8 md:grid-cols-12">
+                  <p class="col-span-full font-serif text-3xl text-text-primary md:col-span-2">{index + 1}</p>
+                  <div class="col-span-full md:col-span-10">
+                    <h3>{step.title}</h3>
+                    <p class="mt-4">{step.text}</p>
+                    {index === 1 && (
+                      <p class="mt-4">
+                        Use the
+                        <a href="/portugal-hqa-visa-documents" class="inline-link">document checklist</a>
+                        as the map of categories. Confirm apostille and translation rules with the post.
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+        </section>
+
+        <section class="mt-24">
+          <h2>After you lodge</h2>
+          <p class="mt-6">
+            Waiting time is not a step you control in the same way as the pack. What lengthens a 2026 file is on
+            <a href="/portugal-hqa-visa-processing-time" class="inline-link">HQA visa processing time</a>.
+            Fees for lodging are on
+            <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
+            The program overview remains the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <ProcessClusterNav current="/portugal-hqa-visa-application" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Check the post and the pack before you book a lodging date</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Filing windows and in-country eligibility change. An advisor can match the sequence to where you are now.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss how this file should be lodged</a>
+      </div>
+    </section>
+  </article>
+</Layout>

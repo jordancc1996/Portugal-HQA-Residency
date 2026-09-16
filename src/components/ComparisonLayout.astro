@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import CompareTable from './CompareTable.astro';
+import ComparisonClusterNav from './ComparisonClusterNav.astro';
+import type { FaqEntry } from '../lib/seo';
+
+interface CompareRow {
+  aspect: string;
+  hqa: string;
+  other: string;
+}
+
+interface Props {
+  title: string;
+  metaDescription: string;
+  crumbLabel: string;
+  otherLabel: string;
+  rows: CompareRow[];
+  current: string;
+  ctaLabel: string;
+  faqItems: FaqEntry[];
+}
+
+const { title, metaDescription, crumbLabel, otherLabel, rows, current, ctaLabel, faqItems } = Astro.props;
+const metaTitle = `${title} | Portugal HQA Residency`;
+const breadcrumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+  { href: current, label: crumbLabel },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription} breadcrumbs={breadcrumbs} faqItems={faqItems}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb items={breadcrumbs} />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <div class="mt-8 max-w-3xl min-w-0">
+          <slot name="intro" />
+        </div>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container py-24 md:py-32">
+        <section>
+          <h2>Side by side</h2>
+          <CompareTable otherLabel={otherLabel} rows={rows} />
+        </section>
+
+        <section class="mt-24 max-w-3xl">
+          <h2>Which is right for you</h2>
+          <div class="mt-6">
+            <slot name="close" />
+          </div>
+          <p class="mt-6">
+            If highly qualified activity is the heading, the next step is the lodging sequence on the
+            <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+            page.
+          </p>
+        </section>
+
+        <section class="mt-24 max-w-3xl" aria-label="Comparison questions">
+          {
+            faqItems.map((item) => (
+              <div class="mt-10 border-t border-border pt-8 first:mt-0 first:border-t-0 first:pt-0">
+                <p class="font-sans text-base font-semibold text-text-primary">{item.question}</p>
+                <p class="mt-4">{item.answer}</p>
+              </div>
+            ))
+          }
+        </section>
+
+        <div class="mt-16 max-w-3xl">
+          <ComparisonClusterNav current={current} />
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Match the heading to the host, the income, and the household</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Permit headings and thresholds change. Confirm the 2026 instructions for each route before you lodge.
+        </p>
+        <a href="/contact" class="btn-cta">{ctaLabel}</a>
+      </div>
+    </section>
+  </article>
+</Layout>

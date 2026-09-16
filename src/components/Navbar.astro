@@ -1,0 +1,340 @@
+---
+import { clusterHubs, megaMenuColumns } from '../data/sitemap';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const links = [
+  { href: '/portugal-hqa-visa', label: 'The Program' },
+  { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+  { href: '/portugal-hqa-visa-application', label: 'Process' },
+  { href: '/portugal-hqa-visa-family', label: 'Family' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="relative sticky top-0 z-50 bg-background">
+  <div class="hidden border-b border-stone-200 bg-stone-100 lg:block">
+    <div class="site-container flex h-9 items-center justify-end">
+      <LanguageSwitcher id="lang-switch-desktop" />
+    </div>
+  </div>
+  <div class="border-b border-border bg-background">
+    <div class="site-container flex min-w-0 items-center justify-between gap-3 py-4 sm:py-6">
+      <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M5 3.2h8.4L7.8 10l5.6 6.8H5L10.2 10 5 3.2Z"></path>
+        </svg>
+        <span class="wordmark font-serif text-base leading-none not-italic sm:text-lg lg:text-xl">
+          <span class="font-bold not-italic">Portugal</span>
+          <span class="font-normal not-italic"> HQA Residency</span>
+        </span>
+      </a>
+      <nav aria-label="Primary" class="hidden items-center gap-6 lg:flex lg:gap-8">
+        {
+          links.map((item) => (
+            <a href={item.href} class="nav-link font-sans text-sm font-normal">
+              {item.label}
+            </a>
+          ))
+        }
+        <button
+          type="button"
+          id="resources-mega-trigger"
+          class="nav-link inline-flex items-center gap-1 font-sans text-sm font-normal focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="resources-mega"
+        >
+          Resources
+          <svg class="h-3.5 w-3.5" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"></path>
+          </svg>
+        </button>
+      </nav>
+      <div class="hidden items-center lg:flex">
+        <a href="/contact" class="btn-cta w-fit font-semibold">Speak with our advisory team</a>
+      </div>
+      <button
+        type="button"
+        id="mobile-nav-open"
+        class="inline-flex h-10 w-10 shrink-0 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav-drawer"
+        aria-label="Open menu"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="resources-mega"
+    class="absolute inset-x-0 top-full z-40 bg-background shadow-lg"
+    role="region"
+    aria-label="Resources"
+    hidden
+  >
+    <div class="site-container grid grid-cols-12 gap-8 py-10">
+      {
+        megaMenuColumns.map((column) => (
+          <div class="col-span-3">
+            <p class="font-sans text-sm font-semibold text-text-primary">{column.title}</p>
+            <ul class="mt-4 space-y-3">
+              {column.links.map((item) => (
+                <li>
+                  <a href={item.href} class="font-sans text-sm font-normal text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+      <a
+        href="/portugal-hqa-visa-vs-golden-visa"
+        class="group relative col-span-6 flex min-h-56 flex-col justify-end overflow-hidden p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        <div class="absolute inset-0 bg-surface-dark" aria-hidden="true"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/50 to-brand/40"
+          aria-hidden="true"
+        >
+        </div>
+        <div class="relative flex items-end justify-between gap-4">
+          <h3 class="max-w-sm font-serif text-2xl font-medium text-white">
+            HQA vs. Golden Visa: Which Is Right for You?
+          </h3>
+          <span
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-colors duration-150 ease-out group-hover:bg-brand-hover"
+            aria-hidden="true"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div
+  id="mobile-nav-drawer"
+  class="mobile-nav-drawer fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background p-6 lg:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menu"
+  hidden
+>
+  <div class="flex items-center justify-between">
+    <LanguageSwitcher id="lang-switch-mobile" variant="mobile" />
+    <button
+      type="button"
+      id="mobile-nav-close"
+      class="inline-flex h-10 w-10 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+      aria-label="Close menu"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+      </svg>
+    </button>
+  </div>
+
+  <a href="/contact" class="btn-cta mt-6 w-fit px-6 py-2.5 text-sm font-medium">Discuss Your Residency Options</a>
+
+  <nav aria-label="Mobile primary" class="mt-8">
+    {
+      links.map((item) => (
+        <a
+          href={item.href}
+          class="flex w-full items-center justify-between border-b border-border py-4 font-sans text-lg font-bold text-text-primary"
+          aria-current={currentPath === item.href ? 'page' : undefined}
+        >
+          <span>{item.label}</span>
+          <svg
+            class:list={['nav-chevron', currentPath === item.href && 'is-active']}
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+          </svg>
+        </a>
+      ))
+    }
+    <details>
+      <summary class="flex w-full cursor-pointer items-center justify-between border-b border-border py-4 font-sans text-lg font-bold text-text-primary">
+        <span>Resources</span>
+        <svg class="nav-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+        </svg>
+      </summary>
+      <ul class="space-y-3 pb-4 pt-2">
+        {
+          clusterHubs.map((item) => (
+            <li>
+              <a href={item.href} class="block py-1 font-sans text-sm font-normal text-text-secondary focus-visible:text-text-primary">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+  </nav>
+
+  <ul class="mt-6 space-y-3">
+    <li>
+      <a href="/privacy-policy" class="font-sans text-sm font-normal text-text-secondary focus-visible:text-text-primary">Privacy Policy</a>
+    </li>
+    <li>
+      <a href="/contact" class="font-sans text-sm font-normal text-text-secondary focus-visible:text-text-primary">Contact</a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  const focusableSelector = 'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
+
+  const getFocusable = (root: HTMLElement) =>
+    [...root.querySelectorAll<HTMLElement>(focusableSelector)].filter((el) => {
+      if (el.hasAttribute('disabled')) return false;
+      return el.getClientRects().length > 0;
+    });
+
+  const trapFocus = (event: KeyboardEvent, root: HTMLElement) => {
+    if (event.key !== 'Tab') return;
+    const items = getFocusable(root);
+    if (items.length === 0) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const openBtn = document.getElementById('mobile-nav-open');
+  const closeBtn = document.getElementById('mobile-nav-close');
+  const siteMain = document.getElementById('main-content');
+  const siteHeader = document.querySelector('header');
+  const siteFooter = document.querySelector('footer');
+
+  if (drawer && openBtn && closeBtn) {
+    const setOpen = (open: boolean) => {
+      const wasOpen = !drawer.hasAttribute('hidden');
+      openBtn.setAttribute('aria-expanded', String(open));
+      drawer.toggleAttribute('hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      document.documentElement.style.overflowY = open ? 'hidden' : '';
+      siteMain?.toggleAttribute('inert', open);
+      siteHeader?.toggleAttribute('inert', open);
+      siteFooter?.toggleAttribute('inert', open);
+      if (open) closeBtn.focus();
+      else if (wasOpen) openBtn.focus();
+    };
+
+    openBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setOpen(true);
+    });
+    closeBtn.addEventListener('click', () => setOpen(false));
+
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      trapFocus(event, drawer);
+    });
+
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.matchMedia('(min-width: 1024px)').matches) {
+        setOpen(false);
+      }
+    });
+  }
+
+  const mega = document.getElementById('resources-mega');
+  const megaBtn = document.getElementById('resources-mega-trigger');
+
+  if (mega && megaBtn) {
+    const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+
+    const setMegaOpen = (open: boolean) => {
+      const next = open && isDesktop();
+      megaBtn.setAttribute('aria-expanded', String(next));
+      mega.toggleAttribute('hidden', !next);
+    };
+
+    megaBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const expanded = megaBtn.getAttribute('aria-expanded') === 'true';
+      setMegaOpen(!expanded);
+    });
+
+    megaBtn.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        setMegaOpen(true);
+        const first = mega.querySelector<HTMLElement>('a[href]');
+        first?.focus();
+      }
+      if (
+        event.key === 'Tab' &&
+        !event.shiftKey &&
+        megaBtn.getAttribute('aria-expanded') === 'true'
+      ) {
+        const first = mega.querySelector<HTMLElement>('a[href]');
+        if (first) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    mega.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMegaOpen(false);
+        megaBtn.focus();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && megaBtn.getAttribute('aria-expanded') === 'true') {
+        setMegaOpen(false);
+        megaBtn.focus();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (megaBtn.getAttribute('aria-expanded') !== 'true') return;
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!mega.contains(target) && !megaBtn.contains(target)) {
+        setMegaOpen(false);
+      }
+    });
+
+    mega.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMegaOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isDesktop()) setMegaOpen(false);
+    });
+  }
+</script>

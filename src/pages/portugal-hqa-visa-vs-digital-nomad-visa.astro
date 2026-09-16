@@ -1,0 +1,65 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'Basis',
+    hqa: 'Highly qualified activity with a Portuguese host.',
+    other: 'Remote work for a foreign employer or clients, under the digital nomad heading in force (often searched as D8).',
+  },
+  {
+    aspect: 'Where the employer sits',
+    hqa: 'A Portuguese entity that can host the file.',
+    other: 'Typically outside Portugal. A Portuguese employment contract is not the core of that heading.',
+  },
+  {
+    aspect: 'Long-term residence',
+    hqa: 'Legal stay on HQA can later support a permanent-residence analysis.',
+    other: 'Clocks and eligibility for permanent residence follow that heading’s own 2026 rules. Do not assume they match HQA.',
+  },
+  {
+    aspect: 'If the work is for a Lisbon company',
+    hqa: 'Often the live heading, if the activity is highly qualified.',
+    other: 'Usually the wrong heading.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs Digital Nomad Visa - Local Host or Remote Work"
+  metaDescription="Portugal HQA visa vs digital nomad visa in 2026 is a local host versus remote foreign work. Read the table, then eligibility and the long-term residence path."
+  crumbLabel="vs digital nomad"
+  otherLabel="Digital nomad"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-digital-nomad-visa"
+  ctaLabel="Discuss HQA versus a digital nomad heading"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and a digital nomad visa?',
+      answer:
+        'HQA is local highly qualified activity with a Portuguese host. A digital nomad file is built around work for a foreign employer or clients while living in Portugal.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'Use HQA when a Portuguese host will employ or host highly qualified activity. Use a digital nomad heading when the work stays with a foreign principal and that heading’s 2026 income tests are met.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs digital nomad visa is a choice between a Portuguese host and a remote-work residence heading. HQA is local highly qualified activity. A digital nomad file is built around work performed for a foreign employer or clients while living in Portugal. Who may use HQA is on
+      <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+      Later stay is on
+      <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>.
+      The program overview is the
+      <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+      guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use HQA when a Portuguese host will employ or host highly qualified activity. Use a digital nomad heading when the work stays with a foreign principal and that heading’s 2026 income tests are met. Do not run both stories in one cover letter. Permanent residence later follows the heading you actually held, not the one you preferred in search.
+    </p>
+  </Fragment>
+</ComparisonLayout>

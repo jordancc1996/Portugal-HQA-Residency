@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import LongTermClusterNav from '../components/LongTermClusterNav.astro';
+
+const title = 'Portugal HQA Visa Citizenship - Naturalization After Residence';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa citizenship in 2026 is naturalization after legal residence, not an automatic upgrade from the first HQA card. Start from permanent residency.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-permanent-residency', label: 'Permanent residency' },
+            { label: 'Citizenship' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa citizenship is ordinary naturalization after a period of legal residence connected to highly qualified activity stay, not a passport sold with the first card. HQA is the residence heading that lets the years start. Nationality is a different statute. Read
+          <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>
+          first if the live question is still the next residence status rather than a nationality file.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>Residence years are not a passport</h2>
+          <p class="mt-6">
+            Naturalization looks at legal residence, absences, criminal record, and the language and civic tests listed for the year of filing. The required residence period is in the nationality law as amended in 2026, not in HQA marketing copy. Confirm the current period before you count. Holding successive HQA cards does not by itself lodge a nationality application.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What usually sits in a nationality file</h2>
+          <p class="mt-6">
+            Expect civil-status documents, proof of residence, criminal-record certificates from relevant countries, and the language evidence the current list names. Portuguese tax and social-security history often appears as practical proof of life here. None of that is a substitute for the residence-time test. A
+            <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">permanent residence</a>
+            decision, where one exists, is still not nationality.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Household members file for themselves</h2>
+          <p class="mt-6">
+            A spouse or child does not receive a Portuguese passport because the principal naturalizes, except where a separate nationality rule actually covers them. Their residence years follow their own cards. That trail starts on
+            <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>.
+            Temporary cards continue through
+            <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>
+            until a later status is granted. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <LongTermClusterNav current="/portugal-hqa-visa-citizenship" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Treat naturalization as its own statute, after the residence years are real</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Nationality rules change. A licensed professional should read your residence history against the nationality law in force, not against the first HQA approval letter.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss whether nationality is the live file</a>
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ResearchClusterNav from '../components/ResearchClusterNav.astro';
+
+const title = 'Portugal HQA Visa University - Academic Affiliation Pathway';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa university affiliation in 2026 is an academic host path, not a degree visa. See how a university contract is tested for HQA eligibility.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-research-visa', label: 'Research visa' },
+            { label: 'University' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa university affiliation is the academic-host path: a Portuguese university or related institute as employer or contracting host for highly qualified activity. It is not a student visa, not an Erasmus stay, and not a visiting-scholar invitation on its own. Searchers who typed “research visa” should start at
+          <a href="/portugal-research-visa" class="inline-link">Portugal research visa</a>,
+          then confirm
+          <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>
+          for the post.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>Academic staff versus students</h2>
+          <p class="mt-6">
+            Lecturers, researchers on institute contracts, and other specialists hired to work are in a different category from people enrolled to study. A PhD enrolment letter, a tuition receipt, or a student residence heading is not this pathway. The university must be the host for professional activity that meets the highly qualified tests in force in 2026.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What the appointment has to show</h2>
+          <p class="mt-6">
+            A usable pack names the Portuguese institution, the role, the duration, and pay or maintenance. An informal email from a faculty member is not a contract. Title inflation (“visiting professor” on a business card) does not replace the statutory tests. Those tests are on
+            <a href="/portugal-hqa-visa-eligibility" class="inline-link">who qualifies</a>.
+            Salary floors, where they apply to the contract type, still apply.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>When the host is a funded project instead</h2>
+          <p class="mt-6">
+            If the person is attached to a named grant or laboratory work package rather than to an academic appointment, use the
+            <a href="/portugal-hqa-visa-research-project" class="inline-link">HQA visa research project</a>
+            pathway. The program overview remains the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <ResearchClusterNav current="/portugal-hqa-visa-university" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Match the university contract to highly qualified activity, not to the campus name</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Academic titles and contract forms differ. A licensed professional should read the appointment against the current AIMA and consular list.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss a university host and residence options</a>
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+
+const title = 'Portugal HQA Visa Requirements - Role, Host, and Stay';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa requirements cover the 2026 role, host, and stay tests. Use this hub for eligibility, documents, and obligations after card approval.';
+
+const spokes = [
+  {
+    href: '/portugal-hqa-visa-eligibility',
+    title: 'Who qualifies',
+    text: 'Whether the person, the role, and the Portuguese host fit highly qualified activity before any document pack is assembled.',
+    cta: 'Read who qualifies',
+  },
+  {
+    href: '/portugal-hqa-visa-documents',
+    title: 'What to file',
+    text: 'The identity, host, qualification, and record evidence that usually travels with an HQA application, once eligibility is the right heading.',
+    cta: 'Open the document checklist',
+  },
+  {
+    href: '/portugal-hqa-visa-residency-requirements',
+    title: 'What continues after approval',
+    text: 'Stay tests that apply once the card is issued: the activity, absences, and address, which are not the same as the admission tests.',
+    cta: 'Read obligations after approval',
+  },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { label: 'Requirements' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa requirements are the tests a highly qualified activity file has to meet, not a single form and not a capital subscription. This hub splits those tests into who qualifies, what documents usually accompany the file, and what the person must keep doing after the residence card is issued. The
+          <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+          guide remains the program overview.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container py-24 md:py-32">
+        <div class="max-w-3xl">
+          <section>
+            <h2>Admission tests versus stay tests</h2>
+            <p class="mt-6">
+              Admission tests ask whether this person, in this role, with this Portuguese host, may receive a highly qualified activity permit. Stay tests ask whether the permit remains valid once the person is in Portugal. Mixing the two is a common filing error: a strong contract does not excuse later unexplained absences, and a clean travel record does not replace a qualifying host.
+            </p>
+            <p class="mt-4">
+              Salary floors, documentary lists, and absence rules change. Confirm the 2026 AIMA and consular instructions before you treat this hub as a checklist. The legal heading some files cite is explained on the
+              <a href="/portugal-article-90-residence-permit" class="inline-link">Portugal Article 90 residence permit</a>
+              page. This hub does not reprint that statute.
+            </p>
+          </section>
+        </div>
+
+        <section class="mt-24">
+          <h2>Pages in this cluster</h2>
+          <p class="mt-6 max-w-3xl">
+            Each page owns one job. Do not read the eligibility page as a document list, and do not read the post-approval page as a substitute for who qualifies.
+          </p>
+          <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {
+              spokes.map((item) => (
+                <a
+                  href={item.href}
+                  class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]"
+                >
+                  <h3>{item.title}</h3>
+                  <p class="mt-4 flex-1">{item.text}</p>
+                  <span class="btn-primary mt-8 w-full gap-2">
+                    {item.cta}
+                    <span class="cluster-card-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+
+        <div class="mx-auto mt-24 max-w-3xl">
+          <section>
+            <h2>How this hub relates to the HQA visa guide</h2>
+            <p class="mt-6">
+              Costs, family coverage, and the consular or in-country path sit on other hubs. After the admission tests are clear, the next spend question is
+              <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
+              When you already know the person qualifies and you need to lodge the pack, go to the
+              <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+              page. Researchers who landed here from a “research visa” search should still start with eligibility for the role, then use the research-host pages from the program guide.
+            </p>
+          </section>
+          <RequirementsClusterNav current="/portugal-hqa-visa-requirements" />
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Match the role and the host to the current requirement list</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. An advisor can tell you which of the three cluster pages actually constrains your file.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss which requirement tests apply</a>
+      </div>
+    </section>
+  </article>
+</Layout>

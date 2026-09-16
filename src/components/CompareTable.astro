@@ -1,0 +1,35 @@
+---
+interface Props {
+  otherLabel: string;
+  rows: {
+    aspect: string;
+    hqa: string;
+    other: string;
+  }[];
+}
+
+const { otherLabel, rows } = Astro.props;
+---
+
+<div class="compare-scroll mt-10">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th scope="col">Point</th>
+        <th scope="col">HQA</th>
+        <th scope="col">{otherLabel}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((row) => (
+          <tr>
+            <td>{row.aspect}</td>
+            <td>{row.hqa}</td>
+            <td>{row.other}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

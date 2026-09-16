@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FinancialClusterNav from '../components/FinancialClusterNav.astro';
+
+const title = 'Portugal HQA Visa Tax - Residence and Filing';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa tax questions in 2026 turn on whether you become Portuguese tax resident. Confirm filing duties with a licensed tax professional first.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-cost', label: 'Cost' },
+            { label: 'Tax' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa tax questions are about whether living and working here makes you a Portuguese tax resident, and what that does to employment income, foreign assets, and filings in 2026. A residence card is not a tax ruling. This page flags the issues. It does not compute your bill. Instruct a licensed tax professional for numbers. US citizens and green-card holders still have a US overlay; that sits on
+          <a href="/portugal-hqa-visa-for-americans" class="inline-link">HQA visa for Americans</a>.
+          Immigration procedure is a separate file, often with an
+          <a href="/portugal-hqa-visa-lawyer" class="inline-link">HQA visa lawyer or consultant</a>.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>When Portuguese tax residency can attach</h2>
+          <p class="mt-6">
+            Portuguese tax residency is a domestic-law test. In broad terms it looks at days spent in Portugal and at whether the person’s habitual residence or household is here. Crossing a residence-permit threshold does not automatically answer that test, and staying under a day-count you read on a forum does not automatically keep you non-resident. Treat 2026 day-counts and “habitual residence” definitions as items for tax counsel, not for this site.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What a tax resident usually has to face</h2>
+          <p class="mt-6">
+            Tax residents generally report Portuguese-source income, and may have to report worldwide income, under the Personal Income Tax rules in force, subject to double-tax treaties. Social security on employment often follows the contract and the host. Special personal-tax regimes have been rewritten more than once. Do not assume an old NHR article still applies. Employer withholding does not replace an individual return if one is due.
+          </p>
+          <p class="mt-4">
+            This is not legal, tax, or immigration advice. Only a professional who has your facts can say whether a treaty, a social-security certificate, or a current incentive statute changes the picture.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Immigration counsel is not a tax filing</h2>
+          <p class="mt-6">
+            An immigration lawyer can assemble the permit. A tax advisor can map residency, payroll, and foreign-asset reporting. Some firms do both under separate engagements. Start with
+            <a href="/portugal-hqa-visa-lawyer" class="inline-link">HQA visa lawyer and consultant</a>
+            for the permit file, and ask them who handles tax if that is not their licence. Role and host tests remain on
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
+            Cash outlay to file is
+            <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
+            Capital tickets are not required; see
+            <a href="/portugal-hqa-visa-investment" class="inline-link">HQA visa investment</a>.
+            When you lodge, use the
+            <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+            page. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <FinancialClusterNav current="/portugal-hqa-visa-tax" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Separate the permit file from the tax-residency file</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. An advisor can introduce immigration counsel and a tax professional rather than treating one invoice as both.
+        </p>
+        <a href="/contact" class="btn-cta">Speak with an advisor about tax and the permit</a>
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FinancialClusterNav from '../components/FinancialClusterNav.astro';
+
+const title = 'Portugal HQA Visa Investment - No Capital Subscription';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa investment is not a capital buy-in in 2026. There is no Golden Visa-style subscription; salary and subsistence remain separate tests.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-cost', label: 'Cost' },
+            { label: 'Investment' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa investment, as people type it, usually means “how much capital must I place.” For highly qualified activity residence the honest answer is that there is no Golden Visa-style investment ticket: no mandated fund subscription, no real-estate purchase, no capital-transfer quota published as the price of the permit. The route is a job and host test. Compare that structure on
+          <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">HQA visa vs Golden Visa</a>.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What does not exist on this route</h2>
+          <p class="mt-6">
+            Portuguese highly qualified activity residence is not a citizenship-by-investment product and not a capital-residence product. Paying a developer or a fund does not create eligibility. If the household’s plan is to deploy capital and live in Portugal with little or no local professional activity, this is the wrong heading.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Salary, subsistence, and proof of means</h2>
+          <p class="mt-6">
+            Employed files often have to meet a published salary floor for highly qualified activity in the year of filing. That floor is wages for work, not an investment into the state. Consulates also ask for subsistence or means evidence so the person will not be destitute. Those are capacity tests on
+            <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>
+            and on the
+            <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>
+            checklist. They are not a buy-in. Confirm the 2026 figures on the official tables. Do not treat a blog euro amount as the law.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Where this sits in the filing path</h2>
+          <p class="mt-6">
+            Decide the role and the host on
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>
+            first. Budget cash outlay on
+            <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
+            Tax after you reside is
+            <a href="/portugal-hqa-visa-tax" class="inline-link">HQA visa tax</a>,
+            not a substitute investment. When the pack is ready, lodge it through the
+            <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
+            path. The program overview is the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <a
+          href="/portugal-hqa-visa-vs-golden-visa"
+          class="card cluster-card mt-16 flex flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]"
+        >
+          <h3>If the plan is capital, not a Portuguese role</h3>
+          <p class="mt-4 flex-1">
+            The Golden Visa comparison is the right next page when the household is placing funds rather than filling a highly qualified post.
+          </p>
+          <span class="btn-primary mt-8 w-full gap-2">
+            Open HQA vs Golden Visa
+            <span class="cluster-card-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <FinancialClusterNav current="/portugal-hqa-visa-investment" />
+      </div>
+    </div>
+  </article>
+</Layout>

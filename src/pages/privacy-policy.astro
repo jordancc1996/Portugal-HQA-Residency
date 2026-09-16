@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const title = 'Privacy Policy - Site Use';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Privacy policy for Portugal HQA Residency: this site is informational, has no public intake form, and uses Weglot for language display as of 2026.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Privacy policy' }]} />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Privacy policy on this site covers how the pages are published. There is no public contact form. Do not send identity documents to a generic web inbox.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What this site collects</h2>
+          <p class="mt-6">
+            The pages are informational. They do not ask for a name, email, or phone number. Hosting, analytics, and the Weglot language layer may process technical data such as IP address, browser type, and pages viewed, under those providers’ own terms. Confirm those terms with the provider before you treat this page as their privacy notice.
+          </p>
+        </section>
+        <section class="mt-24">
+          <h2>Inquiries</h2>
+          <p class="mt-6">
+            If you write through the
+            <a href="/contact" class="inline-link">advisory channel</a>,
+            treat that correspondence as a professional file, not as a newsletter signup. Return to the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide for the permit.
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+</Layout>

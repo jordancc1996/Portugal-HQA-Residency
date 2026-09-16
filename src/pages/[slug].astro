@@ -1,0 +1,36 @@
+---
+import { existsSync } from 'node:fs';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+
+  return pages
+    .filter((entry) => {
+      const slug = entry.data.slug;
+      const reserved = existsSync(new URL(`./${slug}.astro`, import.meta.url));
+      return !reserved && !slug.includes('/');
+    })
+    .map((entry) => ({
+      params: { slug: entry.data.slug },
+      props: { entry },
+    }));
+}
+
+interface Props {
+  entry: CollectionEntry<'pages'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.metaDescription}>
+  <article class="site-container py-24">
+    <h1>{entry.data.title}</h1>
+    <div class="mt-10 max-w-3xl">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

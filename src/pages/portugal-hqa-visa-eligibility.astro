@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+
+const title = 'Portugal HQA Visa Eligibility - Who Qualifies';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Portugal HQA visa eligibility is who qualifies in 2026: the role, the host, and the applicant tests, before you assemble the supporting document checklist.';
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+            { label: 'Eligibility' },
+          ]}
+        />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa eligibility is the question of who may use highly qualified activity residence, before any checklist is printed. The file turns on a qualifying professional activity, a Portuguese host that can support that activity, and an applicant who can be admitted. This page does not list forms. Those belong on
+          <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>The role and the host</h2>
+          <p class="mt-6">
+            Highly qualified activity is a legal test applied to the work, not a compliment on a CV. Typical hosts are a Portuguese company, university, research unit, or other entity that can contract or host the person in Portugal. A remote job for a foreign employer, with no Portuguese host, is a different analysis. A real-estate purchase does not create eligibility.
+          </p>
+          <p class="mt-4">
+            Researchers and academic hires still have to meet this role-and-host test. The
+            <a href="/portugal-research-visa" class="inline-link">Portugal research visa</a>
+            page covers that search phrase. It does not waive eligibility.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>The applicant</h2>
+          <p class="mt-6">
+            The person is usually a non-EU national who will carry out the activity in Portugal. Qualifications must match the role. Many employed files also have to clear a published salary floor for highly qualified activity in the year of filing. Criminal-record, identity, and subsistence rules apply in addition to the job. Confirm the 2026 floors and nationality rules with AIMA and the consulate that will see the file.
+          </p>
+          <p class="mt-4">
+            Family members are not automatic co-applicants. Whether a spouse or child can be included is a separate coverage question on
+            <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
+            coverage, not proof that the principal is eligible.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What eligibility does not cover</h2>
+          <p class="mt-6">
+            Passing these tests does not assemble the pack, lodge the application, or keep the card valid. After you know the person fits, use the
+            <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>
+            hub to move to documents. Once a card is issued, ongoing stay rules sit on
+            <a href="/portugal-hqa-visa-residency-requirements" class="inline-link">HQA visa residency requirements</a>.
+            For the whole route, including cost and family, return to the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+            guide.
+          </p>
+        </section>
+
+        <RequirementsClusterNav current="/portugal-hqa-visa-eligibility" />
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Test the role and the host before you collect certificates</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. Eligibility is fact-specific. A licensed professional should read the contract against the tests in force.
+        </p>
+        <a href="/contact" class="btn-cta">Discuss whether the role looks eligible</a>
+      </div>
+    </section>
+  </article>
+</Layout>

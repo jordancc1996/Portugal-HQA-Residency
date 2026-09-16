@@ -1,0 +1,59 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'Basis',
+    hqa: 'Highly qualified professional activity with a Portuguese host.',
+    other: 'A published capital subscription, such as a fund or other qualifying investment.',
+  },
+  {
+    aspect: 'What you pay the state for the heading',
+    hqa: 'Filing and card fees, plus a salary floor where the contract type requires one.',
+    other: 'The capital ticket in force for 2026, plus filing fees. That ticket is not an HQA fee.',
+  },
+  {
+    aspect: 'Work in Portugal',
+    hqa: 'The permit is built around the role.',
+    other: 'Work rights follow Golden Visa rules, not an HQA host contract.',
+  },
+  {
+    aspect: 'If the plan is only capital',
+    hqa: 'The wrong heading.',
+    other: 'The comparison that belongs on this page.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs Golden Visa - Host Route or Capital Route"
+  metaDescription="Portugal HQA visa vs Golden Visa in 2026 is a Portuguese host versus a capital ticket. Read the side-by-side table, then the cost and investment pages."
+  crumbLabel="vs Golden Visa"
+  otherLabel="Golden Visa"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-golden-visa"
+  ctaLabel="Discuss host route versus capital route"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and the Golden Visa?',
+      answer:
+        'HQA is highly qualified activity with a Portuguese host. Golden Visa is a published capital subscription. Mixing the two produces a file that satisfies neither heading.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'Use HQA when there is a real highly qualified role and host in Portugal. Use Golden Visa when the household is placing qualifying capital and is not relying on that role.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs Golden Visa is a choice between a Portuguese host and a capital ticket. HQA is highly qualified activity. Golden Visa is a published investment. Mixing the two produces a file that satisfies neither heading. Cash spent to lodge HQA is on <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>. Why HQA has no capital buy-in is on <a href="/portugal-hqa-visa-investment" class="inline-link">HQA visa investment</a>. The program overview is the <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a> guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use HQA when there is a real highly qualified role and host in Portugal. Use Golden Visa when the household is placing qualifying capital and is not relying on that role. Confirm the 2026 Golden Visa investment list separately. It changes. HQA salary floors, where they apply, are not a substitute ticket.
+    </p>
+  </Fragment>
+</ComparisonLayout>

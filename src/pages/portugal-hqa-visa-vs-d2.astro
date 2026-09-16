@@ -1,0 +1,63 @@
+---
+import ComparisonLayout from '../components/ComparisonLayout.astro';
+
+const rows = [
+  {
+    aspect: 'Basis',
+    hqa: 'Highly qualified activity, usually employed or hosted.',
+    other: 'Entrepreneurship or independent professional activity under the D2 heading.',
+  },
+  {
+    aspect: 'What the file has to prove',
+    hqa: 'The role, the host, and the applicant tests on eligibility.',
+    other: 'A viable activity in Portugal: company, service, or independent practice as the D2 list requires.',
+  },
+  {
+    aspect: 'Capital',
+    hqa: 'No Golden Visa-style ticket.',
+    other: 'May involve company formation and operating funds. That is not an HQA subscription.',
+  },
+  {
+    aspect: 'If there is already a qualifying employer',
+    hqa: 'Usually the shorter legal story.',
+    other: 'Often the wrong heading unless the person is actually founding or practising independently.',
+  },
+];
+---
+
+<ComparisonLayout
+  title="Portugal HQA Visa vs D2 - Qualified Activity or Entrepreneurship"
+  metaDescription="Portugal HQA visa vs D2 in 2026 is highly qualified activity versus entrepreneurship. Read the side-by-side table, then who qualifies before you file."
+  crumbLabel="vs D2"
+  otherLabel="D2"
+  rows={rows}
+  current="/portugal-hqa-visa-vs-d2"
+  ctaLabel="Discuss HQA versus D2 for this activity"
+  faqItems={[
+    {
+      question: 'What is the difference between the Portugal HQA visa and the D2?',
+      answer:
+        'HQA is highly qualified activity for a host. D2 is entrepreneurship or independent activity. A job offer is not a company, and a company is not automatically highly qualified activity.',
+    },
+    {
+      question: 'Which heading should a household use?',
+      answer:
+        'Use HQA when the Portuguese host already exists and the role meets the highly qualified tests. Use D2 when the person will create or run an independent activity that the D2 rules in 2026 actually cover.',
+    },
+  ]}
+>
+  <Fragment slot="intro">
+    <p>
+      Portugal HQA visa vs D2 is a choice between highly qualified activity for a host and a D2 entrepreneurship or independent-activity permit. A job offer is not a company. A company is not automatically highly qualified activity. Who may use HQA is on
+      <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
+      The program overview is the
+      <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
+      guide.
+    </p>
+  </Fragment>
+  <Fragment slot="close">
+    <p>
+      Use HQA when the Portuguese host already exists and the role meets the highly qualified tests. Use D2 when the person will create or run an independent activity that the D2 rules in 2026 actually cover. Confirm the current D2 business-plan and means lists. Do not file D2 to dodge an HQA salary floor, or HQA to dodge forming a company you in fact need.
+    </p>
+  </Fragment>
+</ComparisonLayout>
