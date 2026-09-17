@@ -405,6 +405,37 @@ a.btn-on-dark:visited,
     width: 22%;
   }
 
+  .inquiry-field {
+    font-family: theme('fontFamily.sans');
+    line-height: 1.5;
+  }
+
+  .inquiry-field:focus-visible {
+    outline: 2px solid theme('colors.brand.DEFAULT');
+    outline-offset: 2px;
+    border-color: theme('colors.brand.DEFAULT');
+  }
+
+  .inquiry-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .card {
     background-color: #ffffff;
     border-radius: theme('borderRadius.lg');

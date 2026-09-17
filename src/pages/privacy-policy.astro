@@ -5,7 +5,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 const title = 'Privacy Policy - Site Use';
 const metaTitle = `${title} | Portugal HQA Residency`;
 const metaDescription =
-  'Privacy policy for Portugal HQA Residency: this site is informational, has no public intake form, and uses Weglot for language display as of 2026.';
+  'Privacy policy for Portugal HQA Residency: the 2026 inquiry form collects contact details to reply to questions. Weglot may process language display data.';
 ---
 
 <Layout title={metaTitle} description={metaDescription}>
@@ -15,7 +15,7 @@ const metaDescription =
         <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Privacy policy' }]} />
         <h1 class="mt-8 max-w-4xl">{title}</h1>
         <p class="mt-8 max-w-3xl">
-          Privacy policy on this site covers how the pages are published. There is no public contact form. Do not send identity documents to a generic web inbox.
+          Privacy policy on this site covers how the pages are published and how the contact inquiry form is used. Do not attach identity documents, police certificates, or passport scans to an inquiry.
         </p>
       </div>
     </header>
@@ -25,7 +25,9 @@ const metaDescription =
         <section>
           <h2>What this site collects</h2>
           <p class="mt-6">
-            The pages are informational. They do not ask for a name, email, or phone number. Hosting, analytics, and the Weglot language layer may process technical data such as IP address, browser type, and pages viewed, under those providers’ own terms. Confirm those terms with the provider before you treat this page as their privacy notice.
+            The article pages are informational. The
+            <a href="/contact" class="inline-link">contact inquiry form</a>
+            collects the question text, name, email, optional phone number, country of residence, optional LinkedIn URL, stated goals, residency option of interest, timing, and any additional note. Those fields are used to reply to the inquiry. They are not a newsletter signup. Hosting, analytics, the form delivery provider, and the Weglot language layer may process technical data such as IP address, browser type, and pages viewed, under those providers’ own terms. Confirm those terms with the provider before you treat this page as their privacy notice.
           </p>
         </section>
         <section class="mt-24">

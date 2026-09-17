@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import InquiryForm from '../components/InquiryForm.astro';
 
-const title = 'Contact - Advisory Channel';
+const title = 'Contact - Portugal HQA Residency Inquiry';
 const metaTitle = `${title} | Portugal HQA Residency`;
 const metaDescription =
-  'Contact Portugal HQA Residency through the advisory channel. This page has no intake form. Write only if the role, host, and household need a 2026 file review.';
+  'Contact Portugal HQA Residency with a 2026 inquiry: your question, name, email, country, and what you want to accomplish. Informational only.';
 ---
 
 <Layout title={metaTitle} description={metaDescription}>
@@ -15,15 +16,16 @@ const metaDescription =
         <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Contact' }]} />
         <h1 class="mt-8 max-w-4xl">{title}</h1>
         <p class="mt-8 max-w-3xl">
-          Contact is a private advisory channel, not a public evaluation form. Write only when a Portuguese host, a highly qualified role, and a household already exist to discuss. There is no name, email, or phone intake on this page.
+          Contact Portugal HQA Residency through this inquiry form when you have a question about highly qualified activity residence, family coverage, or how HQA compares with other Portuguese options. The form is informational. It is not a filing and not legal advice.
         </p>
       </div>
     </header>
 
     <div class="bg-background-alt">
       <div class="site-container max-w-3xl py-24 md:py-32">
-        <p>
-          Use the engagement address supplied with your briefing, or ask host counsel already on the file to introduce the advisory desk. For the permit itself, start from the
+        <InquiryForm />
+        <p class="mt-16 max-w-2xl">
+          For the permit itself, start from the
           <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
           guide.
         </p>

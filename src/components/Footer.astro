@@ -1,37 +1,187 @@
 ---
 import Wordmark from './Wordmark.astro';
+
+const socialLinks = [
+  { name: 'LinkedIn', href: '#' },
+  { name: 'X', href: '#' },
+  { name: 'Instagram', href: '#' },
+  { name: 'YouTube', href: '#' },
+  { name: 'Facebook', href: '#' },
+];
 ---
 
-<footer class="border-t border-border bg-background-alt">
-  <div class="site-container grid grid-cols-1 gap-10 py-24 md:grid-cols-12 md:py-32">
-    <div class="col-span-full min-w-0 md:col-span-5">
-      <p class="inline-block font-serif text-4xl leading-none md:text-5xl">
-        <Wordmark variant="footer" class="font-serif text-4xl leading-none md:text-5xl" />
+<footer id="footer" class="site-footer border-t border-stone-800 bg-stone-950 text-stone-100">
+  <div class="site-container py-24 md:py-32">
+    <div class="border-b border-stone-800 pb-16 md:pb-20">
+      <h2 class="max-w-3xl text-stone-100">Stay Informed</h2>
+      <p class="mt-6 max-w-2xl font-sans text-stone-400">
+        Short notes on HQA residence, university hosts, and research-route filings. This is an updates list, not an advisory request.
       </p>
-      <p class="mt-4 max-w-md">
-        Information on Portugal's Highly Qualified Activity residence route. This site does not provide legal, tax, or immigration advice. Speak with a licensed professional about your circumstances.
-      </p>
+      <form id="footer-newsletter" class="mt-8 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-start" novalidate>
+        {/* TODO: connect this form to an actual email service (Mailchimp/ConvertKit/etc.) before launch — currently non-functional. */}
+        <label class="sr-only" for="footer-newsletter-email">Email address</label>
+        <input
+          id="footer-newsletter-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder="Email address"
+          class="inquiry-field mt-0 min-w-0 flex-1 rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 font-sans text-base text-stone-100 placeholder:text-stone-500"
+        />
+        <button type="submit" class="btn-primary w-full shrink-0 sm:w-fit">Subscribe</button>
+      </form>
+      <p id="footer-newsletter-status" class="mt-4 font-sans text-sm text-stone-400" role="status" aria-live="polite"></p>
     </div>
-    <div class="col-span-full md:col-span-3">
-      <h3>Program</h3>
-      <ul class="mt-4 space-y-3">
-        <li><a href="/portugal-hqa-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA visa overview</a></li>
-        <li><a href="/portugal-hqa-visa-cost" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">Costs</a></li>
-        <li><a href="/portugal-hqa-visa-vs-d7" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs D7</a></li>
-        <li><a href="/portugal-hqa-visa-vs-golden-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs Golden Visa</a></li>
+
+    <div class="grid grid-cols-1 gap-10 pt-16 md:grid-cols-12 md:pt-20">
+      <div class="col-span-full min-w-0 md:col-span-5">
+        <p class="inline-block font-serif text-4xl leading-none md:text-5xl">
+          <Wordmark variant="footer" class="font-serif text-4xl leading-none text-stone-100 md:text-5xl" />
+        </p>
+        <p class="mt-4 max-w-md text-stone-400">
+          Information on Portugal's Highly Qualified Activity residence route. This site does not provide legal, tax, or immigration advice. Speak with a licensed professional about your circumstances.
+        </p>
+      </div>
+      <div class="col-span-full md:col-span-3">
+        <h3 class="text-stone-400">Program</h3>
+        <ul class="mt-4 space-y-3">
+          <li>
+            <a
+              href="/portugal-hqa-visa"
+              class="font-sans text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+            >
+              HQA visa overview
+            </a>
+          </li>
+          <li>
+            <a
+              href="/portugal-hqa-visa-cost"
+              class="font-sans text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+            >
+              Costs
+            </a>
+          </li>
+          <li>
+            <a
+              href="/portugal-hqa-visa-vs-d7"
+              class="font-sans text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+            >
+              HQA vs D7
+            </a>
+          </li>
+          <li>
+            <a
+              href="/portugal-hqa-visa-vs-golden-visa"
+              class="font-sans text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+            >
+              HQA vs Golden Visa
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-full md:col-span-4">
+        <h3 class="text-stone-400">Contact</h3>
+        <p class="mt-4">
+          {/* RTL FLAG: the → glyph is physical, not a logical "forward" arrow. */}
+          <a
+            href="/contact"
+            class="font-sans font-semibold text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+          >
+            Discuss Your Residency Options <span aria-hidden="true">→</span>
+          </a>
+        </p>
+        <p class="mt-4">
+          <a
+            href="/privacy-policy"
+            class="font-sans text-stone-400 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
+          >
+            Privacy Policy
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 border-t border-stone-800 pt-10">
+      {/* TODO: replace with real social profile URLs before launch. */}
+      <ul class="flex flex-wrap items-center gap-5" aria-label="Social media">
+        {
+          socialLinks.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="inline-flex text-stone-100 transition-colors duration-150 ease-out hover:text-brand focus-visible:text-brand"
+                aria-label={item.name}
+              >
+                {item.name === 'LinkedIn' && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.52V24H.24V8.25zM8.34 8.25h4.33v2.14h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.93V24h-4.52v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1V24H8.34V8.25z" />
+                  </svg>
+                )}
+                {item.name === 'X' && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.9 2H22l-6.84 7.82L23 22h-6.55l-5.13-6.7L5.7 22H2.58l7.32-8.37L1 2h6.72l4.63 6.14L18.9 2zm-1.15 18.2h1.82L6.36 3.7H4.4l13.35 16.5z" />
+                  </svg>
+                )}
+                {item.name === 'Instagram' && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"></circle>
+                  </svg>
+                )}
+                {item.name === 'YouTube' && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.3.4A3.1 3.1 0 0 0 .5 6.2 32.6 32.6 0 0 0 0 12a32.6 32.6 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.8.4 9.3.4 9.3.4s7.5 0 9.3-.4a3.1 3.1 0 0 0 2.2-2.2A32.6 32.6 0 0 0 24 12a32.6 32.6 0 0 0-.5-5.8zM9.75 15.5v-7l6.2 3.5-6.2 3.5z" />
+                  </svg>
+                )}
+                {item.name === 'Facebook' && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.02H8.08v-2.91h2.36V9.84c0-2.34 1.4-3.63 3.52-3.63 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.59l-.41 2.91h-2.18V22c4.78-.75 8.44-4.91 8.44-9.93z" />
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))
+        }
       </ul>
-    </div>
-    <div class="col-span-full md:col-span-4">
-      <h3>Contact</h3>
-      <p class="mt-4">
-        {/* RTL FLAG: the → glyph is physical, not a logical "forward" arrow. */}
-        <a href="/contact" class="text-link">
-          Discuss Your Residency Options <span aria-hidden="true">→</span>
-        </a>
-      </p>
-      <p class="mt-4">
-        <a href="/privacy-policy" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">Privacy Policy</a>
-      </p>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer :global(.wordmark),
+  .site-footer :global(.wordmark [data-wordmark-part]) {
+    color: #f5f5f4 !important;
+    -webkit-text-fill-color: #f5f5f4 !important;
+  }
+
+  .site-footer :global(h2) {
+    color: #f5f5f4 !important;
+  }
+
+  .site-footer :global(h3) {
+    color: #a8a29e !important;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('footer-newsletter') as HTMLFormElement | null;
+  const status = document.getElementById('footer-newsletter-status');
+  const email = document.getElementById('footer-newsletter-email') as HTMLInputElement | null;
+
+  if (form && status && email && form.dataset.bound !== 'true') {
+    form.dataset.bound = 'true';
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!email.validity.valid) {
+        status.textContent = 'Enter a valid email address.';
+        email.reportValidity();
+        return;
+      }
+      // TODO: connect this form to an actual email service (Mailchimp/ConvertKit/etc.) before launch — currently non-functional.
+      form.setAttribute('hidden', '');
+      status.textContent = 'This signup is not connected yet. The address was not sent.';
+    });
+  }
+</script>

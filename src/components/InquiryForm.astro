@@ -1,0 +1,175 @@
+---
+const endpoint =
+  import.meta.env.PUBLIC_INQUIRY_ENDPOINT?.trim() || 'https://formcarry.com/s/yernDIKc320';
+
+const goals = [
+  { id: 'goal-residency', value: 'Obtain Portuguese residency' },
+  { id: 'goal-permanent', value: 'Create a pathway toward permanent residency or citizenship' },
+  { id: 'goal-family', value: 'Include my spouse or family' },
+  { id: 'goal-business', value: 'Establish or expand business interests in Portugal' },
+  { id: 'goal-research', value: 'Explore professional or research opportunities in Portugal' },
+  { id: 'goal-compare', value: 'Compare HQA with other Portugal residency options' },
+  { id: 'goal-other', value: 'Other' },
+];
+
+const residencyOptions = [
+  { id: 'opt-hqa', value: 'Portugal HQA Residency' },
+  { id: 'opt-golden', value: 'Portugal Golden Visa' },
+  { id: 'opt-compare', value: "I'm comparing HQA and the Golden Visa" },
+  { id: 'opt-unsure', value: "I'm not sure which option is right for me" },
+];
+
+const timelines = [
+  { id: 'time-asap', value: 'As soon as possible' },
+  { id: 'time-3m', value: 'Within 3 months' },
+  { id: 'time-3-6m', value: 'Within 3-6 months' },
+  { id: 'time-6-12m', value: 'Within 6-12 months' },
+  { id: 'time-research', value: "I'm currently researching" },
+];
+
+const fieldClass =
+  'inquiry-field mt-2 w-full min-w-0 rounded-lg border border-border bg-white px-4 py-3 font-sans text-base text-text-primary';
+---
+
+<form
+  id="inquiry-form"
+  class="inquiry-form"
+  method="post"
+  action={endpoint || '/contact'}
+  data-endpoint={endpoint}
+  novalidate
+>
+  <input type="text" name="company" class="inquiry-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <section>
+    <h2>Portugal HQA Residency Inquiry</h2>
+    <p class="mt-6">
+      I have a question about Portugal HQA Residency:
+    </p>
+    <label class="sr-only" for="inquiry-question">Question about Portugal HQA Residency</label>
+    <textarea
+      id="inquiry-question"
+      name="question"
+      class:list={[fieldClass, 'min-h-40']}
+      rows="8"
+      required
+    ></textarea>
+  </section>
+
+  <section class="mt-16">
+    <h2>Contact information</h2>
+    <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <p class="min-w-0">
+        <label for="first-name" class="font-sans text-sm font-semibold text-text-primary">First Name <span aria-hidden="true">*</span></label>
+        <input id="first-name" name="firstName" type="text" autocomplete="given-name" required class={fieldClass} />
+      </p>
+      <p class="min-w-0">
+        <label for="last-name" class="font-sans text-sm font-semibold text-text-primary">Last Name <span aria-hidden="true">*</span></label>
+        <input id="last-name" name="lastName" type="text" autocomplete="family-name" required class={fieldClass} />
+      </p>
+      <p class="min-w-0 md:col-span-2">
+        <label for="email" class="font-sans text-sm font-semibold text-text-primary">Email Address <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" required class={fieldClass} />
+      </p>
+      <p class="min-w-0 md:col-span-2">
+        <label for="phone" class="font-sans text-sm font-semibold text-text-primary">Phone Number</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" class={fieldClass} />
+      </p>
+      <p class="min-w-0 md:col-span-2">
+        <label for="country" class="font-sans text-sm font-semibold text-text-primary">Country of Residence <span aria-hidden="true">*</span></label>
+        <input id="country" name="country" type="text" autocomplete="country-name" required class={fieldClass} />
+      </p>
+      <p class="min-w-0 md:col-span-2">
+        <label for="linkedin" class="font-sans text-sm font-semibold text-text-primary">LinkedIn Profile</label>
+        <input id="linkedin" name="linkedin" type="url" inputmode="url" autocomplete="url" class={fieldClass} placeholder="https://" />
+        <span class="mt-2 block font-sans text-sm text-text-muted">Optional. This helps our advisory team understand your professional background.</span>
+      </p>
+    </div>
+  </section>
+
+  <fieldset class="mt-16" aria-labelledby="goals-heading">
+    <h2 id="goals-heading">What are you looking to accomplish?</h2>
+    <ul class="mt-8 space-y-4">
+      {
+        goals.map((item) => (
+          <li class="flex items-start gap-3">
+            <input
+              id={item.id}
+              name="goals"
+              type="checkbox"
+              value={item.value}
+              class="inquiry-check mt-1 h-4 w-4 shrink-0 accent-brand"
+            />
+            <label for={item.id} class="font-sans text-base text-text-secondary">
+              {item.value}
+            </label>
+          </li>
+        ))
+      }
+    </ul>
+  </fieldset>
+
+  <fieldset class="mt-16" aria-labelledby="option-heading">
+    <h2 id="option-heading">Which Portugal residency option are you interested in?</h2>
+    <ul class="mt-8 space-y-4">
+      {
+        residencyOptions.map((item) => (
+          <li class="flex items-start gap-3">
+            <input
+              id={item.id}
+              name="residencyOption"
+              type="radio"
+              value={item.value}
+              required
+              class="inquiry-check mt-1 h-4 w-4 shrink-0 accent-brand"
+            />
+            <label for={item.id} class="font-sans text-base text-text-secondary">
+              {item.value}
+            </label>
+          </li>
+        ))
+      }
+    </ul>
+  </fieldset>
+
+  <fieldset class="mt-16" aria-labelledby="timeline-heading">
+    <h2 id="timeline-heading">When are you considering moving forward?</h2>
+    <ul class="mt-8 space-y-4">
+      {
+        timelines.map((item) => (
+          <li class="flex items-start gap-3">
+            <input
+              id={item.id}
+              name="timeline"
+              type="radio"
+              value={item.value}
+              required
+              class="inquiry-check mt-1 h-4 w-4 shrink-0 accent-brand"
+            />
+            <label for={item.id} class="font-sans text-base text-text-secondary">
+              {item.value}
+            </label>
+          </li>
+        ))
+      }
+    </ul>
+  </fieldset>
+
+  <section class="mt-16">
+    <h2 id="additional-heading">Is there anything else you would like us to know?</h2>
+    <label for="additional" class="sr-only">Is there anything else you would like us to know?</label>
+    <textarea id="additional" name="additional" class:list={[fieldClass, 'min-h-40']} rows="8"></textarea>
+  </section>
+
+  <p class="mt-10" data-form-status role="status" aria-live="polite"></p>
+
+  <button type="submit" class="btn-cta mt-8 w-full sm:w-fit">Send my inquiry</button>
+</form>
+
+<p id="inquiry-success" class="card hidden p-8" tabindex="-1">
+  Your inquiry has been sent. The advisory team will reply by email. This is not a filing and is not legal advice.
+</p>
+
+<script>
+  import '../scripts/inquiry-form.ts';
+</script>
