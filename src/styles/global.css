@@ -32,6 +32,12 @@
 
 .wordmark {
   font-synthesis: none;
+  color: #1c1917;
+}
+
+.wordmark [data-wordmark-part] {
+  color: #1c1917;
+  -webkit-text-fill-color: #1c1917;
 }
 
 a.site-wordmark:link,
@@ -39,12 +45,15 @@ a.site-wordmark:visited,
 a.site-wordmark:active,
 a.site-wordmark:hover,
 a.site-wordmark:focus-visible {
-  color: theme('colors.text-primary');
+  color: #1c1917;
+  -webkit-text-fill-color: #1c1917;
   text-decoration: none;
 }
 
 a.site-wordmark svg {
   color: theme('colors.brand.DEFAULT');
+  fill: currentColor;
+  -webkit-text-fill-color: unset;
 }
 
 html {
@@ -230,15 +239,17 @@ a.btn-cta:visited {
 @layer components {
   .site-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: min(1280px, 100%);
     margin-inline: auto;
-    padding-inline: 1.25rem;
+    padding-inline-start: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-inline-end: max(1.25rem, env(safe-area-inset-right, 0px));
     min-width: 0;
   }
 
   @media (min-width: 768px) {
     .site-container {
-      padding-inline: 2rem;
+      padding-inline-start: max(2rem, env(safe-area-inset-left, 0px));
+      padding-inline-end: max(2rem, env(safe-area-inset-right, 0px));
     }
   }
 

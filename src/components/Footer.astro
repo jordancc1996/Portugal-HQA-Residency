@@ -1,0 +1,37 @@
+---
+import Wordmark from './Wordmark.astro';
+---
+
+<footer class="border-t border-border bg-background-alt">
+  <div class="site-container grid grid-cols-1 gap-10 py-24 md:grid-cols-12 md:py-32">
+    <div class="col-span-full min-w-0 md:col-span-5">
+      <p class="inline-block font-serif text-4xl leading-none md:text-5xl">
+        <Wordmark variant="footer" class="font-serif text-4xl leading-none md:text-5xl" />
+      </p>
+      <p class="mt-4 max-w-md">
+        Information on Portugal's Highly Qualified Activity residence route. This site does not provide legal, tax, or immigration advice. Speak with a licensed professional about your circumstances.
+      </p>
+    </div>
+    <div class="col-span-full md:col-span-3">
+      <h3>Program</h3>
+      <ul class="mt-4 space-y-3">
+        <li><a href="/portugal-hqa-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA visa overview</a></li>
+        <li><a href="/portugal-hqa-visa-cost" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">Costs</a></li>
+        <li><a href="/portugal-hqa-visa-vs-d7" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs D7</a></li>
+        <li><a href="/portugal-hqa-visa-vs-golden-visa" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">HQA vs Golden Visa</a></li>
+      </ul>
+    </div>
+    <div class="col-span-full md:col-span-4">
+      <h3>Contact</h3>
+      <p class="mt-4">
+        {/* RTL FLAG: the → glyph is physical, not a logical "forward" arrow. */}
+        <a href="/contact" class="text-link">
+          Discuss Your Residency Options <span aria-hidden="true">→</span>
+        </a>
+      </p>
+      <p class="mt-4">
+        <a href="/privacy-policy" class="text-text-secondary transition-colors duration-150 ease-out hover:text-text-primary focus-visible:text-text-primary">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</footer>

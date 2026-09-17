@@ -1,0 +1,50 @@
+---
+interface Props {
+  variant?: 'nav' | 'footer';
+  class?: string;
+}
+
+const { variant = 'nav', class: className } = Astro.props;
+
+const ink = 'font-serif text-text-primary text-[#1C1917] !text-[#1C1917]';
+---
+
+<span
+  class:list={['wordmark', className]}
+  translate="no"
+  data-wg-notranslate
+>
+  {
+    variant === 'footer' ? (
+      <>
+        <span class="block">
+          <span data-wordmark-part="portugal" class:list={[ink, 'font-bold not-italic']} style="color:#1C1917">
+            Portugal
+          </span>
+          <span data-wordmark-part="hqa" class:list={[ink, 'font-normal not-italic']} style="color:#1C1917">
+            {' '}HQA
+          </span>
+        </span>
+        <span
+          data-wordmark-part="residency"
+          class:list={[ink, 'mt-1 block text-right font-normal italic']}
+          style="color:#1C1917"
+        >
+          Residency
+        </span>
+      </>
+    ) : (
+      <>
+        <span data-wordmark-part="portugal" class:list={[ink, 'font-bold not-italic']} style="color:#1C1917">
+          Portugal
+        </span>
+        <span data-wordmark-part="hqa" class:list={[ink, 'font-normal not-italic']} style="color:#1C1917">
+          {' '}HQA
+        </span>
+        <span data-wordmark-part="residency" class:list={[ink, 'font-normal italic']} style="color:#1C1917">
+          {' '}Residency
+        </span>
+      </>
+    )
+  }
+</span>
