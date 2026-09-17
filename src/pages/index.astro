@@ -31,14 +31,6 @@ const clusters = [
     linkLabel: 'Discuss Your Residency Options',
   },
 ];
-
-const logos = ['Advisory partner', 'Law chamber', 'Relocation group', 'Employer network'];
-
-const stats = [
-  { value: '15', unit: 'years', label: 'of immigration advisory work' },
-  { value: '8', unit: 'routes', label: 'compared across Portugal residence options' },
-  { value: '3', unit: 'generations', label: 'of family filings documented in-house' },
-];
 ---
 
 <Layout
@@ -60,12 +52,7 @@ const stats = [
         </p>
         <div class="mt-10 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <a href="/contact" class="btn-cta w-full sm:w-fit">Discuss Your Residency Options</a>
-          <a
-            href="/portugal-hqa-visa"
-            class="inline-flex w-full max-w-full items-center justify-center rounded-pill border border-white/40 px-6 py-3 font-sans text-sm font-semibold text-white transition-[background-color,border-color,color,transform] duration-150 ease-out hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-fit"
-          >
-            Explore Your Eligibility
-          </a>
+          <a href="/portugal-hqa-visa" class="btn-on-dark w-full sm:w-fit">Explore Your Eligibility</a>
         </div>
       </div>
       <div class="order-1 flex h-[45vh] min-h-[16rem] min-w-0 w-full p-4 sm:p-6 lg:order-2 lg:h-auto lg:min-h-[85vh] lg:p-8">
@@ -87,16 +74,13 @@ const stats = [
 
   <section class="bg-background-alt">
     <div class="site-container max-w-3xl py-24 md:py-32">
-      <h2>What the HQA visa is</h2>
-      <p class="mt-6">
-        Portugal issues the
-        <a href="/portugal-highly-qualified-activity-visa" class="inline-link">Highly Qualified Activity visa</a>
-        (often shortened to HQA) to non-EU nationals who will carry out highly qualified professional activity in the country, typically through a qualifying employment relationship with a Portuguese company or institution. Approval turns on whether the role and the applicant meet the statutory tests, not on buying real estate or parking capital in a fund. Once resident, many families later apply for renewal, permanent residence, or citizenship under the general rules that apply to legal residents.
+      <h2 data-scroll-reveal>What is the Portugal HQA Visa?</h2>
+      <p class="mt-6" data-scroll-reveal>
+        The
+        <a href="/portugal-highly-qualified-activity-visa" class="inline-link">Portugal HQA Visa</a>
+        offers non-EU nationals a route to residency built on research and development activity rather than a straightforward capital investment. Instead of purchasing property or parking funds in an investment vehicle, an applicant typically partners with an accredited Portuguese research institution, forms a Portuguese company they own outright, and directs a multi-year R&amp;D project through that company, with the option to commercialize whatever the research produces. Eligibility depends on meeting the program's qualifying criteria for the applicant's role and activity, not on the size of a passive investment.
       </p>
-      <p class="mt-4">
-        Processing times, salary floors, and documentary lists change. Confirm current AIMA and consular instructions before you file.
-      </p>
-      <a href="/portugal-hqa-visa" class="text-link mt-8">
+      <a href="/portugal-hqa-visa" class="text-link mt-8" data-scroll-reveal>
         Learn more <span aria-hidden="true">→</span>
       </a>
     </div>
@@ -104,11 +88,11 @@ const stats = [
 
   <section class="bg-background">
     <div class="site-container py-24 md:py-32">
-      <h2 class="max-w-3xl">Eligibility, cost, process, and family coverage</h2>
+      <h2 class="max-w-3xl" data-scroll-reveal>Eligibility, cost, process, and family coverage</h2>
       <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {
           clusters.map((item) => (
-            <article class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]">
+            <article class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]" data-scroll-reveal>
               <h3>{item.title}</h3>
               <p class="mt-4 flex-1">{item.description}</p>
               <a href={item.href} class="btn-primary mt-auto w-full gap-2">
@@ -126,46 +110,36 @@ const stats = [
 
   <section class="bg-background-alt">
     <div class="site-container py-24 md:py-32">
-      <h2 class="max-w-3xl">Structured files, not a volume sales funnel</h2>
-      <p class="mt-6 max-w-2xl">
-        Partner marks and the figures below are placeholders. Replace the logos and the numbers after the client confirms what may be shown.
+      <figure class="w-full min-w-0" data-scroll-reveal>
+        <img
+          src="/images/university-coimbra-courtyard.jpg"
+          alt="Student in traditional academic dress crossing the courtyard at the University of Coimbra, Portugal"
+          width="1024"
+          height="768"
+          decoding="async"
+          class="h-auto w-full max-w-full rounded-lg object-cover object-center"
+        />
+      </figure>
+      <h2 class="mt-8 max-w-3xl" data-scroll-reveal>A Residency Path Rooted in Research</h2>
+      <p class="mt-6 max-w-2xl" data-scroll-reveal>
+        Portugal's HQA visa is designed around collaboration with the country's universities, not passive investment, connecting qualified professionals to real research activity.
       </p>
-      <ul class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4" aria-label="Partner logo placeholders">
-        {
-          logos.map((name) => (
-            <li class="flex h-24 items-center justify-center rounded-md border border-border bg-background grayscale">
-              <span class="font-sans text-sm text-text-secondary">{name}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {
-          stats.map((stat) => (
-            <div class="card p-8">
-              <p class="font-serif text-4xl font-medium text-text-primary md:text-5xl">{stat.value}</p>
-              <p class="mt-2 text-sm text-text-secondary">{stat.unit}</p>
-              <p class="mt-3">{stat.label}</p>
-            </div>
-          ))
-        }
-      </div>
     </div>
   </section>
 
   <section class="bg-background">
     <div class="site-container grid grid-cols-1 gap-10 py-24 md:py-32 lg:grid-cols-12">
       <div class="col-span-full min-w-0 lg:col-span-7">
-        <h2>If the HQA visa is not the right route</h2>
-        <p class="mt-6 max-w-xl">
+        <h2 data-scroll-reveal>If the HQA visa is not the right route</h2>
+        <p class="mt-6 max-w-xl" data-scroll-reveal>
           HQA is built for qualifying professional activity in Portugal. The Golden Visa is a capital route. The D7 is a passive-income residence permit. Use the comparison pages if the role, the capital, or the income profile points to a different file.
         </p>
       </div>
       <div class="col-span-full flex min-w-0 flex-col justify-center gap-4 lg:col-span-5">
-        <a href="/portugal-hqa-visa-vs-golden-visa" class="text-link">
+        <a href="/portugal-hqa-visa-vs-golden-visa" class="text-link" data-scroll-reveal>
           HQA visa vs Golden Visa <span aria-hidden="true">→</span>
         </a>
-        <a href="/portugal-hqa-visa-vs-d7" class="text-link">
+        <a href="/portugal-hqa-visa-vs-d7" class="text-link" data-scroll-reveal>
           HQA visa vs D7 <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -174,7 +148,7 @@ const stats = [
 
   <section class="bg-cta-tint">
     <div class="site-container flex flex-col items-start gap-8 py-24 md:py-32">
-      <h2 class="max-w-3xl">Discuss whether the HQA route fits the role and the household</h2>
+      <h2 class="max-w-3xl" data-scroll-reveal>Discuss whether the HQA route fits the role and the household</h2>
       <a href="/contact" class="btn-cta">Discuss Your Residency Options</a>
     </div>
   </section>

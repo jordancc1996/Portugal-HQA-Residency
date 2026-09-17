@@ -506,6 +506,24 @@ a.btn-on-dark:visited,
     color: theme('colors.brand.hover');
   }
 
+  /*
+    Hidden reveal state is applied only after GSAP adds .scroll-reveal-ready.
+    Without JS, [data-scroll-reveal] stays fully visible.
+  */
+  [data-scroll-reveal].scroll-reveal-ready {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+    will-change: transform, opacity;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-scroll-reveal].scroll-reveal-ready {
+      opacity: 1;
+      transform: none;
+      will-change: auto;
+    }
+  }
+
   .inline-link {
     color: theme('colors.brand.DEFAULT');
     font-weight: 600;
