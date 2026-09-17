@@ -36,3 +36,5 @@ Desktop.ini
 # local tooling
 .vercel
 .netlify
+.astro-verify/
+.tmp-screens/
