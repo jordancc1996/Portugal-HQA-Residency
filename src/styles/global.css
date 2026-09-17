@@ -187,7 +187,13 @@ button.nav-link[aria-expanded='true'] {
 a.btn-primary:link,
 a.btn-primary:visited,
 a.btn-cta:link,
-a.btn-cta:visited {
+a.btn-cta:visited,
+a.btn-on-dark:link,
+a.btn-on-dark:visited,
+.mobile-nav-drawer a.btn-cta:link,
+.mobile-nav-drawer a.btn-cta:visited,
+.mobile-nav-drawer a.btn-cta:hover,
+.mobile-nav-drawer a.btn-cta:focus-visible {
   color: #ffffff;
 }
 
@@ -255,7 +261,8 @@ a.btn-cta:visited {
 
   .btn-primary,
   .btn-cta,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-on-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -265,15 +272,19 @@ a.btn-cta:visited {
     font-family: theme('fontFamily.sans');
     font-size: 0.875rem;
     font-weight: 600;
+    letter-spacing: normal;
     line-height: 1.25;
     text-decoration: none;
     cursor: pointer;
+    box-shadow: none;
+    filter: none;
+    backdrop-filter: none;
+    transform: none;
+    will-change: auto;
     transition:
       background-color 150ms ease-out,
       border-color 150ms ease-out,
-      color 150ms ease-out,
-      transform 150ms ease-out;
-    will-change: transform;
+      color 150ms ease-out;
   }
 
   .btn-primary {
@@ -284,7 +295,6 @@ a.btn-cta:visited {
 
   .btn-primary:hover {
     background-color: theme('colors.brand.hover');
-    transform: scale(1.03);
   }
 
   .btn-cta {
@@ -293,9 +303,15 @@ a.btn-cta:visited {
     border: 1px solid transparent;
   }
 
+  .btn-cta:hover {
+    background-color: theme('colors.cta.hover');
+  }
+
   .btn-primary:focus-visible,
   .btn-cta:focus-visible,
-  .btn-secondary:focus-visible {
+  .btn-secondary:focus-visible,
+  .btn-on-dark:focus-visible,
+  .btn-icon:focus-visible {
     outline: 2px solid theme('colors.text-primary');
     outline-offset: 3px;
   }
@@ -309,6 +325,41 @@ a.btn-cta:visited {
   .btn-secondary:hover {
     border-color: #a8a29e;
     color: theme('colors.text-primary');
+  }
+
+  .btn-on-dark {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-on-dark:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+  }
+
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: theme('borderRadius.pill');
+    border: 1px solid transparent;
+    background-color: theme('colors.brand.DEFAULT');
+    color: #ffffff;
+    box-shadow: none;
+    filter: none;
+    backdrop-filter: none;
+    transform: none;
+    will-change: auto;
+    transition: background-color 150ms ease-out;
+  }
+
+  .btn-icon:hover,
+  .group:hover .btn-icon {
+    background-color: theme('colors.brand.hover');
   }
 
   .compare-scroll {
