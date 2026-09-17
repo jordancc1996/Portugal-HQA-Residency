@@ -11,6 +11,10 @@ const site = (process.env.PUBLIC_SITE_URL || 'https://www.portugalhqaresidency.c
 export default defineConfig({
   site,
   trailingSlash: 'never',
+  // Astro 7 defaults to compressHTML: 'jsx', which strips newlines around
+  // tags and glues "The <a>Portugal HQA Visa</a> offers" into one word.
+  // `true` uses HTML-aware collapsing and keeps those spaces.
+  compressHTML: true,
   integrations: [
     sitemap({
       filter: (page) => {
