@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
 
 const title = 'Portugal HQA Visa Family - Spouse and Children Coverage';
@@ -11,23 +11,27 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Family' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-family-together.jpg"
+        alt="White courtyard walls in cooler light, with dark doorways opening onto grass under a blue sky"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Family' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa family coverage is how a spouse and dependent children can be included when the principal holds, or is applying for, highly qualified activity residence. Inclusion is not automatic. Each person still needs identity, relationship, and (where listed) subsistence evidence under the 2026 rules. The principal must first meet
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
           Later stay toward
           <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>
           is a separate clock for each cardholder.
         </p>
+        </div>
       </div>
     </header>
 

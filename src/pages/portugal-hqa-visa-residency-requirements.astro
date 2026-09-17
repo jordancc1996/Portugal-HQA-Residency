@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
 
 const title = 'Portugal HQA Visa Residency Requirements - After Approval';
@@ -11,23 +11,27 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
-            { label: 'After approval' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-residency-requirements-apartment.jpg"
+        alt="Praça do Comércio in Lisbon, with yellow arcades and a white riverside palace facing the Tagus"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+          { label: 'After approval' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa residency requirements are the obligations that apply after highly qualified activity residence is granted. They are not a second copy of who qualified, and they are not the filing checklist. Admission tests live on
           <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
           This page covers staying inside the permit until the next card event, which is usually a
           <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>.
         </p>
+        </div>
       </div>
     </header>
 

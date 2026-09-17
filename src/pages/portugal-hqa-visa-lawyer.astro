@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ProfessionalClusterNav from '../components/ProfessionalClusterNav.astro';
 
 const title = 'Portugal HQA Visa Lawyer - When Legal Counsel Helps';
@@ -11,19 +11,23 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Lawyer' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-lawyer-consultation.jpg"
+        alt="Man walking away down a cobbled lane past a green Volkswagen Beetle and a Centro Comercial sign"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Lawyer' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa lawyer work is legal advice on whether the activity, the host, and the applicant fit highly qualified activity residence, and on how that file should be lodged. It is not a requirement for every employed case. A straightforward contract, a complete pack, and a post that publishes a clear 2026 list can proceed without counsel. Use a lawyer when the facts are disputed, the host structure is unusual, or a refusal would be costly.
         </p>
+        </div>
       </div>
     </header>
 

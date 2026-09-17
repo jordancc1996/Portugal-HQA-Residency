@@ -3,27 +3,40 @@ import type { Crumb } from '../lib/seo';
 
 interface Props {
   items: Crumb[];
+  tone?: 'default' | 'on-dark';
 }
 
-const { items } = Astro.props;
+const { items, tone = 'default' } = Astro.props;
+const onDark = tone === 'on-dark';
 ---
 
 <nav aria-label="Breadcrumb">
-  <ol class="flex flex-wrap items-center gap-2 font-sans text-sm text-text-secondary">
+  <ol
+    class:list={[
+      'flex flex-wrap items-center gap-2 font-sans text-sm',
+      onDark ? 'text-white/80' : 'text-text-secondary',
+    ]}
+  >
     {
       items.map((item, index) => (
         <li class="flex items-center gap-2">
           {index > 0 && (
-            <span aria-hidden="true" class="text-border">
+            <span aria-hidden="true" class={onDark ? 'text-white/50' : 'text-border'}>
               /
             </span>
           )}
           {item.href ? (
-            <a href={item.href} class="transition-colors duration-150 ease-out hover:text-text-primary">
+            <a
+              href={item.href}
+              class:list={[
+                'transition-colors duration-150 ease-out',
+                onDark ? 'hover:text-white focus-visible:text-white' : 'hover:text-text-primary',
+              ]}
+            >
               {item.label}
             </a>
           ) : (
-            <span class="text-text-secondary" aria-current="page">
+            <span class={onDark ? 'text-white' : 'text-text-secondary'} aria-current="page">
               {item.label}
             </span>
           )}

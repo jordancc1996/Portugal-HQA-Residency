@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ResearchClusterNav from '../components/ResearchClusterNav.astro';
 
 const title = 'Portugal HQA Visa Research Project - Funded Host Pathway';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-research-visa', label: 'Research visa' },
-            { label: 'Research project' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-research-project-lab.jpg"
+        alt="Moliceiro boats on the canal in Aveiro, with tiled facades and pedestrians on the quay"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-research-visa', label: 'Research visa' },
+          { label: 'Research project' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa research project files are hosted posts on a named laboratory, grant, or funded work package in Portugal. The project letter is evidence of the host relationship. It is not a residence decision on its own. People who arrived here from a “research visa” search should still read
           <a href="/portugal-research-visa" class="inline-link">Portugal research visa</a>
           for that phrase, then confirm
           <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>
           for the role.
         </p>
+        </div>
       </div>
     </header>
 

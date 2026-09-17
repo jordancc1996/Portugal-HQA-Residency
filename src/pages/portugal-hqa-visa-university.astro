@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ResearchClusterNav from '../components/ResearchClusterNav.astro';
 
 const title = 'Portugal HQA Visa University - Academic Affiliation Pathway';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-research-visa', label: 'Research visa' },
-            { label: 'University' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-university-campus.jpg"
+        alt="White modernist courtyard walls with dark door openings and a small dome catching late sun"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-research-visa', label: 'Research visa' },
+          { label: 'University' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa university affiliation is the academic-host path: a Portuguese university or related institute as employer or contracting host for highly qualified activity. It is not a student visa, not an Erasmus stay, and not a visiting-scholar invitation on its own. Searchers who typed “research visa” should start at
           <a href="/portugal-research-visa" class="inline-link">Portugal research visa</a>,
           then confirm
           <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>
           for the post.
         </p>
+        </div>
       </div>
     </header>
 

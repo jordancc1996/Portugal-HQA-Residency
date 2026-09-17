@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
 
 const title = 'Portugal HQA Visa Requirements - Role, Host, and Stay';
@@ -32,21 +32,25 @@ const spokes = [
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Requirements' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-requirements-documents.jpg"
+        alt="Stone seaward wall and sentry turret above limestone rocks, with open Atlantic water beyond"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Requirements' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa requirements are the tests a highly qualified activity file has to meet, not a single form and not a capital subscription. This hub splits those tests into who qualifies, what documents usually accompany the file, and what the person must keep doing after the residence card is issued. The
           <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
           guide remains the program overview.
         </p>
+        </div>
       </div>
     </header>
 

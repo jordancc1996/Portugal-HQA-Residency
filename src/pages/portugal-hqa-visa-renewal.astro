@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
 
 const title = 'Portugal HQA Visa Renewal - Next Card After Approval';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-application', label: 'Application' },
-            { label: 'Renewal' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-renewal-office.jpg"
+        alt="White houses with terracotta roofs stacked on a sea cliff above breaking waves"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-application', label: 'Application' },
+          { label: 'Renewal' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa renewal is the later file that keeps highly qualified activity residence in force when the card’s validity ends. It is not the first lodging sequence and not permanent residence. Stay obligations that run during the card’s life are on
           <a href="/portugal-hqa-visa-residency-requirements" class="inline-link">HQA visa residency requirements</a>.
           When enough legal residence has accrued, the next statute may be
           <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>,
           which is a different application.
         </p>
+        </div>
       </div>
     </header>
 

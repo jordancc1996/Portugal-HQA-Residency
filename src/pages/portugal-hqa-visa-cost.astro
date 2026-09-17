@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FinancialClusterNav from '../components/FinancialClusterNav.astro';
 
 const title = 'Portugal HQA Visa Cost - Fees and Professional Spend';
@@ -11,17 +11,20 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Cost' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-cost-euro-currency.jpg"
+        alt="Narrow cobbled lane between yellow and cream houses that opens onto a beach and the sea"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Cost' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa cost is the cash spent to prepare and lodge a highly qualified activity file: state fees, legalization, translations, travel for biometrics, and any professional work you instruct. It is not a capital subscription. Confirm 2026 euro amounts on the AIMA and consular tables in force for the office that will see the file. Who must qualify sits upstream on
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
           Lodging sits downstream on the
@@ -29,6 +32,7 @@ const metaDescription =
           page. How long that lodging then takes is
           <a href="/portugal-hqa-visa-processing-time" class="inline-link">HQA visa processing time</a>.
         </p>
+        </div>
       </div>
     </header>
 

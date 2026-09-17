@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
 
 const title = 'Portugal HQA Visa Processing Time - What Affects Speed';
@@ -11,22 +11,26 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-application', label: 'Application' },
-            { label: 'Processing time' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-processing-time-calendar.jpg"
+        alt="Row of white and ochre houses along a tidal mudflat, with parked cars and wading birds"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-application', label: 'Application' },
+          { label: 'Processing time' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa processing time is the wait after a highly qualified activity file is lodged, not a guaranteed calendar. Consular queues, AIMA analysis, and card production each move on their own clocks. Figures change through 2026. Confirm the current estimate with the post that holds the file, not with a screenshot from a previous year. The lodging sequence is on the
           <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
           page.
         </p>
+        </div>
       </div>
     </header>
 

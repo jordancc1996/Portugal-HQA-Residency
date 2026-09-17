@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
 
 const title = 'Portugal HQA Visa Eligibility - Who Qualifies';
@@ -11,21 +11,25 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
-            { label: 'Eligibility' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-eligibility-professional.jpg"
+        alt="Roman temple columns in an Évora square facing a white palace and church tower, with a carved Subscrição inscription in the foreground"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+          { label: 'Eligibility' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa eligibility is the question of who may use highly qualified activity residence, before any checklist is printed. The file turns on a qualifying professional activity, a Portuguese host that can support that activity, and an applicant who can be admitted. This page does not list forms. Those belong on
           <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>.
         </p>
+        </div>
       </div>
     </header>
 

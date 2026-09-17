@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ProfessionalClusterNav from '../components/ProfessionalClusterNav.astro';
 
 const title = 'Portugal HQA Visa Consultant - Lawyer Versus Process Support';
@@ -11,22 +11,26 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-lawyer', label: 'Lawyer' },
-            { label: 'Consultant' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-consultant-meeting.jpg"
+        alt="Terracotta roofs and pastel Lisbon houses beneath the dome of Santa Engrácia"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-lawyer', label: 'Lawyer' },
+          { label: 'Consultant' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa consultant support is process and document logistics: checklists, translations, appointment calendars, and packing the file for the post. It is not a substitute for a
           <a href="/portugal-hqa-visa-lawyer" class="inline-link">Portugal HQA visa lawyer</a>
           when the question is legal. Some firms employ both under separate engagements. Know which invoice you are paying.
         </p>
+        </div>
       </div>
     </header>
 

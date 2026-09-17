@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import LongTermClusterNav from '../components/LongTermClusterNav.astro';
 
 const title = 'Portugal HQA Visa Permanent Residency - After Legal Stay';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-renewal', label: 'Renewal' },
-            { label: 'Permanent residency' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-permanent-residency-home.jpg"
+        alt="Empty dark wooden benches rising in a curved lecture hall with white walls and arched windows"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-renewal', label: 'Renewal' },
+          { label: 'Permanent residency' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa permanent residency is a later residence status after a period of legal stay in Portugal, not an automatic upgrade of the first highly qualified activity card. Count years only against the statute in force in 2026. Repeated
           <a href="/portugal-hqa-visa-renewal" class="inline-link">HQA visa renewal</a>
           files keep the temporary card alive until that later application is the live file. Family members are assessed on their own cards; start from
           <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
           coverage.
         </p>
+        </div>
       </div>
     </header>
 

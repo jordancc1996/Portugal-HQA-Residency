@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 
 const title = 'Portugal Highly Qualified Activity Visa - Official Name and Meaning';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -10,19 +10,23 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Highly Qualified Activity visa' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-highly-qualified-activity-visa-overview.jpg"
+        alt="Aerial view of Porto’s Douro riverfront at sunset, with cruise boats on the water and terracotta-roofed houses along Ribeira"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Highly Qualified Activity visa' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal Highly Qualified Activity visa is the official name for the residence permit that English-language practice shortens to HQA. The abbreviation is a label, not a separate product. If a contract, a consular checklist, or a host letter says “highly qualified activity,” it is pointing at this permit type, not at a Golden Visa subscription and not at a passive-income D7 file.
         </p>
+        </div>
       </div>
     </header>
 

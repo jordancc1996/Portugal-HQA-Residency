@@ -53,25 +53,39 @@ const glance = [
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Portugal HQA Visa' }]} />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <figure class="mt-8 max-w-4xl">
-          <img
-            src="/images/portugal-hqa-visa-program.jpg"
-            alt="University of Coimbra physics department and historic campus at golden hour, Portugal"
-            width="819"
-            height="1024"
-            decoding="async"
-            class="aspect-[3/2] w-full max-w-full rounded-lg object-cover"
-          />
-        </figure>
-        <p class="mt-8 max-w-3xl">
-          The Portugal HQA visa is a residence permit for non-EU nationals who will perform highly qualified professional activity in Portugal. The official name is the
-          <a href="/portugal-highly-qualified-activity-visa" class="inline-link">Portugal Highly Qualified Activity visa</a>.
-          It is for people with a qualifying role and a Portuguese host, not for buyers of real estate or holders of passive income alone. Core benefits are lawful residence, work in the qualifying activity, Schengen travel on a Portuguese residence card, and a documented path to longer-term status if the person remains legally resident.
-        </p>
+    <header>
+      <div class="relative isolate aspect-[5/4] max-h-[85vh] min-h-[28rem] w-full overflow-hidden sm:aspect-[16/10] sm:min-h-[32rem] lg:aspect-[16/9] lg:min-h-[36rem]">
+        <img
+          src="/images/portugal-hqa-visa-program.jpg"
+          alt="Santander Academic Hall beside a reflecting pool, with lettering on the concrete facade and palms on the slope beyond"
+          width="682"
+          height="1024"
+          decoding="async"
+          class="absolute inset-0 h-full w-full object-cover object-[center_48%] sm:object-[center_50%] lg:object-[center_52%]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/15" aria-hidden="true"></div>
+        <div class="relative z-10 flex h-full min-h-0 w-full flex-col py-10 md:py-14">
+          <div class="site-container shrink-0">
+            <Breadcrumb
+              tone="on-dark"
+              items={[{ href: '/', label: 'Home' }, { label: 'Portugal HQA Visa' }]}
+            />
+          </div>
+          <div class="site-container flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center">
+            <h1 class="hero-headline mx-auto w-full min-w-0 max-w-4xl text-center font-serif font-bold text-white">
+              {title}
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+          <p class="max-w-3xl" data-scroll-reveal>
+            The Portugal HQA visa is a residence permit for non-EU nationals who will perform highly qualified professional activity in Portugal. The official name is the
+            <a href="/portugal-highly-qualified-activity-visa" class="inline-link">Portugal Highly Qualified Activity visa</a>.
+            It is for people with a qualifying role and a Portuguese host, not for buyers of real estate or holders of passive income alone. Core benefits are lawful residence, work in the qualifying activity, Schengen travel on a Portuguese residence card, and a documented path to longer-term status if the person remains legally resident.
+          </p>
+        </div>
       </div>
     </header>
 
@@ -79,8 +93,8 @@ const glance = [
       <div class="site-container grid grid-cols-1 gap-10 py-24 md:py-32 lg:grid-cols-12">
         <div class="col-span-full min-w-0 lg:col-span-8">
           <section>
-            <h2>Who this is for</h2>
-            <p class="mt-6">
+            <h2 data-scroll-reveal>Who this is for</h2>
+            <p class="mt-6" data-scroll-reveal>
               HQA is a work and activity route. The file stands or falls on whether the job (or the hosted activity) is highly qualified under Portuguese immigration law, and whether the applicant can prove qualifications, a clean record, and a relationship with a host in Portugal.
             </p>
             <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-12">
@@ -93,6 +107,7 @@ const glance = [
                       index === 1 ? 'col-span-full md:col-span-5' : '',
                       index === 2 ? 'col-span-full' : '',
                     ]}
+                    data-scroll-reveal
                   >
                     <h3>{item.title}</h3>
                     <p class="mt-4">{item.text}</p>
@@ -103,14 +118,14 @@ const glance = [
           </section>
 
           <section class="mt-24">
-            <h2>At a glance</h2>
-            <p class="mt-6">
+            <h2 data-scroll-reveal>At a glance</h2>
+            <p class="mt-6" data-scroll-reveal>
               Use these summaries as a map. Each item opens the full page for tests, figures, and caveats. Figures change. Confirm current AIMA and consular instructions before you file.
             </p>
             <dl class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {
                 glance.map((item) => (
-                  <div class="card flex h-full flex-col p-8">
+                  <div class="card flex h-full flex-col p-8" data-scroll-reveal>
                     <p class="card-eyebrow">{item.eyebrow}</p>
                     <dt>
                       <a href={item.href} class="mt-4 block font-serif text-2xl font-medium text-text-primary">
@@ -130,15 +145,15 @@ const glance = [
           </section>
 
           <section class="mt-24">
-            <h2>How an HQA file is assembled</h2>
-            <p class="mt-6">
+            <h2 data-scroll-reveal>How an HQA file is assembled</h2>
+            <p class="mt-6" data-scroll-reveal>
               Most employed files start with a Portuguese contract or binding offer, then evidence that the activity meets
               <a href="/portugal-hqa-visa-requirements" class="inline-link"> HQA visa requirements</a>
               for the role, the qualifications, and the host. Parallel to that, the applicant gathers identity, criminal-record, and subsistence documents. The
               <a href="/portugal-hqa-visa-application" class="inline-link"> HQA visa application</a>
               then moves through a consular post or an in-country AIMA path, depending on where the person is when the file is lodged.
             </p>
-            <p class="mt-4">
+            <p class="mt-4" data-scroll-reveal>
               Budget for
               <a href="/portugal-hqa-visa-cost" class="inline-link"> HQA visa cost</a>
               as state fees plus a salary at or above the legal floor, and for professional work if you instruct
@@ -149,7 +164,7 @@ const glance = [
               <a href="/portugal-hqa-visa-vs-d7" class="inline-link"> HQA visa vs D7</a>
               comparison is the better starting point.
             </p>
-            <p class="mt-4">
+            <p class="mt-4" data-scroll-reveal>
               A spouse and dependent children are not automatic. Coverage, evidence of family relationship, and card issuance are set out on
               <a href="/portugal-hqa-visa-family" class="inline-link"> bringing family on the HQA visa</a>.
               Researchers and academic hires should also read the
@@ -159,7 +174,7 @@ const glance = [
           </section>
 
           <nav class="mt-16 lg:hidden" aria-label="Cluster hubs">
-            <div class="card p-8">
+            <div class="card p-8" data-scroll-reveal>
               <h3>Cluster hubs</h3>
               <ul class="mt-6 space-y-3">
                 {
@@ -197,8 +212,8 @@ const glance = [
 
     <section class="bg-cta-tint">
       <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
-        <h2 class="max-w-3xl">Review the role, the host, and the household before you file</h2>
-        <p class="max-w-2xl">
+        <h2 class="max-w-3xl" data-scroll-reveal>Review the role, the host, and the household before you file</h2>
+        <p class="max-w-2xl" data-scroll-reveal>
           This page is informational. It is not legal, tax, or immigration advice. An advisor can map the contract and the family facts to the current AIMA and consular list.
         </p>
         <a href="/contact" class="btn-cta">Discuss Your Residency Options</a>

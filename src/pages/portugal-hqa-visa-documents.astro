@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
 
 const title = 'Portugal HQA Visa Documents - Filing Checklist';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
-            { label: 'Documents' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-documents-checklist.jpg"
+        alt="Belém Tower, a limestone riverside fortress in Lisbon, photographed from the water"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-requirements', label: 'Requirements' },
+          { label: 'Documents' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa documents are the evidence pack that accompanies a highly qualified activity filing, not the test of who qualifies. Use this page when eligibility is already the right heading and you need to know what usually has to be shown. Who qualifies is on
           <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>.
           How the pack is lodged is on the
           <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
           page.
         </p>
+        </div>
       </div>
     </header>
 

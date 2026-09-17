@@ -1,0 +1,38 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import type { Crumb } from '../lib/seo';
+
+interface Props {
+  image: string;
+  alt: string;
+  title: string;
+  items: Crumb[];
+  width?: number;
+  height?: number;
+  position?: string;
+}
+
+const { image, alt, title, items, width = 1600, height = 900, position = 'object-center' } = Astro.props;
+---
+
+<div class="relative isolate h-[42vh] min-h-[18rem] w-full overflow-hidden sm:h-[45vh] md:min-h-[22rem]">
+  <img
+    src={image}
+    alt={alt}
+    width={width}
+    height={height}
+    decoding="async"
+    class:list={['absolute inset-0 h-full w-full object-cover', position]}
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/15" aria-hidden="true"></div>
+  <div class="relative z-10 flex h-full min-h-0 w-full flex-col py-10 md:py-14">
+    <div class="site-container shrink-0">
+      <Breadcrumb tone="on-dark" items={items} />
+    </div>
+    <div class="site-container flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center">
+      <h1 class="hero-headline mx-auto w-full min-w-0 max-w-4xl text-center font-serif font-bold text-white">
+        {title}
+      </h1>
+    </div>
+  </div>
+</div>

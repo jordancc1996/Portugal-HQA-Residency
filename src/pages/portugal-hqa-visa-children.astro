@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
 
 const title = 'Portugal HQA Visa Children - Dependent Residence Coverage';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-family', label: 'Family' },
-            { label: 'Children' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-children-family.jpg"
+        alt="Child in a patterned cap leaning on a stone wall, looking down at a sea cave in dark cliffs"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-family', label: 'Family' },
+          { label: 'Children' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa children coverage is how dependent children can be included on a highly qualified activity residence file. Age, custody, and dependency tests are set in the rules in force, not by a school enrolment letter alone. Confirm the 2026 list with the post. The principal still has to meet
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
           Return to the
           <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
           hub for the household map.
         </p>
+        </div>
       </div>
     </header>
 

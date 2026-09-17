@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
 
 const title = 'Portugal HQA Visa Application - Step-by-Step Filing';
@@ -34,23 +34,27 @@ const steps = [
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Application' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-application-form.jpg"
+        alt="Portuguese flag on a silver pole against a pale, cloudy sky"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Application' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa application is the lodging sequence for highly qualified activity residence: a complete pack, a consular or in-country filing, biometrics, then a residence card if the file is granted. It is not a second copy of who qualifies. Start from
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>
           and the
           <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa documents</a>
           checklist, then use the steps below.
         </p>
+        </div>
       </div>
     </header>
 

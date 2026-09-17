@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FinancialClusterNav from '../components/FinancialClusterNav.astro';
 
 const title = 'Portugal HQA Visa Investment - No Capital Subscription';
@@ -11,21 +11,25 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-cost', label: 'Cost' },
-            { label: 'Investment' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-investment-meeting.jpg"
+        alt="Street-level farmácia and Marques shopfront on a tiled Portuguese house with iron balconies"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-cost', label: 'Cost' },
+          { label: 'Investment' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa investment, as people type it, usually means “how much capital must I place.” For highly qualified activity residence the honest answer is that there is no Golden Visa-style investment ticket: no mandated fund subscription, no real-estate purchase, no capital-transfer quota published as the price of the permit. The route is a job and host test. Compare that structure on
           <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">HQA visa vs Golden Visa</a>.
         </p>
+        </div>
       </div>
     </header>
 

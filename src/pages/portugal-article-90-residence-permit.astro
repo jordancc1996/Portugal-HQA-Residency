@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 
 const title = 'Portugal Article 90 Residence Permit - Legal Basis for HQA';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -10,19 +10,23 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Article 90 residence permit' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-article-90-residence-permit-law.jpg"
+        alt="Stone city wall above orange-roofed houses and the Douro waterfront in Porto, under a clear blue sky"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Article 90 residence permit' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal Article 90 residence permit is the legal heading lawyers and hosts often cite for highly qualified activity residence under Portuguese immigration law (Law 23/2007, as amended). The article number is a map reference. It is not a substitute for the current implementing rules, salary floors, or the AIMA and consular document list in force when you file.
         </p>
+        </div>
       </div>
     </header>
 

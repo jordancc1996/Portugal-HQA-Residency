@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FinancialClusterNav from '../components/FinancialClusterNav.astro';
 
 const title = 'Portugal HQA Visa Tax - Residence and Filing';
@@ -11,23 +11,27 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-cost', label: 'Cost' },
-            { label: 'Tax' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-tax-calculator.jpg"
+        alt="Hill of Lisbon houses with terracotta roofs and the dome of Santa Engrácia under a clear sky"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-cost', label: 'Cost' },
+          { label: 'Tax' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa tax questions are about whether living and working here makes you a Portuguese tax resident, and what that does to employment income, foreign assets, and filings in 2026. A residence card is not a tax ruling. This page flags the issues. It does not compute your bill. Instruct a licensed tax professional for numbers. US citizens and green-card holders still have a US overlay; that sits on
           <a href="/portugal-hqa-visa-for-americans" class="inline-link">HQA visa for Americans</a>.
           Immigration procedure is a separate file, often with an
           <a href="/portugal-hqa-visa-lawyer" class="inline-link">HQA visa lawyer or consultant</a>.
         </p>
+        </div>
       </div>
     </header>
 

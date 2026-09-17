@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 
 const title = 'Portugal HQA Visa for Americans - US Tax and Route Fit';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -10,22 +10,26 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'For Americans' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-for-americans.jpg"
+        alt="Stone statue of a man in sixteenth-century dress on a paved terrace, with hills and a cable-stayed bridge beyond"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'For Americans' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa for Americans is the same highly qualified activity residence heading that applies to other non-EU nationals: a qualifying role and a Portuguese host. US citizenship does not create a separate HQA product. What is US-specific is tax, reporting, and the temptation to treat a capital route or a passive-income permit as interchangeable with this file. US tax issues are on
           <a href="/portugal-hqa-visa-tax" class="inline-link">HQA visa tax</a>.
           Capital tickets are compared on
           <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">HQA visa vs Golden Visa</a>.
         </p>
+        </div>
       </div>
     </header>
 

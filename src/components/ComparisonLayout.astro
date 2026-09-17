@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from './Breadcrumb.astro';
+import HeroBanner from './HeroBanner.astro';
 import CompareTable from './CompareTable.astro';
 import ComparisonClusterNav from './ComparisonClusterNav.astro';
 import type { FaqEntry } from '../lib/seo';
@@ -20,9 +20,12 @@ interface Props {
   current: string;
   ctaLabel: string;
   faqItems: FaqEntry[];
+  image: string;
+  alt: string;
+  position?: string;
 }
 
-const { title, metaDescription, crumbLabel, otherLabel, rows, current, ctaLabel, faqItems } = Astro.props;
+const { title, metaDescription, crumbLabel, otherLabel, rows, current, ctaLabel, faqItems, image, alt, position } = Astro.props;
 const metaTitle = `${title} | Portugal HQA Residency`;
 const breadcrumbs = [
   { href: '/', label: 'Home' },
@@ -33,12 +36,13 @@ const breadcrumbs = [
 
 <Layout title={metaTitle} description={metaDescription} breadcrumbs={breadcrumbs} faqItems={faqItems}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb items={breadcrumbs} />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <div class="mt-8 max-w-3xl min-w-0">
-          <slot name="intro" />
+    <header>
+      <HeroBanner image={image} alt={alt} title={title} items={breadcrumbs} position={position} />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+          <div class="max-w-3xl min-w-0">
+            <slot name="intro" />
+          </div>
         </div>
       </div>
     </header>

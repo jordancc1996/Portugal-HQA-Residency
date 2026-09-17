@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import ResearchClusterNav from '../components/ResearchClusterNav.astro';
 
 const title = 'Portugal Research Visa - Hosted Highly Qualified Research';
@@ -11,19 +11,23 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { label: 'Research visa' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-research-visa-laboratory.jpg"
+        alt="Sunlit Ribeira waterfront in Porto, with boats on the Douro and packed terracotta roofs climbing the hillside"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { label: 'Research visa' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal research visa is the phrase many scientists, postdoctoral researchers, and laboratory staff type when they have a Portuguese host and need residence to carry out research. In a large share of those files, the permit family is highly qualified activity residence (HQA), not a student visa and not a capital route. The search term names the work. It does not name a separate, simpler product.
         </p>
+        </div>
       </div>
     </header>
 

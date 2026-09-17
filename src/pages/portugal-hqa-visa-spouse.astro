@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
 
 const title = 'Portugal HQA Visa Spouse - Partner Residence Coverage';
@@ -11,24 +11,28 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-family', label: 'Family' },
-            { label: 'Spouse' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-spouse-couple.jpg"
+        alt="Couple sitting together on a riverside quay in mist, facing warehouses across the water"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-family', label: 'Family' },
+          { label: 'Spouse' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa spouse coverage is the partner of a person who qualifies for highly qualified activity residence. Marriage is the usual proof. Other partnerships are only useful if the immigration rules in force recognize them. The principal still has to meet
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
           This page does not replace the
           <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>
           hub.
         </p>
+        </div>
       </div>
     </header>
 

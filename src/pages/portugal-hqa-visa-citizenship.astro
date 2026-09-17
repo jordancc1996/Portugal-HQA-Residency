@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import LongTermClusterNav from '../components/LongTermClusterNav.astro';
 
 const title = 'Portugal HQA Visa Citizenship - Naturalization After Residence';
@@ -11,22 +11,26 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb
-          items={[
-            { href: '/', label: 'Home' },
-            { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
-            { href: '/portugal-hqa-visa-permanent-residency', label: 'Permanent residency' },
-            { label: 'Citizenship' },
-          ]}
-        />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-citizenship-passport.jpg"
+        alt="People walking through a tall colonnade with polished floors and angled steel supports"
+        title={title}
+        items={[
+          { href: '/', label: 'Home' },
+          { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
+          { href: '/portugal-hqa-visa-permanent-residency', label: 'Permanent residency' },
+          { label: 'Citizenship' },
+        ]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Portugal HQA visa citizenship is ordinary naturalization after a period of legal residence connected to highly qualified activity stay, not a passport sold with the first card. HQA is the residence heading that lets the years start. Nationality is a different statute. Read
           <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>
           first if the live question is still the next residence status rather than a nationality file.
         </p>
+        </div>
       </div>
     </header>
 
