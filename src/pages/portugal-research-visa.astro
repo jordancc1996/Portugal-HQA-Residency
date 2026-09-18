@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import ResearchClusterNav from '../components/ResearchClusterNav.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal Research Visa - Hosted Highly Qualified Research';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -41,7 +43,7 @@ const metaDescription =
             guide.
           </p>
           <p class="mt-4">
-            A degree program, an Erasmus stay, or a short visiting-scholar invitation may sit on a different permit. If the activity is study rather than highly qualified professional research, do not force this page’s heading onto the file. If the person will live on remote income without a Portuguese research host, this is also the wrong starting point.
+            A degree program, an Erasmus stay, or a short visiting-scholar invitation may sit on a different permit. If the activity is study rather than highly qualified professional research, do not force this page’s heading onto the file.             If the person will live on remote income without a Portuguese research host, this is also the wrong starting point.
           </p>
         </section>
 
@@ -56,8 +58,20 @@ const metaDescription =
             terminology page if the host and the consulate are using different labels for the same role.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-research-visa"
+      image="/images/portugal-research-visa-cta-divider.jpg"
+      alt="Porto riverside used on the Portugal research visa page"
+      heading="Match a research host to highly qualified activity tests"
+      copy="Not sure whether a grant or lab letter supports this heading? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>Project hosts and university hosts</h2>
           <p class="mt-6">
             Research posts are not identical. A person attached to a named project or laboratory needs different evidence than a person hired onto academic staff. Use the two pages below for those host types. Come back to the HQA visa guide only when you need the whole route (costs, family, and the generic application path) rather than the research-host question.
@@ -103,7 +117,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. A grant or a university title does not decide the permit. Confirm the host type and the current research-host checklist with a licensed professional.
         </p>
-        <a href="/contact" class="btn-cta">Discuss a research host and residence options</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-research-visa" simple />
       </div>
     </section>
   </article>

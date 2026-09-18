@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { processingStageField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
 
 const title = 'Portugal HQA Visa Processing Time - What Affects Speed';
@@ -45,8 +48,20 @@ const metaDescription =
             A published legal maximum, where one exists, is not the same as the practical wait. Treat any “average months” on a forum as anecdote.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-processing-time"
+      image="/images/portugal-hqa-visa-processing-time-cta-divider.jpg"
+      alt="Lisbon calendar-season street used on the HQA processing time page"
+      heading="Get a realistic view of HQA processing time"
+      copy="Not sure what usually sets the clock on a 2026 file? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What you can still control</h2>
           <p class="mt-6">
             You cannot buy a shorter AIMA queue. You can lodge a pack that matches the
@@ -84,7 +99,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Wait times move. An advisor can compare your post and your pack with current practice, including whether to instruct counsel.
         </p>
-        <a href="/contact" class="btn-cta">Discuss processing time and whether to instruct counsel</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-processing-time" contextField={processingStageField} />
       </div>
     </section>
   </article>

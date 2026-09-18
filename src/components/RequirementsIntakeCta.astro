@@ -1,0 +1,122 @@
+---
+import IntakeForm from './IntakeForm.astro';
+
+interface Props {
+  source: string;
+  instance?: string;
+  image: string;
+  alt: string;
+  heading: string;
+  copy: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  source,
+  instance = 'top',
+  image,
+  alt,
+  heading,
+  copy,
+  width = 1024,
+  height = 768,
+} = Astro.props;
+---
+
+<section class="requirements-photo-cta relative isolate w-full overflow-hidden">
+  <img
+    src={image}
+    alt=""
+    width={width}
+    height={height}
+    decoding="async"
+    aria-hidden="true"
+    class="requirements-photo-cta__image absolute inset-0 h-full w-full object-cover"
+    onerror="this.style.opacity='0'"
+  />
+  <span class="sr-only">{alt}</span>
+  <div class="requirements-photo-cta__overlay absolute inset-0" aria-hidden="true"></div>
+  <div class="site-container relative z-10 flex min-h-[32rem] items-center py-12 md:min-h-[36rem] md:py-16">
+    <div class="w-full min-w-0 max-w-[34rem]">
+      <h2 class="requirements-photo-cta__heading">
+        {heading}
+      </h2>
+      <p class="requirements-photo-cta__copy mt-5 max-w-lg">
+        {copy}
+      </p>
+      <div class="mt-7 w-full min-w-0">
+        {/* TODO: no backend yet */}
+        <IntakeForm
+          source={source}
+          simple
+          flush
+          instance={instance}
+          submitLabel="Get guidance →"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .requirements-photo-cta {
+    min-height: 32rem;
+  }
+
+  .requirements-photo-cta__image {
+    object-position: 72% center;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+  }
+
+  .requirements-photo-cta__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.52) 35%,
+      rgba(0, 0, 0, 0.18) 65%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+  }
+
+  .requirements-photo-cta__heading {
+    color: #ffffff;
+  }
+
+  .requirements-photo-cta__copy {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .requirements-photo-cta :global(label) {
+    color: #ffffff;
+  }
+
+  .requirements-photo-cta :global([data-form-status]),
+  .requirements-photo-cta :global([data-intake-success]) {
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    .requirements-photo-cta {
+      min-height: 36rem;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .requirements-photo-cta__image {
+      object-position: 78% center;
+    }
+
+    .requirements-photo-cta__overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.74) 0%,
+        rgba(0, 0, 0, 0.58) 42%,
+        rgba(0, 0, 0, 0.28) 72%,
+        rgba(0, 0, 0, 0.12) 100%
+      );
+    }
+  }
+</style>

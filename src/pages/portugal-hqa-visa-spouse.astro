@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
 
 const title = 'Portugal HQA Visa Spouse - Partner Residence Coverage';
@@ -44,8 +46,20 @@ const metaDescription =
             Expect a marriage certificate or the partnership evidence the 2026 list actually names, legalized or apostilled, and translated where the post requires Portuguese. A wedding photograph, a joint lease, or a social-media history is not a substitute. Divorce, prior marriages, and name changes need the civil documents that explain the current status.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-spouse"
+      image="/images/portugal-hqa-visa-spouse-cta-divider.jpg"
+      alt="Lisbon couple-scale street used on the HQA spouse coverage page"
+      heading="Find out who qualifies as a spouse on an HQA file"
+      copy="Not sure what the relationship still has to prove? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What spouse coverage does not do</h2>
           <p class="mt-6">
             It does not make the partner a highly qualified worker. It does not skip identity, police, or subsistence items listed for family members. It does not put the partner on the principal’s card. If granted, the spouse receives a separate residence card with its own validity and, later, its own path toward
@@ -74,7 +88,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Recognition of marriages and partnerships differs by issuing country and by the Portuguese rules in force. A licensed professional should read the certificates against the current family list.
         </p>
-        <a href="/contact" class="btn-cta">Discuss spouse coverage on this file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-spouse" simple />
       </div>
     </section>
   </article>

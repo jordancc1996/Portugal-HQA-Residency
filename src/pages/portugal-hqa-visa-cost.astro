@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { estimatedTimelineField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import FinancialClusterNav from '../components/FinancialClusterNav.astro';
 
 const title = 'Portugal HQA Visa Cost - Fees and Professional Spend';
@@ -54,8 +57,20 @@ const metaDescription =
             their invoice is a professional fee, not a government charge. Family members added to the same move multiply several of these lines.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-cost"
+      image="/images/portugal-hqa-visa-cost-cta-divider.jpg"
+      alt="Lisbon street market light used on the HQA visa cost page"
+      heading="Map HQA fees without treating them as a capital ticket"
+      copy="Not sure what state fees and professional spend look like on this route? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What is not a filing fee</h2>
           <p class="mt-6">
             A salary at or above a published highly qualified floor is a pay condition, not a fee paid to the state. There is no Golden Visa-style fund or real-estate ticket on this route. That distinction is the whole of the
@@ -107,7 +122,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Fee tables change. An advisor can map state charges and professional work to your host and your consulate.
         </p>
-        <a href="/contact" class="btn-cta">Discuss a realistic cost range for this file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-cost" contextField={estimatedTimelineField('Estimated Timeline')} />
       </div>
     </section>
   </article>

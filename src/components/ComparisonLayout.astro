@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import HeroBanner from './HeroBanner.astro';
 import CompareTable from './CompareTable.astro';
 import ComparisonClusterNav from './ComparisonClusterNav.astro';
+import IntakeForm from './IntakeForm.astro';
+import RequirementsIntakeCta from './RequirementsIntakeCta.astro';
 import type { FaqEntry } from '../lib/seo';
+import { comparingOptionsField } from '../lib/intake-context';
 
 interface CompareRow {
   aspect: string;
@@ -18,14 +21,32 @@ interface Props {
   otherLabel: string;
   rows: CompareRow[];
   current: string;
-  ctaLabel: string;
   faqItems: FaqEntry[];
   image: string;
   alt: string;
   position?: string;
+  dividerImage: string;
+  dividerAlt: string;
+  dividerHeading: string;
+  dividerCopy: string;
 }
 
-const { title, metaDescription, crumbLabel, otherLabel, rows, current, ctaLabel, faqItems, image, alt, position } = Astro.props;
+const {
+  title,
+  metaDescription,
+  crumbLabel,
+  otherLabel,
+  rows,
+  current,
+  faqItems,
+  image,
+  alt,
+  position,
+  dividerImage,
+  dividerAlt,
+  dividerHeading,
+  dividerCopy,
+} = Astro.props;
 const metaTitle = `${title} | Portugal HQA Residency`;
 const breadcrumbs = [
   { href: '/', label: 'Home' },
@@ -53,8 +74,20 @@ const breadcrumbs = [
           <h2>Side by side</h2>
           <CompareTable otherLabel={otherLabel} rows={rows} />
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24 max-w-3xl">
+    <RequirementsIntakeCta
+      source={current}
+      image={dividerImage}
+      alt={dividerAlt}
+      heading={dividerHeading}
+      copy={dividerCopy}
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container py-24 md:py-32">
+        <section class="max-w-3xl">
           <h2>Which is right for you</h2>
           <div class="mt-6">
             <slot name="close" />
@@ -89,7 +122,8 @@ const breadcrumbs = [
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Permit headings and thresholds change. Confirm the 2026 instructions for each route before you lodge.
         </p>
-        <a href="/contact" class="btn-cta">{ctaLabel}</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source={current} contextField={comparingOptionsField} />
       </div>
     </section>
   </article>

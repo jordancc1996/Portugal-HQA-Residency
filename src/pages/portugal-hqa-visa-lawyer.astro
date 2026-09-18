@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { lawyerNeedField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import ProfessionalClusterNav from '../components/ProfessionalClusterNav.astro';
 
 const title = 'Portugal HQA Visa Lawyer - When Legal Counsel Helps';
@@ -41,8 +44,20 @@ const metaDescription =
             page.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-lawyer"
+      image="/images/portugal-hqa-visa-lawyer-cta-divider.jpg"
+      alt="Lisbon legal quarter street used on the HQA visa lawyer page"
+      heading="Find out when legal counsel helps an HQA file"
+      copy="Not sure whether a lawyer is the right spend for this heading? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What a lawyer does not replace</h2>
           <p class="mt-6">
             Counsel does not create a qualifying role. The tests remain on
@@ -72,14 +87,14 @@ const metaDescription =
       </div>
     </div>
 
-    <section class="bg-background">
-      <div class="site-container max-w-3xl py-24 md:py-32">
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Write if the host or the pack needs a legal opinion</h2>
         <p class="max-w-2xl">
-          This page is informational. It is not legal, tax, or immigration advice. If the host or the civil-status pack needs a legal opinion, write to the advisory desk. There is no evaluation form on this page.
+          This page is informational. It is not legal, tax, or immigration advice. Counsel reads the statute and the current instructions against the facts of the file.
         </p>
-        <a href="/contact" class="text-link mt-8">
-          Write if the file needs a legal opinion <span aria-hidden="true">→</span>
-        </a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-lawyer" contextField={lawyerNeedField} />
       </div>
     </section>
   </article>

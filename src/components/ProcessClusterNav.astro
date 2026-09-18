@@ -10,12 +10,12 @@ const { current } = Astro.props;
 
 <nav aria-label="Process cluster" class="border-t border-border pt-10">
   <p class="font-sans text-sm font-semibold text-text-primary">In this cluster</p>
-  <ul class="mt-4 flex flex-col gap-3">
+  <ul class="mt-4 flex list-none flex-col gap-3 p-0">
     {
       processCluster.map((item) => (
         <li>
           {item.href === current ? (
-            <span class="font-sans text-sm text-text-secondary" aria-current="page">
+            <span class="text-link" aria-current="page">
               {item.label}
             </span>
           ) : (

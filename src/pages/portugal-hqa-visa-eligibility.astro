@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa Eligibility - Who Qualifies';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -58,8 +60,20 @@ const metaDescription =
             coverage, not proof that the principal is eligible.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-eligibility"
+      image="/images/portugal-hqa-visa-eligibility-cta-divider.jpg"
+      alt="Professional setting in Portugal used on the HQA visa eligibility page"
+      heading="Find out who qualifies for the Portugal HQA visa"
+      copy="Not sure whether the role, the host, and the applicant tests fit? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What eligibility does not cover</h2>
           <p class="mt-6">
             Passing these tests does not assemble the pack, lodge the application, or keep the card valid. After you know the person fits, use the
@@ -82,7 +96,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Eligibility is fact-specific. A licensed professional should read the contract against the tests in force.
         </p>
-        <a href="/contact" class="btn-cta">Discuss whether the role looks eligible</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-eligibility" simple />
       </div>
     </section>
   </article>

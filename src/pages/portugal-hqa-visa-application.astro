@@ -1,7 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { applicationStageField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
+import NumberedSteps from '../components/NumberedSteps.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa Application - Step-by-Step Filing';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -62,29 +66,28 @@ const steps = [
       <div class="site-container max-w-3xl py-24 md:py-32">
         <section>
           <h2>The filing sequence</h2>
-          <ol class="mt-10 space-y-10">
-            {
-              steps.map((step, index) => (
-                <li class="grid grid-cols-1 gap-6 border-t border-border pt-8 md:grid-cols-12">
-                  <p class="col-span-full font-serif text-3xl text-text-primary md:col-span-2">{index + 1}</p>
-                  <div class="col-span-full md:col-span-10">
-                    <h3>{step.title}</h3>
-                    <p class="mt-4">{step.text}</p>
-                    {index === 1 && (
-                      <p class="mt-4">
-                        Use the
-                        <a href="/portugal-hqa-visa-documents" class="inline-link">document checklist</a>
-                        as the map of categories. Confirm apostille and translation rules with the post.
-                      </p>
-                    )}
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
+          <NumberedSteps steps={steps}>
+            <p slot="after-1">
+              Use the
+              <a href="/portugal-hqa-visa-documents" class="inline-link">document checklist</a>
+              as the map of categories. Confirm apostille and translation rules with the post.
+            </p>
+          </NumberedSteps>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-application"
+      image="/images/portugal-hqa-visa-application-cta-divider.jpg"
+      alt="Lisbon civic building used on the HQA visa application page"
+      heading="Match your file to the HQA application sequence"
+      copy="Not sure which lodging path applies to where you are now? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>After you lodge</h2>
           <p class="mt-6">
             Waiting time is not a step you control in the same way as the pack. What lengthens a 2026 file is on
@@ -107,7 +110,8 @@ const steps = [
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Filing windows and in-country eligibility change. An advisor can match the sequence to where you are now.
         </p>
-        <a href="/contact" class="btn-cta">Discuss how this file should be lodged</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-application" contextField={applicationStageField} />
       </div>
     </section>
   </article>

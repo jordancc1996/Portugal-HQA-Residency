@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroBanner from '../components/HeroBanner.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 
 const title = 'Contact - Portugal HQA Residency Inquiry';
@@ -11,13 +11,22 @@ const metaDescription =
 
 <Layout title={metaTitle} description={metaDescription}>
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Contact' }]} />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-residency-contact.jpg"
+        alt="Aerial view of Lisbon's red-tiled rooftops and the 25 de Abril Bridge at sunset."
+        title={title}
+        width={1024}
+        height={537}
+        position="object-[center_32%] sm:object-[center_30%] lg:object-[center_28%]"
+        items={[{ href: '/', label: 'Home' }, { label: 'Contact' }]}
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+        <p class="max-w-3xl">
           Contact Portugal HQA Residency through this inquiry form when you have a question about highly qualified activity residence, family coverage, or how HQA compares with other Portuguese options. The form is informational. It is not a filing and not legal advice.
         </p>
+        </div>
       </div>
     </header>
 

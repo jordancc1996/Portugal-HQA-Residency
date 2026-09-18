@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { estimatedTimelineField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import FinancialClusterNav from '../components/FinancialClusterNav.astro';
 
 const title = 'Portugal HQA Visa Investment - No Capital Subscription';
@@ -41,8 +44,20 @@ const metaDescription =
             Portuguese highly qualified activity residence is not a citizenship-by-investment product and not a capital-residence product. Paying a developer or a fund does not create eligibility. If the household’s plan is to deploy capital and live in Portugal with little or no local professional activity, this is the wrong heading.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-investment"
+      image="/images/portugal-hqa-visa-investment-cta-divider.jpg"
+      alt="Lisbon commercial street used on the HQA visa investment page"
+      heading="Confirm HQA is not a capital subscription"
+      copy="Not sure how salary and means differ from a Golden Visa ticket? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>Salary, subsistence, and proof of means</h2>
           <p class="mt-6">
             Employed files often have to meet a published salary floor for highly qualified activity in the year of filing. That floor is wages for work, not an investment into the state. Consulates also ask for subsistence or means evidence so the person will not be destitute. Those are capacity tests on
@@ -87,5 +102,16 @@ const metaDescription =
         <FinancialClusterNav current="/portugal-hqa-visa-investment" />
       </div>
     </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Treat this heading as a role, not a capital ticket</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. An advisor can say whether the plan is a Portuguese host file or a capital route.
+        </p>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-investment" contextField={estimatedTimelineField('When would you start a Portuguese role?')} />
+      </div>
+    </section>
   </article>
 </Layout>

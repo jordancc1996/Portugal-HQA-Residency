@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa Family - Spouse and Children Coverage';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -25,11 +27,14 @@ const metaDescription =
       <div class="bg-background">
         <div class="site-container py-24 md:py-32">
         <p class="max-w-3xl">
-          Portugal HQA visa family coverage is how a spouse and dependent children can be included when the principal holds, or is applying for, highly qualified activity residence. Inclusion is not automatic. Each person still needs identity, relationship, and (where listed) subsistence evidence under the 2026 rules. The principal must first meet
+          Portugal HQA visa family coverage allows the spouse and dependent children of a principal applicant to obtain residence in Portugal through family reunification. Family members are not included automatically and must submit their own applications with the required identity, relationship, and, where applicable, financial support documentation.
+        </p>
+        <p class="mt-4 max-w-3xl">
+          The principal applicant must first qualify under the
           <a href="/portugal-hqa-visa-requirements" class="inline-link">HQA visa requirements</a>.
-          Later stay toward
+          Each family member then holds their own residence status, and eligibility for
           <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">HQA visa permanent residency</a>
-          is a separate clock for each cardholder.
+          is assessed separately for each residence permit holder.
         </p>
         </div>
       </div>
@@ -48,8 +53,20 @@ const metaDescription =
             </p>
           </section>
         </div>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-family"
+      image="/images/portugal-hqa-visa-family-cta-divider.jpg"
+      alt="Lisbon family-scale neighborhood used on the HQA visa family page"
+      heading="Find out who qualifies as family on an HQA file"
+      copy="Not sure whether a spouse or children can be covered? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container py-24 md:py-32">
+        <section class="mt-0">
           <h2>Pages in this cluster</h2>
           <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             <a
@@ -103,7 +120,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Family categories and evidence lists change. An advisor can tell you whether the spouse and children pages both apply to this household.
         </p>
-        <a href="/contact" class="btn-cta">Discuss family coverage on this file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-family" simple />
       </div>
     </section>
   </article>

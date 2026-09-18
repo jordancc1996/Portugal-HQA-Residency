@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import FamilyClusterNav from '../components/FamilyClusterNav.astro';
 
 const title = 'Portugal HQA Visa Children - Dependent Residence Coverage';
@@ -45,8 +47,20 @@ const metaDescription =
             Typical coverage is minor children of the principal or of the included spouse, plus other dependents only if the current statute actually names them. Adult children in education, step-children, and children from prior relationships need the civil and custody documents the post lists. Do not copy an age cut-off from an old blog post. Read the 2026 instructions.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-children"
+      image="/images/portugal-hqa-visa-children-cta-divider.jpg"
+      alt="Lisbon neighborhood street used on the HQA children coverage page"
+      heading="Find out who qualifies as a child on an HQA file"
+      copy="Not sure which dependency tests still apply? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>Evidence that usually travels with a child</h2>
           <p class="mt-6">
             Birth certificates, proof of parental relationship, and consent or custody papers when one parent is not travelling are the core. Passports, photographs, and any police certificate required by age still apply. Each child is a separate person on the file. If granted, each receives a residence card, not a stamp on the parent’s card. Later
@@ -76,7 +90,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Child categories change. A licensed professional should read birth and custody documents against the current family instructions.
         </p>
-        <a href="/contact" class="btn-cta">Discuss children coverage on this file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-children" simple />
       </div>
     </section>
   </article>

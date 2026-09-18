@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa Documents - Filing Checklist';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -47,8 +49,20 @@ const metaDescription =
             A grant letter or university email is not a complete pack. Hosted research still has to produce the identity and record set, not only the science.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-documents"
+      image="/images/portugal-hqa-visa-documents-cta-divider.jpg"
+      alt="Lisbon riverside fortress light used on the HQA visa documents page"
+      heading="Match your file to the HQA document checklist"
+      copy="Not sure which evidence belongs in the pack? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>How documents are prepared</h2>
           <p class="mt-6">
             Foreign public documents often need legalization or an apostille, then a certified translation into Portuguese. Criminal-record certificates are time-limited. Substituting a CV for a diploma, or an informal email for a contract, is a common reason a post sends the file back. This page is a map of categories. It is not a substitute for the current consular PDF.
@@ -80,7 +94,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Document lists change by year and by consulate. A licensed professional should match certificates to the office of filing.
         </p>
-        <a href="/contact" class="btn-cta">Review which documents your post is asking for</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-documents" simple />
       </div>
     </section>
   </article>

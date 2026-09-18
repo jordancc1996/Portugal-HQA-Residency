@@ -1,0 +1,256 @@
+---
+interface ContextField {
+  label: string;
+  name: string;
+  options: string[];
+}
+
+interface Props {
+  source: string;
+  simple?: boolean;
+  instance?: string;
+  flush?: boolean;
+  surface?: 'card' | 'cta';
+  submitLabel?: string;
+  contextField?: ContextField;
+}
+
+const {
+  source,
+  simple = false,
+  instance,
+  flush = false,
+  surface = 'cta',
+  submitLabel = 'Submit',
+  contextField,
+} = Astro.props;
+
+const integrated = surface === 'cta' && !flush;
+const unboxed = flush || integrated;
+
+const endpoint =
+  import.meta.env.PUBLIC_INQUIRY_ENDPOINT?.trim() || 'https://formcarry.com/s/yernDIKc320';
+
+const fieldClass = integrated
+  ? 'inquiry-field inquiry-field-cta mt-2 box-border h-14 w-full min-w-0 rounded-lg px-4 font-sans text-base text-text-primary'
+  : flush
+    ? 'inquiry-field mt-2 box-border h-14 w-full min-w-0 rounded-lg border border-border bg-white px-4 font-sans text-base text-text-primary'
+    : 'inquiry-field mt-2 w-full min-w-0 rounded-lg border border-border bg-white px-4 py-3 font-sans text-base text-text-primary';
+
+const lookingFor = [
+  'An alternative long-term residency option',
+  'European residency',
+  'Residency options for my family',
+  'Professional or research opportunities in Portugal',
+  'Business opportunities in Portugal',
+  'An alternative to relying solely on the U.S. immigration process',
+  'Just researching my options',
+];
+
+const sourceSlug = source.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '');
+const instanceSlug = instance?.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '');
+const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-${sourceSlug}`;
+---
+
+{/* TODO: no backend yet */}
+<div
+  class:list={[
+    'w-full',
+    unboxed ? 'max-w-full' : 'max-w-3xl border border-border bg-background p-6 md:p-8',
+    integrated && 'intake-cta-form',
+  ]}
+>
+  <form
+    id={idBase}
+    method="post"
+    action={endpoint || '/contact'}
+    data-inquiry-form
+    data-success-mode="inline"
+    data-endpoint={endpoint}
+    novalidate
+  >
+    <input type="hidden" name="formType" value={simple ? 'hqa-intake-simple' : 'hqa-intake'} />
+    <input type="hidden" name="source" value={source} />
+    {
+      contextField && (
+        <input type="hidden" name="contextFieldLabel" value={contextField.label} />
+      )
+    }
+    <input type="text" name="company" class="inquiry-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+    {
+      simple && flush ? (
+        <div class="grid w-full max-w-full grid-cols-1 gap-4 sm:grid-cols-2">
+          <p class="min-w-0">
+            <label for={`${idBase}-first-name`} class="font-sans text-sm font-semibold text-text-primary">
+              First Name <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-first-name`}
+              name="firstName"
+              type="text"
+              autocomplete="given-name"
+              required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0">
+            <label for={`${idBase}-last-name`} class="font-sans text-sm font-semibold text-text-primary">
+              Last Name <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-last-name`}
+              name="lastName"
+              type="text"
+              autocomplete="family-name"
+              required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0">
+            <label for={`${idBase}-email`} class="font-sans text-sm font-semibold text-text-primary">
+              Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-email`}
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0">
+            <label for={`${idBase}-phone`} class="font-sans text-sm font-semibold text-text-primary">
+              Phone Number
+            </label>
+            <input
+              id={`${idBase}-phone`}
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              class={fieldClass}
+            />
+          </p>
+          <div class="sm:col-span-2">
+            <button type="submit" class="btn-cta box-border h-14 w-full px-6 sm:w-fit">
+              {submitLabel}
+            </button>
+          </div>
+        </div>
+      ) : simple ? (
+        <div class:list={['flex flex-col gap-4 sm:flex-row sm:items-end', unboxed && 'w-full max-w-full']}>
+          <p class="min-w-0 flex-1">
+            <label for={`${idBase}-email`} class="font-sans text-sm font-semibold text-text-primary">
+              Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-email`}
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class={fieldClass}
+            />
+          </p>
+          <button
+            type="submit"
+            class:list={[
+              'btn-cta w-full shrink-0 sm:w-fit',
+              unboxed && 'box-border h-14 px-6 sm:w-auto',
+            ]}
+          >
+            {submitLabel}
+          </button>
+        </div>
+      ) : (
+        <div class:list={['grid grid-cols-1 md:grid-cols-2', integrated ? 'gap-6' : 'gap-4']}>
+          <p class="min-w-0">
+            <label for={`${idBase}-name`} class="font-sans text-sm font-semibold text-text-primary">
+              Name <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-name`}
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0">
+            <label for={`${idBase}-email`} class="font-sans text-sm font-semibold text-text-primary">
+              Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={`${idBase}-email`}
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class={fieldClass}
+            />
+          </p>
+          {contextField && (
+            <p class="min-w-0 md:col-span-2">
+              <label for={`${idBase}-context`} class="font-sans text-sm font-semibold text-text-primary">
+                {contextField.label} <span aria-hidden="true">*</span>
+              </label>
+              <select id={`${idBase}-context`} name={contextField.name} required class={fieldClass}>
+                <option value="">Select</option>
+                {contextField.options.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </p>
+          )}
+          <p class="min-w-0 md:col-span-2">
+            <label for={`${idBase}-looking`} class="font-sans text-sm font-semibold text-text-primary">
+              What are you primarily looking for? <span aria-hidden="true">*</span>
+            </label>
+            <select id={`${idBase}-looking`} name="lookingFor" required class={fieldClass}>
+              <option value="">Select</option>
+              {lookingFor.map((item) => (
+                <option value={item}>{item}</option>
+              ))}
+            </select>
+          </p>
+        </div>
+      )
+    }
+
+    <p class:list={[unboxed ? 'mt-2' : 'mt-4']} data-form-status role="status" aria-live="polite"></p>
+    {
+      !simple && (
+        <button
+          type="submit"
+          class:list={['btn-cta w-full sm:w-fit', integrated ? 'mt-6 box-border h-14 px-6' : 'mt-4']}
+        >
+          {submitLabel}
+        </button>
+      )
+    }
+  </form>
+
+  <p class="mt-6 hidden" data-intake-success tabindex="-1" role="status">
+    Thank you. Our advisory team has received your information.
+  </p>
+</div>
+
+<script>
+  import '../scripts/inquiry-form.ts';
+</script>
+
+<style>
+  .intake-cta-form :global(.inquiry-field-cta) {
+    background-color: #f8efe9;
+    border: 1px solid #e3c3bc;
+    color: #1c1917;
+  }
+
+  .intake-cta-form :global(.inquiry-field-cta:focus-visible) {
+    outline: 2px solid #c1453b;
+    outline-offset: 2px;
+    border-color: #c1453b;
+  }
+</style>

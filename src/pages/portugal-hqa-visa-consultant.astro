@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { consultantNeedField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import ProfessionalClusterNav from '../components/ProfessionalClusterNav.astro';
 
 const title = 'Portugal HQA Visa Consultant - Lawyer Versus Process Support';
@@ -46,8 +49,20 @@ const metaDescription =
             It does not decide whether the activity is highly qualified.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-consultant"
+      image="/images/portugal-hqa-visa-consultant-cta-divider.jpg"
+      alt="Lisbon meeting-room street used on the HQA visa consultant page"
+      heading="Find out what a consultant can do on an HQA file"
+      copy="Not sure how process support differs from legal advice? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What only legal counsel should answer</h2>
           <p class="mt-6">
             Whether an unusual host, a change of employer, a prior refusal, or an in-country filing basis is lawful is a legal question. If the consultant’s contract disclaims legal advice, treat that clause as accurate. Instruct a lawyer for those facts. Requirements and eligibility remain the tests, not the consultant’s project plan.
@@ -73,7 +88,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. An advisor can say which function the file actually needs before you retain either.
         </p>
-        <a href="/contact" class="btn-cta">Discuss lawyer versus consultant for this file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-consultant" contextField={consultantNeedField} />
       </div>
     </section>
   </article>

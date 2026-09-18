@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import LongTermClusterNav from '../components/LongTermClusterNav.astro';
 
 const title = 'Portugal HQA Visa Permanent Residency - After Legal Stay';
@@ -45,8 +47,20 @@ const metaDescription =
             Permanent residence looks backward at legal residence already completed, including absences that may break or pause the count. The required period is set in immigration law as amended, not in a forum screenshot. Confirm the 2026 period and the absence rules before you treat a calendar as complete. Time spent waiting for a first decision is not always the same as time spent as a resident.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-permanent-residency"
+      image="/images/portugal-hqa-visa-permanent-residency-cta-divider.jpg"
+      alt="Portuguese residential street used on the HQA permanent residency page"
+      heading="Map the clock from HQA residence to permanent residency"
+      copy="Not sure what the timing test actually is? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What else the file has to show</h2>
           <p class="mt-6">
             Expect updated identity and record evidence, proof of subsistence, and a residence history that matches the registered address. Highly qualified activity was the basis of the first permit. Permanent residence is a different heading: continued lawful stay, not a second copy of the original job test. Do not skip
@@ -80,7 +94,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Periods, absences, and evidence lists change. A licensed professional should read your travel history and card dates against the current permanent-residence rules.
         </p>
-        <a href="/contact" class="btn-cta">Discuss whether permanent residence is the live file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-permanent-residency" simple />
       </div>
     </section>
   </article>

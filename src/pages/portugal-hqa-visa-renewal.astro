@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { renewalStageField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import ProcessClusterNav from '../components/ProcessClusterNav.astro';
 
 const title = 'Portugal HQA Visa Renewal - Next Card After Approval';
@@ -44,8 +47,20 @@ const metaDescription =
             The desk will look for continued highly qualified activity with a host that still supports the permit, updated identity and record items, and a travel pattern that has not broken the residence rules in force. Changing employer or dropping the role without a new basis is a renewal problem, not a surprise to raise on the last day of validity. Confirm the 2026 AIMA renewal window (how many days before expiry you may or must file) on the current form.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-renewal"
+      image="/images/portugal-hqa-visa-renewal-cta-divider.jpg"
+      alt="Lisbon office street used on the HQA visa renewal page"
+      heading="Map the next HQA card before the current one expires"
+      copy="Not sure what a renewal file has to show? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>Timing against the card</h2>
           <p class="mt-6">
             Lodge while the card is still valid whenever the instructions allow it. A first
@@ -72,12 +87,20 @@ const metaDescription =
     </div>
 
     <section class="bg-cta-tint">
-      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+      <div class="site-container flex flex-col items-start pt-16 pb-12 md:pt-20 md:pb-14">
         <h2 class="max-w-3xl">Start the renewal against the card date, not against a forum average</h2>
-        <p class="max-w-2xl">
+        <p class="mt-4 max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Renewal windows and evidence lists change. An advisor can read your host situation and absences against the current AIMA instructions.
         </p>
-        <a href="/contact" class="btn-cta">Discuss a renewal timeline for this card</a>
+        <div class="mt-8 w-full min-w-0 max-w-3xl">
+          {/* TODO: no backend yet */}
+          <IntakeForm
+            source="/portugal-hqa-visa-renewal"
+            surface="cta"
+            contextField={renewalStageField}
+            submitLabel="Get renewal guidance →"
+          />
+        </div>
       </div>
     </section>
   </article>

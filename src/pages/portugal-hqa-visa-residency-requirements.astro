@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
 
 const title = 'Portugal HQA Visa Residency Requirements - After Approval';
@@ -44,8 +46,20 @@ const metaDescription =
             The card is issued for a stated activity with a stated host relationship. Changing employer, dropping the highly qualified role, or remaining in Portugal with no qualifying activity can put the permit outside its basis. Tax registration, social security, and a lawful Portuguese address often follow from actually living and working here. Those are not optional branding. Confirm current AIMA practice for host changes before you assume a new contract is a continuation of the same file.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-residency-requirements"
+      image="/images/portugal-hqa-visa-residency-requirements-cta-divider.jpg"
+      alt="Portuguese apartment street used on the HQA residency requirements page"
+      heading="Match your stay pattern to HQA residency requirements"
+      copy="Not sure what applies after the card is issued? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>Absences and address</h2>
           <p class="mt-6">
             Residence permits are built for residence in Portugal, not for an unused card in a drawer. Prolonged absence can affect renewal and later
@@ -79,7 +93,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Stay rules and renewal clocks change. A licensed professional should read your travel pattern and host situation against the current statute.
         </p>
-        <a href="/contact" class="btn-cta">Discuss stay obligations after approval</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-residency-requirements" simple />
       </div>
     </section>
   </article>

@@ -1,0 +1,203 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { usImmigrationStatusField } from '../lib/intake-context';
+import lisbonRiverfront from '../assets/images/lisbon-vasco-da-gama-tower-parque-das-nacoes.jpg';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
+
+const title = 'Portugal HQA Visa for H-1B Holders';
+const metaTitle = `${title} | Portugal HQA Residency`;
+const metaDescription =
+  'Explore the Portugal HQA Visa for H-1B holders seeking an alternative path to European residency based on highly qualified professional activity in Portugal.';
+
+const compareRows = [
+  {
+    aspect: 'Country',
+    h1b: 'United States',
+    hqa: 'Portugal',
+  },
+  {
+    aspect: 'Primary purpose',
+    h1b: 'Temporary professional employment',
+    hqa: 'Residence based on highly qualified activity',
+  },
+  {
+    aspect: 'Immigration system',
+    h1b: 'US',
+    hqa: 'Portuguese / EU',
+  },
+  {
+    aspect: 'Employment relationship',
+    h1b: 'Generally tied to qualifying US employment',
+    hqa: 'Based on qualifying highly qualified activity in Portugal',
+  },
+  {
+    aspect: 'Residence outcome',
+    h1b: 'US nonimmigrant status',
+    hqa: 'Portuguese residence permit',
+  },
+  {
+    aspect: 'Schengen benefits',
+    h1b: 'No',
+    hqa: 'Travel rights associated with Portuguese residence',
+  },
+  {
+    aspect: 'Family options',
+    h1b: 'H-4 for qualifying dependents',
+    hqa: 'Portuguese family reunification rules may apply',
+  },
+  {
+    aspect: 'Permanent status',
+    h1b: 'Separate US green card process',
+    hqa: 'May contribute toward eventual permanent residence or citizenship eligibility if legal requirements are satisfied',
+  },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <article>
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-visa-for-h1b-holders.jpg"
+        alt="Clérigos Tower rising above the rooftops of Porto, Portugal, at sunset"
+        title={title}
+        items={[{ href: '/', label: 'Home' }, { label: 'Portugal HQA Visa for H-1B Holders' }]}
+        width={3607}
+        height={5410}
+        position="object-[center_75%]"
+      />
+      <div class="bg-background">
+        <div class="site-container pt-16 pb-12 md:pt-24 md:pb-16">
+          <p class="max-w-3xl">
+            The Portugal HQA Visa is a Portuguese residence pathway for qualifying highly skilled professionals. It is not specifically designed for H-1B holders, but it may be an attractive option for professionals currently working in the United States on H-1B status who want to explore an additional path to long-term residency. See the
+            <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA Visa overview</a>
+            for the full program.
+          </p>
+          <p class="mt-4 max-w-3xl">
+            H-1B work authorization is generally connected to qualifying US employment, while the path to permanent residence can be lengthy for some applicants. The Portugal HQA Visa provides a separate opportunity for qualifying professionals to establish highly qualified activity in Portugal and pursue Portuguese residence.
+          </p>
+          <p class="mt-4 max-w-3xl">
+            It does not replace H-1B status or provide US work authorization. Instead, it can be considered as part of a broader international career, residency, or family strategy. For H-1B holders already living and working in the United States, see our
+            <a href="/portugal-hqa-visa-for-americans" class="inline-link">Portugal HQA Visa for Americans</a>
+            page for additional considerations specific to US-based applicants.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <figure class="m-0 w-full overflow-hidden">
+      <Image
+        src={lisbonRiverfront}
+        alt="Vasco da Gama Tower and the Myriad by SANA Hotel on the Tagus riverfront in Lisbon, Portugal"
+        widths={[640, 960, 1280, 1920, 2560, 3840]}
+        sizes="100vw"
+        decoding="async"
+        class="h-[13.75rem] w-full object-cover object-[25%_80%] sm:h-[15.625rem] md:h-[17.5rem]"
+      />
+    </figure>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl pt-16 pb-24 md:pt-20 md:pb-32">
+        <section>
+          <h2>Why the Portugal HQA Visa May Appeal to H-1B Holders</h2>
+          <p class="mt-6">
+            H-1B and the Portugal HQA Visa operate under separate immigration systems. H-1B allows qualifying professionals to work in the United States through eligible US employment. The Portugal HQA route is available more broadly to professionals who meet Portugal's requirements for highly qualified activity.
+          </p>
+          <p class="mt-4">
+            An applicant does not need to hold H-1B status to qualify for the HQA Visa. For someone currently on H-1B, however, the program may provide an opportunity to pursue Portuguese residence outside the US employment-based immigration system.
+          </p>
+          <p class="mt-4">
+            An approved Portuguese residence permit allows the holder to reside in Portugal and provides the Schengen Area travel rights associated with Portuguese residence. Qualifying family members may also be eligible through Portugal's family reunification rules.
+          </p>
+          <p class="mt-4">
+            Maintaining qualifying residence may eventually contribute toward eligibility for Portuguese permanent residence or citizenship if all applicable requirements are satisfied. Neither is automatic.
+          </p>
+          <p class="mt-4">
+            The HQA route also has a different cost structure from H-1B and is not simply a purchase of residency or fixed capital investment. See
+            <a href="/portugal-hqa-visa-cost" class="inline-link">Portugal HQA Visa costs</a>
+            and
+            <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">Portugal HQA Visa vs. Golden Visa</a>
+            for more information.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>H-1B vs. Portugal HQA Visa</h2>
+          <p class="mt-6">
+            The table below is a map of the two headings. Neither route is universally better. Confirm current USCIS and AIMA instructions before treating any cell as a filing rule.
+          </p>
+          <div class="compare-scroll mt-10">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">Point</th>
+                  <th scope="col">H-1B</th>
+                  <th scope="col">Portugal HQA Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  compareRows.map((row) => (
+                    <tr>
+                      <td>{row.aspect}</td>
+                      <td>{row.h1b}</td>
+                      <td>{row.hqa}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-for-h1b-holders"
+      image="/images/portugal-hqa-visa-h1b-holders-cta-divider.jpg"
+      alt="Lisbon riverfront towers used on the HQA visa for H-1B holders page"
+      heading="Match an H-1B file to Portugal HQA residence"
+      copy="Not sure whether this heading can sit alongside current US status? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl pt-16 pb-24 md:pt-20 md:pb-32">
+        <section>
+          <h2>Can You Explore the Portugal HQA Visa While on H-1B?</h2>
+          <p class="mt-6">
+            Holding H-1B status does not by itself prevent someone from exploring Portuguese residence. However, US and Portuguese immigration requirements are separate, and maintaining connections to both countries can raise questions involving employment, physical presence, travel, taxation, and immigration status.
+          </p>
+          <p class="mt-4">
+            Obtaining Portuguese residence does not automatically preserve H-1B status, and holding H-1B status does not provide special eligibility for the HQA Visa.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Explore Whether You Qualify</h2>
+          <p class="mt-6">
+            The Portugal HQA Visa may be particularly relevant to professionals looking for an additional international residency option, including H-1B professionals from India and China navigating the US employment-based immigration system.
+          </p>
+          <p class="mt-4">
+            H-1B status is not a requirement. Applicants must qualify for the Portuguese program independently. Review the
+            <a href="/portugal-hqa-visa-eligibility" class="inline-link">Portugal HQA Visa eligibility requirements</a>
+            to determine whether your professional background and proposed activity may qualify.
+          </p>
+          <p class="mt-4">This page is informational and does not constitute legal, tax, or immigration advice.</p>
+        </section>
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Separate the Portuguese host file from the H-1B file</h2>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. US work authorization and Portuguese residence are separate systems. A licensed professional should read both against the facts of the file.
+        </p>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-for-h1b-holders" contextField={usImmigrationStatusField} />
+      </div>
+    </section>
+  </article>
+</Layout>

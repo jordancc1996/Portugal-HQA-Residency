@@ -1,0 +1,28 @@
+---
+export interface NumberedStep {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  steps: NumberedStep[];
+  start?: number;
+}
+
+const { steps, start = 1 } = Astro.props;
+---
+
+<ol class="numbered-steps" start={start}>
+  {
+    steps.map((step, index) => (
+      <li class="numbered-steps__item">
+        <span class="numbered-steps__index">{start + index}</span>
+        <div class="numbered-steps__body">
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+          {start + index === 2 && <slot name="after-1" />}
+        </div>
+      </li>
+    ))
+  }
+</ol>

@@ -8,19 +8,15 @@ function setStatus(form: HTMLFormElement, message: string, isError = false): voi
 
 function payloadFromForm(form: HTMLFormElement): Record<string, string> {
   const data = new FormData(form);
-  return {
-    question: String(data.get('question') ?? ''),
-    firstName: String(data.get('firstName') ?? ''),
-    lastName: String(data.get('lastName') ?? ''),
-    email: String(data.get('email') ?? ''),
-    phone: String(data.get('phone') ?? ''),
-    country: String(data.get('country') ?? ''),
-    linkedin: String(data.get('linkedin') ?? ''),
-    goals: data.getAll('goals').map(String).join('; '),
-    residencyOption: String(data.get('residencyOption') ?? ''),
-    timeline: String(data.get('timeline') ?? ''),
-    additional: String(data.get('additional') ?? ''),
-  };
+  const payload: Record<string, string> = {};
+
+  for (const [key, value] of data.entries()) {
+    if (key === 'company') continue;
+    const next = String(value);
+    payload[key] = payload[key] ? `${payload[key]}; ${next}` : next;
+  }
+
+  return payload;
 }
 
 function formcarryAccepted(response: Response, payload: unknown): boolean {
@@ -31,17 +27,29 @@ function formcarryAccepted(response: Response, payload: unknown): boolean {
   return status.toLowerCase() === 'success';
 }
 
-export function initInquiryForm(): void {
-  const form = document.getElementById('inquiry-form') as HTMLFormElement | null;
+function showSuccess(form: HTMLFormElement): void {
+  const inline = form.parentElement?.querySelector<HTMLElement>('[data-intake-success]');
+  if (form.dataset.successMode === 'inline' && inline) {
+    form.classList.add('hidden');
+    inline.classList.remove('hidden');
+    inline.focus();
+    return;
+  }
+
   const success = document.getElementById('inquiry-success');
-  if (!form || form.dataset.bound === 'true') return;
+  form.classList.add('hidden');
+  success?.classList.remove('hidden');
+  success?.focus();
+}
+
+function bindInquiryForm(form: HTMLFormElement): void {
+  if (form.dataset.bound === 'true') return;
   form.dataset.bound = 'true';
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (String(new FormData(form).get('company') ?? '').trim()) {
-      form.classList.add('hidden');
-      success?.classList.remove('hidden');
+      showSuccess(form);
       return;
     }
     if (!form.reportValidity()) {
@@ -81,9 +89,7 @@ export function initInquiryForm(): void {
         throw new Error('request-failed');
       }
 
-      form.classList.add('hidden');
-      success?.classList.remove('hidden');
-      success?.focus();
+      showSuccess(form);
     } catch {
       setStatus(
         form,
@@ -96,6 +102,10 @@ export function initInquiryForm(): void {
       if (submit) submit.disabled = false;
     }
   });
+}
+
+export function initInquiryForm(): void {
+  document.querySelectorAll<HTMLFormElement>('[data-inquiry-form]').forEach(bindInquiryForm);
 }
 
 initInquiryForm();

@@ -10,12 +10,21 @@ interface Props {
   width?: number;
   height?: number;
   position?: string;
+  size?: 'default' | 'compact';
 }
 
-const { image, alt, title, items, width = 1600, height = 900, position = 'object-center' } = Astro.props;
+const { image, alt, title, items, width = 1600, height = 900, position = 'object-center', size = 'default' } = Astro.props;
+const compact = size === 'compact';
 ---
 
-<div class="relative isolate h-[42vh] min-h-[18rem] w-full overflow-hidden sm:h-[45vh] md:min-h-[22rem]">
+<div
+  class:list={[
+    'relative isolate w-full overflow-hidden text-left',
+    compact
+      ? 'h-[22vh] min-h-[13rem] sm:h-[24vh] md:min-h-[15rem]'
+      : 'h-[42vh] min-h-[18rem] sm:h-[45vh] md:min-h-[22rem]',
+  ]}
+>
   <img
     src={image}
     alt={alt}
@@ -25,7 +34,7 @@ const { image, alt, title, items, width = 1600, height = 900, position = 'object
     class:list={['absolute inset-0 h-full w-full object-cover', position]}
   />
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/15" aria-hidden="true"></div>
-  <div class="relative z-10 flex h-full min-h-0 w-full flex-col py-10 md:py-14">
+  <div class:list={['relative z-10 flex h-full min-h-0 w-full flex-col', compact ? 'py-6 md:py-8' : 'py-10 md:py-14']}>
     <div class="site-container shrink-0">
       <Breadcrumb tone="on-dark" items={items} />
     </div>

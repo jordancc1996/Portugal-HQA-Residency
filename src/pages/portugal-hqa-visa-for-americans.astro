@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { usImmigrationStatusField } from '../lib/intake-context';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa for Americans - US Tax and Route Fit';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -56,8 +59,20 @@ const metaDescription =
             for the Portuguese-residency side only.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-for-americans"
+      image="/images/portugal-hqa-visa-for-americans-cta-divider.jpg"
+      alt="Lisbon terrace and river used on the HQA visa for Americans page"
+      heading="Match a US file to the Portuguese host and tax overlay"
+      copy="Not sure how the host test and US tax residency sit together? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>How Americans usually move the file</h2>
           <p class="mt-6">
             Lodging is still the
@@ -66,6 +81,8 @@ const metaDescription =
             <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
             Family members follow
             <a href="/portugal-hqa-visa-family" class="inline-link">HQA visa family</a>.
+            H-1B professionals considering Portuguese residency should also read
+            <a href="/portugal-hqa-visa-for-h1b-holders" class="inline-link">Portugal HQA Visa for H-1B holders</a>.
             The program overview is the
             <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
             guide.
@@ -80,7 +97,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. US and Portuguese tax rules both apply until a qualified professional says otherwise for your facts.
         </p>
-        <a href="/contact" class="btn-cta">Discuss a US household against the HQA host test</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-for-americans" contextField={usImmigrationStatusField} />
       </div>
     </section>
   </article>

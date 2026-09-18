@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal Article 90 Residence Permit - Legal Basis for HQA';
 const metaTitle = `${title} | Portugal HQA Residency`;
@@ -46,8 +48,20 @@ const metaDescription =
             guide.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-article-90-residence-permit"
+      image="/images/portugal-article-90-residence-permit-cta-divider.jpg"
+      alt="Porto stone walls and riverfront used on the Article 90 residence permit page"
+      heading="Map Article 90 to the contract and the current checklist"
+      copy="Not sure how the statute heading applies to your host documents? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>How Article 90 relates to an HQA file</h2>
           <p class="mt-6">
             A complete file still has to show that the activity is highly qualified under the rules that implement the article, and that the applicant can be admitted. That evidence is described, for working purposes, on
@@ -105,7 +119,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Statute citations change. A licensed professional should read the version in force against your host documents.
         </p>
-        <a href="/contact" class="btn-cta">Review the Article 90 heading on your file</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-article-90-residence-permit" simple />
       </div>
     </section>
   </article>

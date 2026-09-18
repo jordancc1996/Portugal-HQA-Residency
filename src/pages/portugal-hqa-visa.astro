@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import { clusterHubs, glanceSpokes } from '../data/sitemap';
 
 const title = 'Portugal HQA Visa - Highly Qualified Activity Residence';
@@ -54,7 +56,7 @@ const glance = [
 <Layout title={metaTitle} description={metaDescription}>
   <article>
     <header>
-      <div class="relative isolate aspect-[5/4] max-h-[85vh] min-h-[28rem] w-full overflow-hidden sm:aspect-[16/10] sm:min-h-[32rem] lg:aspect-[16/9] lg:min-h-[36rem]">
+      <div class="relative isolate aspect-[5/4] max-h-[85vh] min-h-[28rem] w-full overflow-hidden text-left sm:aspect-[16/10] sm:min-h-[32rem] lg:aspect-[16/9] lg:min-h-[36rem]">
         <img
           src="/images/portugal-hqa-visa-program.jpg"
           alt="Santander Academic Hall beside a reflecting pool, with lettering on the concrete facade and palms on the slope beyond"
@@ -95,7 +97,9 @@ const glance = [
           <section>
             <h2 data-scroll-reveal>Who this is for</h2>
             <p class="mt-6" data-scroll-reveal>
-              HQA is a work and activity route. The file stands or falls on whether the job (or the hosted activity) is highly qualified under Portuguese immigration law, and whether the applicant can prove qualifications, a clean record, and a relationship with a host in Portugal.
+              HQA is a work and activity route. The file stands or falls on whether the job (or the hosted activity) is highly qualified under Portuguese immigration law, and whether the applicant can prove qualifications, a clean record, and a relationship with a host in Portugal. US-based H-1B professionals considering Portuguese residency can read
+              <a href="/portugal-hqa-visa-for-h1b-holders" class="inline-link">Portugal HQA Visa for H-1B holders</a>.
+              That overlay does not replace the host and role tests below.
             </p>
             <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-12">
               {
@@ -116,8 +120,39 @@ const glance = [
               }
             </div>
           </section>
+        </div>
 
-          <section class="mt-24">
+        <aside class="col-span-full hidden min-w-0 lg:col-span-4 lg:block">
+          <div class="card sticky top-8 p-8">
+            <h3>Cluster hubs</h3>
+            <ul class="mt-6 space-y-3">
+              {
+                clusterHubs.map((item) => (
+                  <li>
+                    <a href={item.href} class="text-link">
+                      {item.label} <span aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa"
+      image="/images/portugal-hqa-visa-overview-cta-divider.jpg"
+      alt="Portuguese university campus and grounds used on the Portugal HQA visa overview"
+      heading="Match your role and host to the Portugal HQA visa"
+      copy="Not sure whether this permit fits the job and the household? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container grid grid-cols-1 gap-10 py-24 md:py-32 lg:grid-cols-12">
+        <div class="col-span-full min-w-0 lg:col-span-8">
+          <section>
             <h2 data-scroll-reveal>At a glance</h2>
             <p class="mt-6" data-scroll-reveal>
               Use these summaries as a map. Each item opens the full page for tests, figures, and caveats. Figures change. Confirm current AIMA and consular instructions before you file.
@@ -216,7 +251,8 @@ const glance = [
         <p class="max-w-2xl" data-scroll-reveal>
           This page is informational. It is not legal, tax, or immigration advice. An advisor can map the contract and the family facts to the current AIMA and consular list.
         </p>
-        <a href="/contact" class="btn-cta">Discuss Your Residency Options</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa" simple />
       </div>
     </section>
   </article>

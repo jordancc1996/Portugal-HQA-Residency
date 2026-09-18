@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IntakeForm from '../components/IntakeForm.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 import ResearchClusterNav from '../components/ResearchClusterNav.astro';
 
 const title = 'Portugal HQA Visa Research Project - Funded Host Pathway';
@@ -44,8 +46,20 @@ const metaDescription =
             A usable host pack names the Portuguese entity, the activity, the duration, and how the person is paid or maintained. A grant award number without a Portuguese contracting party is weak. A PI email without institutional letterhead is weaker. The activity still has to be highly qualified under the tests in force in 2026, not merely “research” in ordinary English.
           </p>
         </section>
+      </div>
+    </div>
 
-        <section class="mt-24">
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-research-project"
+      image="/images/portugal-hqa-visa-research-project-cta-divider.jpg"
+      alt="Portuguese laboratory campus used on the HQA research project page"
+      heading="Match a funded project letter to the HQA host test"
+      copy="Not sure whether a grant supports this heading? Enter your details and our advisory team can help point you in the right direction."
+    />
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
           <h2>What a grant letter does not replace</h2>
           <p class="mt-6">
             Identity, police certificates, subsistence, and the rest of the filing pack still apply. Salary floors, where they apply to the contract type, still apply. Family coverage is not automatic because the science is interesting. Those admission tests sit on
@@ -75,7 +89,8 @@ const metaDescription =
         <p class="max-w-2xl">
           This page is informational. It is not legal, tax, or immigration advice. Host letters and grant instruments differ. A licensed professional should match the Portuguese entity and the activity to the current list.
         </p>
-        <a href="/contact" class="btn-cta">Discuss a research-project host letter</a>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/portugal-hqa-visa-research-project" simple />
       </div>
     </section>
   </article>

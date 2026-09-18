@@ -1,31 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroBanner from '../components/HeroBanner.astro';
-import RequirementsClusterNav from '../components/RequirementsClusterNav.astro';
+import RequirementsIntakeCta from '../components/RequirementsIntakeCta.astro';
 
 const title = 'Portugal HQA Visa Requirements - Role, Host, and Stay';
 const metaTitle = `${title} | Portugal HQA Residency`;
 const metaDescription =
   'Portugal HQA visa requirements cover the 2026 role, host, and stay tests. Use this hub for eligibility, documents, and obligations after card approval.';
 
-const spokes = [
+const requirementItems = [
   {
-    href: '/portugal-hqa-visa-eligibility',
-    title: 'Who qualifies',
-    text: 'Whether the person, the role, and the Portuguese host fit highly qualified activity before any document pack is assembled.',
-    cta: 'Read who qualifies',
+    label: 'Age',
+    text: 'Applicants must be at least 18 years old.',
   },
   {
-    href: '/portugal-hqa-visa-documents',
-    title: 'What to file',
-    text: 'The identity, host, qualification, and record evidence that usually travels with an HQA application, once eligibility is the right heading.',
-    cta: 'Open the document checklist',
+    label: 'Qualifications',
+    text: 'Applicants generally need a university degree or significant professional experience in a specialized or highly qualified field.',
   },
   {
-    href: '/portugal-hqa-visa-residency-requirements',
-    title: 'What continues after approval',
-    text: 'Stay tests that apply once the card is issued: the activity, absences, and address, which are not the same as the admission tests.',
-    cta: 'Read obligations after approval',
+    label: 'Employment or Qualifying Activity',
+    text: 'The applicant must have qualifying highly skilled activity in Portugal, supported by the appropriate employment, research, or host arrangement.',
+  },
+  {
+    label: 'Salary Requirements',
+    text: 'Where applicable, the position must satisfy the minimum compensation requirements for highly qualified activity in Portugal.',
+  },
+  {
+    label: 'Health Insurance',
+    text: 'Applicants must provide appropriate health or travel medical coverage as required for the application and residence process.',
+  },
+  {
+    label: 'Criminal Record',
+    text: 'Applicants must provide the required criminal-record documentation and authorize Portuguese authorities to conduct applicable background checks.',
   },
 ];
 ---
@@ -37,6 +43,7 @@ const spokes = [
         image="/images/portugal-hqa-visa-requirements-documents.jpg"
         alt="Stone seaward wall and sentry turret above limestone rocks, with open Atlantic water beyond"
         title={title}
+        size="compact"
         items={[
           { href: '/', label: 'Home' },
           { href: '/portugal-hqa-visa', label: 'Portugal HQA Visa' },
@@ -44,82 +51,80 @@ const spokes = [
         ]}
       />
       <div class="bg-background">
-        <div class="site-container py-24 md:py-32">
+        <div class="site-container py-10 md:py-12">
         <p class="max-w-3xl">
-          Portugal HQA visa requirements are the tests a highly qualified activity file has to meet, not a single form and not a capital subscription. This hub splits those tests into who qualifies, what documents usually accompany the file, and what the person must keep doing after the residence card is issued. The
+          Portugal HQA visa requirements define who may qualify for residence in Portugal through highly qualified activity. Applicants generally need to meet requirements related to their qualifications, professional activity, Portuguese host or employer, compensation, and supporting documentation. See the
           <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA visa</a>
-          guide remains the program overview.
+          guide for an overview of the program.
         </p>
+        <section class="mt-10 max-w-3xl">
+          <h2>Portugal HQA Visa Requirements</h2>
+          <dl class="mt-8">
+            {
+              requirementItems.map((item) => (
+                <div class="mt-10 border-t border-border pt-8 first:mt-0 first:border-t-0 first:pt-0">
+                  <dt class="font-sans text-base font-semibold text-text-primary">{item.label}</dt>
+                  <dd class="mt-4">{item.text}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
         </div>
       </div>
     </header>
 
+    <RequirementsIntakeCta
+      source="/portugal-hqa-visa-requirements"
+      image="/images/portugal-hqa-visa-portugal-hqa-residency.jpg"
+      alt="Lisbon waterfront at dusk with a sailboat on the Tagus and the 25 de Abril Bridge beyond"
+      heading="Match your situation to the Portugal HQA requirements"
+      copy="Not sure which requirements apply to you? Enter your details and our advisory team can help point you in the right direction."
+    />
+
     <div class="bg-background-alt">
       <div class="site-container py-24 md:py-32">
         <div class="max-w-3xl">
-          <section>
-            <h2>Admission tests versus stay tests</h2>
-            <p class="mt-6">
-              Admission tests ask whether this person, in this role, with this Portuguese host, may receive a highly qualified activity permit. Stay tests ask whether the permit remains valid once the person is in Portugal. Mixing the two is a common filing error: a strong contract does not excuse later unexplained absences, and a clean travel record does not replace a qualifying host.
-            </p>
-            <p class="mt-4">
-              Salary floors, documentary lists, and absence rules change. Confirm the 2026 AIMA and consular instructions before you treat this hub as a checklist. The legal heading some files cite is explained on the
-              <a href="/portugal-article-90-residence-permit" class="inline-link">Portugal Article 90 residence permit</a>
-              page. This hub does not reprint that statute.
-            </p>
-          </section>
-        </div>
-
-        <section class="mt-24">
-          <h2>Pages in this cluster</h2>
-          <p class="mt-6 max-w-3xl">
-            Each page owns one job. Do not read the eligibility page as a document list, and do not read the post-approval page as a substitute for who qualifies.
+        <section>
+          <h2>Documents and Eligibility</h2>
+          <p class="mt-6">
+            Meeting the general requirements does not mean an application is automatically approved. Applicants must provide evidence demonstrating that both the individual and the proposed activity in Portugal satisfy the applicable requirements.
           </p>
-          <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-            {
-              spokes.map((item) => (
-                <a
-                  href={item.href}
-                  class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]"
-                >
-                  <h3>{item.title}</h3>
-                  <p class="mt-4 flex-1">{item.text}</p>
-                  <span class="btn-primary mt-8 w-full gap-2">
-                    {item.cta}
-                    <span class="cluster-card-arrow" aria-hidden="true">
-                      →
-                    </span>
-                  </span>
-                </a>
-              ))
-            }
-          </div>
+          <p class="mt-4">
+            See
+            <a href="/portugal-hqa-visa-eligibility" class="inline-link">HQA visa eligibility</a>
+            to determine who may qualify, or review the
+            <a href="/portugal-hqa-visa-documents" class="inline-link">HQA visa document checklist</a>
+            for the supporting evidence typically required.
+          </p>
         </section>
 
-        <div class="mx-auto mt-24 max-w-3xl">
-          <section>
-            <h2>How this hub relates to the HQA visa guide</h2>
-            <p class="mt-6">
-              Costs, family coverage, and the consular or in-country path sit on other hubs. After the admission tests are clear, the next spend question is
-              <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa cost</a>.
-              When you already know the person qualifies and you need to lodge the pack, go to the
-              <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application</a>
-              page. Researchers who landed here from a “research visa” search should still start with eligibility for the role, then use the research-host pages from the program guide.
-            </p>
-          </section>
-          <RequirementsClusterNav current="/portugal-hqa-visa-requirements" />
+        <section class="mt-24">
+          <h2>Requirements After Approval</h2>
+          <p class="mt-6">
+            Requirements continue after a residence permit is issued. Permit holders must comply with Portuguese residence rules and applicable renewal requirements. Changes involving employment, qualifying activity, residence, or extended absences from Portugal may affect renewal.
+          </p>
+          <p class="mt-4">
+            See
+            <a href="/portugal-hqa-visa-residency-requirements" class="inline-link">HQA visa residency requirements</a>
+            for the requirements that apply after approval.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Next Steps</h2>
+          <p class="mt-6">
+            Once you understand the qualification requirements, review the
+            <a href="/portugal-hqa-visa-application" class="inline-link">HQA visa application process</a>,
+            <a href="/portugal-hqa-visa-cost" class="inline-link">HQA visa costs</a>, or our guide to the
+            <a href="/portugal-article-90-residence-permit" class="inline-link">Portugal Article 90 residence permit</a>.
+          </p>
+          <p class="mt-4">
+            Requirements, salary thresholds, documentation, and immigration procedures can change. Confirm current requirements with AIMA, the appropriate Portuguese consulate, or a qualified immigration professional before filing.
+          </p>
+        </section>
         </div>
       </div>
     </div>
-
-    <section class="bg-cta-tint">
-      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
-        <h2 class="max-w-3xl">Match the role and the host to the current requirement list</h2>
-        <p class="max-w-2xl">
-          This page is informational. It is not legal, tax, or immigration advice. An advisor can tell you which of the three cluster pages actually constrains your file.
-        </p>
-        <a href="/contact" class="btn-cta">Discuss which requirement tests apply</a>
-      </div>
-    </section>
   </article>
 </Layout>
