@@ -58,25 +58,29 @@ a.site-wordmark svg {
 
 a.inline-link:link,
 a.inline-link:visited,
-a.inline-link:active,
 a.text-link:link,
-a.text-link:visited,
-a.text-link:active {
-  color: #c1453b;
-  -webkit-text-fill-color: #c1453b;
+a.text-link:visited {
+  color: #0a66c2;
+  -webkit-text-fill-color: #0a66c2;
 }
 
 a.inline-link:hover,
 a.inline-link:focus-visible,
 a.text-link:hover,
 a.text-link:focus-visible {
-  color: #a53a31;
-  -webkit-text-fill-color: #a53a31;
+  color: #084e96;
+  -webkit-text-fill-color: #084e96;
+}
+
+a.inline-link:active,
+a.text-link:active {
+  color: #063d77;
+  -webkit-text-fill-color: #063d77;
 }
 
 .text-link[aria-current='page'] {
-  color: #c1453b;
-  -webkit-text-fill-color: #c1453b;
+  color: #0a66c2;
+  -webkit-text-fill-color: #0a66c2;
 }
 
 ol.numbered-steps {
@@ -589,23 +593,28 @@ a.btn-on-dark:visited,
     font-family: theme('fontFamily.sans');
     font-size: 0.875rem;
     font-weight: 600;
-    color: theme('colors.brand.DEFAULT');
+    color: theme('colors.cta.DEFAULT');
     text-decoration: none;
     transition: color 150ms ease-out;
   }
 
   .text-link:hover {
-    color: theme('colors.brand.hover');
+    color: theme('colors.cta.hover');
   }
 
   .text-link:link,
   .text-link:visited {
-    color: theme('colors.brand.DEFAULT');
+    color: theme('colors.cta.DEFAULT');
   }
 
   .text-link:hover,
   .text-link:visited:hover {
-    color: theme('colors.brand.hover');
+    color: theme('colors.cta.hover');
+  }
+
+  .text-link:active,
+  .text-link:visited:active {
+    color: theme('colors.cta.active');
   }
 
   /*
@@ -627,15 +636,23 @@ a.btn-on-dark:visited,
   }
 
   .inline-link {
-    color: theme('colors.brand.DEFAULT');
+    color: theme('colors.cta.DEFAULT');
     font-weight: 600;
     text-decoration: none;
     transition: color 150ms ease-out;
   }
 
+  .inline-link:hover {
+    color: theme('colors.cta.hover');
+  }
+
+  .inline-link:active {
+    color: theme('colors.cta.active');
+  }
+
   .text-link:focus-visible,
   .inline-link:focus-visible {
-    outline: 2px solid theme('colors.brand.DEFAULT');
+    outline: 2px solid theme('colors.cta.DEFAULT');
     outline-offset: 2px;
   }
 }
