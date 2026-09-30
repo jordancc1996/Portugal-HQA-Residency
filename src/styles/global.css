@@ -392,24 +392,21 @@ a.btn-on-dark:visited,
       color 150ms ease-out;
   }
 
-  .btn-primary {
-    background-color: theme('colors.brand.DEFAULT');
-    color: #ffffff;
-    border: 1px solid transparent;
-  }
-
-  .btn-primary:hover {
-    background-color: theme('colors.brand.hover');
-  }
-
+  .btn-primary,
   .btn-cta {
     background-color: theme('colors.cta.DEFAULT');
     color: #ffffff;
     border: 1px solid transparent;
   }
 
+  .btn-primary:hover,
   .btn-cta:hover {
     background-color: theme('colors.cta.hover');
+  }
+
+  .btn-primary:active,
+  .btn-cta:active {
+    background-color: theme('colors.cta.active');
   }
 
   .btn-primary:focus-visible,

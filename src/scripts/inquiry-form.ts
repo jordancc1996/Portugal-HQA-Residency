@@ -2,7 +2,7 @@ function setStatus(form: HTMLFormElement, message: string, isError = false): voi
   const status = form.querySelector<HTMLElement>('[data-form-status]');
   if (!status) return;
   status.textContent = message;
-  status.classList.toggle('text-cta', isError);
+  status.classList.toggle('text-brand', isError);
   status.classList.toggle('text-text-primary', !isError);
 }
 

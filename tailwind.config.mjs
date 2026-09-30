@@ -16,8 +16,9 @@ export default {
           tint: '#FDF1F0',
         },
         cta: {
-          DEFAULT: '#DC2626',
-          hover: '#B91C1C',
+          DEFAULT: '#0A66C2',
+          hover: '#084E96',
+          active: '#063D77',
           tint: '#FEE2E2',
         },
         border: '#E7E5E4',
