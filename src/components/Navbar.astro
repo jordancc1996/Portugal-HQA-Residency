@@ -12,15 +12,24 @@ const links = [
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+interface Props {
+  overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
 ---
 
-<header class="relative sticky top-0 z-50 bg-background">
-  <div class="hidden border-b border-stone-200 bg-stone-100 lg:block">
+<header
+  class:list={['site-header relative sticky top-0 z-50', overlay ? 'site-header--overlay' : 'bg-background']}
+  data-overlay-nav={overlay ? 'true' : undefined}
+>
+  <div class="site-header__utility hidden border-b border-stone-200 bg-stone-100 lg:block">
     <div class="site-container flex h-9 items-center justify-end">
       <LanguageSwitcher id="lang-switch-desktop" />
     </div>
   </div>
-  <div class="border-b border-border bg-background">
+  <div class="site-header__bar border-b border-border bg-background">
     <div class="site-container flex min-w-0 items-center justify-between gap-3 py-4 sm:py-6">
       <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5 text-[#1C1917] no-underline hover:text-[#1C1917] visited:text-[#1C1917]">
         <svg class="h-5 w-5 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -335,5 +344,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     window.addEventListener('resize', () => {
       if (!isDesktop()) setMegaOpen(false);
     });
+  }
+
+  const overlayHeader = document.querySelector<HTMLElement>('header[data-overlay-nav="true"]');
+  if (overlayHeader) {
+    const setScrolled = () => {
+      overlayHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
   }
 </script>

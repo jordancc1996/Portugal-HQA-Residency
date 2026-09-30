@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import JsonLd from '../components/JsonLd.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import { insightByHref } from '../data/insights';
 import {
   breadcrumbListJsonLd,
   canonicalPath,
@@ -23,6 +24,8 @@ interface Props {
 const { title, description, noindex = false, breadcrumbs, faqItems } = Astro.props;
 const path = canonicalPath(Astro.url.pathname);
 const canonical = canonicalUrl(path);
+const insight = insightByHref(path);
+const socialImage = insight ? canonicalUrl(insight.previewImage) : undefined;
 const fontHref =
   'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap';
 const crumbItems: Crumb[] =
@@ -67,6 +70,15 @@ const crumbItems: Crumb[] =
     {!noindex && <JsonLd data={organizationJsonLd()} />}
     <JsonLd data={breadcrumbListJsonLd(crumbItems, path)} />
     {faqItems && faqItems.length > 0 && <JsonLd data={faqPageJsonLd(faqItems)} />}
+    {
+      socialImage && (
+        <>
+          <meta property="og:image" content={socialImage} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={socialImage} />
+        </>
+      )
+    }
     <slot name="head" />
   </head>
   <body>

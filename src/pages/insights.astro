@@ -11,7 +11,7 @@ const metaDescription =
   'Portugal HQA visa insights collect research, guides, comparisons, and immigration analysis for Portugal residency and the HQA visa. Updated September 2026.';
 const path = '/insights';
 const canonical = canonicalUrl(path);
-const ogImage = canonicalUrl('/images/portugal-hqa-visa-program.jpg');
+const ogImage = canonicalUrl('/images/portugal-hqa-visa-insights.webp');
 
 const collectionLd = collectionPageJsonLd(
   title,
@@ -34,12 +34,14 @@ function formatUpdated(iso: string) {
 <Layout
   title={metaTitle}
   description={metaDescription}
+  overlayNav
   breadcrumbs={[
     { href: '/', label: 'Home' },
     { href: path, label: 'Insights' },
   ]}
 >
   <Fragment slot="head">
+    <link rel="preload" as="image" href="/images/portugal-hqa-visa-insights.webp" type="image/webp" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={metaTitle} />
@@ -54,11 +56,18 @@ function formatUpdated(iso: string) {
   </Fragment>
 
   <article>
-    <header class="bg-background">
-      <div class="site-container py-24 md:py-32">
-        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Insights' }]} />
-        <h1 class="mt-8 max-w-4xl">{title}</h1>
-        <p class="mt-8 max-w-3xl">
+    <header class="insights-hero relative isolate -mt-[120px] w-full overflow-hidden pt-[120px] text-white">
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/25"
+        aria-hidden="true"
+      ></div>
+      <div class="site-container relative z-10 py-24 md:py-32">
+        <Breadcrumb
+          tone="on-dark"
+          items={[{ href: '/', label: 'Home' }, { label: 'Insights' }]}
+        />
+        <h1 class="mt-8 max-w-4xl text-white">{title}</h1>
+        <p class="mt-8 max-w-3xl text-white">
           Portugal HQA visa insights collect research, guides, comparisons, immigration updates, and analysis related to Portugal residency and the Portugal HQA Visa.
         </p>
       </div>
@@ -73,7 +82,17 @@ function formatUpdated(iso: string) {
               <ul class="mt-10">
                 {group.articles.map((article) => (
                   <li class="border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0">
-                    <p class="card-eyebrow">{article.category}</p>
+                    <div class="insights-card-media">
+                      <img
+                        src={article.previewImage}
+                        alt={article.previewAlt}
+                        width="1200"
+                        height="630"
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p class="card-eyebrow mt-6">{article.category}</p>
                     <h3 class="mt-4">{article.title}</h3>
                     <p class="mt-3 font-sans text-sm text-text-secondary">
                       Updated
@@ -93,3 +112,40 @@ function formatUpdated(iso: string) {
     </div>
   </article>
 </Layout>
+
+<style>
+  .insights-hero {
+    min-height: 28rem;
+    background-color: #121314;
+    background-image: url('/images/portugal-hqa-visa-insights.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 22%;
+  }
+
+  @media (min-width: 768px) {
+    .insights-hero {
+      min-height: 36rem;
+      background-position: 50% 18%;
+    }
+  }
+
+  .insights-hero h1,
+  .insights-hero p {
+    color: #ffffff;
+  }
+
+  .insights-card-media {
+    aspect-ratio: 1200 / 630;
+    overflow: hidden;
+    background-color: #121314;
+  }
+
+  .insights-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

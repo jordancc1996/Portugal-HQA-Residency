@@ -9,9 +9,10 @@ interface Props {
   noindex?: boolean;
   breadcrumbs?: import('../lib/seo').Crumb[];
   faqItems?: import('../lib/seo').FaqEntry[];
+  overlayNav?: boolean;
 }
 
-const { title, description, noindex = false, breadcrumbs, faqItems } = Astro.props;
+const { title, description, noindex = false, breadcrumbs, faqItems, overlayNav = false } = Astro.props;
 const weglotKey = import.meta.env.PUBLIC_WEGLOT_API_KEY ?? '';
 ---
 
@@ -45,7 +46,7 @@ const weglotKey = import.meta.env.PUBLIC_WEGLOT_API_KEY ?? '';
   </Fragment>
 
   <a href="#main-content" class="skip-link">Skip to content</a>
-  <Navbar />
+  <Navbar overlay={overlayNav} />
 
   <main id="main-content" class="min-w-0 text-left" tabindex="-1">
     <slot />
