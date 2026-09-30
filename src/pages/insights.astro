@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { insightArticles, insightGroups } from '../data/insights';
+import { SITE_NAME, canonicalUrl, collectionPageJsonLd } from '../lib/seo';
+
+const title = 'Portugal HQA Visa Insights & Guides';
+const metaTitle = `${title} | ${SITE_NAME}`;
+const metaDescription =
+  'Portugal HQA visa insights collect research, guides, comparisons, and immigration analysis for Portugal residency and the HQA visa. Updated September 2026.';
+const path = '/insights';
+const canonical = canonicalUrl(path);
+const ogImage = canonicalUrl('/images/portugal-hqa-visa-program.jpg');
+
+const collectionLd = collectionPageJsonLd(
+  title,
+  metaDescription,
+  path,
+  insightArticles.map((article) => ({ href: article.href, name: article.title })),
+);
+
+function formatUpdated(iso: string) {
+  const [year, month, day] = iso.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  breadcrumbs={[
+    { href: '/', label: 'Home' },
+    { href: path, label: 'Insights' },
+  ]}
+>
+  <Fragment slot="head">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <JsonLd data={collectionLd} />
+  </Fragment>
+
+  <article>
+    <header class="bg-background">
+      <div class="site-container py-24 md:py-32">
+        <Breadcrumb items={[{ href: '/', label: 'Home' }, { label: 'Insights' }]} />
+        <h1 class="mt-8 max-w-4xl">{title}</h1>
+        <p class="mt-8 max-w-3xl">
+          Portugal HQA visa insights collect research, guides, comparisons, immigration updates, and analysis related to Portugal residency and the Portugal HQA Visa.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        {
+          insightGroups.map((group) => (
+            <section class="mt-24 first:mt-0">
+              <h2>{group.heading}</h2>
+              <ul class="mt-10">
+                {group.articles.map((article) => (
+                  <li class="border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0">
+                    <p class="card-eyebrow">{article.category}</p>
+                    <h3 class="mt-4">{article.title}</h3>
+                    <p class="mt-3 font-sans text-sm text-text-secondary">
+                      Updated
+                      <time datetime={article.updated}>{formatUpdated(article.updated)}</time>
+                    </p>
+                    <p class="mt-4">{article.description}</p>
+                    <a href={article.href} class="text-link mt-6">
+                      Read more <span aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </article>
+</Layout>

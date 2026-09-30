@@ -73,6 +73,7 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-vs-digital-nomad-visa | Portugal HQA Visa vs Digital Nomad Visa - Local Host or Remote Work | comparison spoke | Portugal HQA visa vs digital nomad visa | published |
 | portugal-hqa-visa-vs-tech-visa | Portugal HQA Visa vs Tech Visa - Residence Heading or Hiring Path | comparison spoke | Portugal HQA visa vs Tech Visa | published |
 | portugal-hqa-visa-vs-eu-blue-card | Portugal HQA Visa vs EU Blue Card - National Route or EU Permit | comparison spoke | Portugal HQA visa vs EU Blue Card | published |
+| insights | Portugal HQA Visa Insights & Guides | editorial hub | Portugal HQA visa insights | published |
 
 ## H2 inventory
 
@@ -109,6 +110,7 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-vs-digital-nomad-visa | Side by side; Which is right for you |
 | portugal-hqa-visa-vs-tech-visa | Side by side; Which is right for you |
 | portugal-hqa-visa-vs-eu-blue-card | Side by side; Which is right for you |
+| insights | Program and legal basis; Eligibility and process; Cost, investment, and tax; Family and long-term status; Research hosts; Audience and professional support; Comparisons |
 
 ## Keyword ownership
 
@@ -145,6 +147,7 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-vs-digital-nomad-visa | Portugal HQA visa vs digital nomad visa | HQA versus D8; local host versus remote work | Portugal HQA visa eligibility (primary); Portugal HQA visa permanent residency (primary) |
 | portugal-hqa-visa-vs-tech-visa | Portugal HQA visa vs Tech Visa | Tech Visa hiring path; facilitation versus permit | Portugal HQA visa eligibility (primary); Portugal HQA visa vs EU Blue Card (primary) |
 | portugal-hqa-visa-vs-eu-blue-card | Portugal HQA visa vs EU Blue Card | national HQA versus EU Blue Card; Blue Card mobility | Portugal HQA visa eligibility (primary); Portugal HQA visa university (primary) |
+| insights | Portugal HQA visa insights | Portugal HQA visa guides; Portugal residency analysis; HQA immigration updates | Portugal HQA visa (primary); Portugal HQA visa requirements (primary); Portugal HQA visa application (primary) |
 
 ## Changelog
 
@@ -154,3 +157,4 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | 2026-09-16 | Registered `/portugal-hqa-visa-for-americans`, `/portugal-hqa-visa-lawyer`, `/portugal-hqa-visa-consultant` (OUTCOME A for Americans overlay; OUTCOME B lawyer ≠ consultant). |
 | 2026-09-16 | Registered six comparison pages (OUTCOME A). Each vs-slug is a distinct heading; overlap with eligibility, investment, cost, university, and permanent-residency stays below 30 as those pages do not own the other-route primary. |
 | 2026-09-17 | Registered `/portugal-hqa-visa-for-h1b-holders` (OUTCOME A). Distinct from `/portugal-hqa-visa-for-americans` (tax/passport overlay). Specificity token is h1b-holders. |
+| 2026-09-29 | Registered `/insights` (OUTCOME A). Editorial index hub. Does not own any existing article primary. Specificity token is insights. |

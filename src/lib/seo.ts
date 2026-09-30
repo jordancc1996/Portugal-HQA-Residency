@@ -72,3 +72,37 @@ export function faqPageJsonLd(entries: FaqEntry[]) {
     })),
   };
 }
+
+export type CollectionListItem = {
+  href: string;
+  name: string;
+};
+
+export function collectionPageJsonLd(
+  name: string,
+  description: string,
+  pathname: string,
+  items: CollectionListItem[],
+  origin = SITE_ORIGIN,
+) {
+  const url = canonicalUrl(pathname, origin);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url,
+    isPartOf: {
+      '@id': `${origin}/#organization`,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: absoluteUrl(item.href, origin),
+      })),
+    },
+  };
+}
