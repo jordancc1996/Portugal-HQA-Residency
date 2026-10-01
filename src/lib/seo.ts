@@ -78,6 +78,25 @@ export type CollectionListItem = {
   name: string;
 };
 
+export function newsArticleJsonLd(
+  headline: string,
+  datePublished: string,
+  pathname: string,
+  origin = SITE_ORIGIN,
+) {
+  const url = canonicalUrl(pathname, origin);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline,
+    datePublished,
+    mainEntityOfPage: url,
+    publisher: {
+      '@id': `${origin}/#organization`,
+    },
+  };
+}
+
 export function collectionPageJsonLd(
   name: string,
   description: string,

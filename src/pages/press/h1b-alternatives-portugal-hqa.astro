@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { pressReleaseByHref } from '../../data/press';
+import { SITE_NAME, canonicalUrl, newsArticleJsonLd } from '../../lib/seo';
+
+const release = pressReleaseByHref('/press/h1b-alternatives-portugal-hqa');
+if (!release) {
+  throw new Error('Missing press release data for /press/h1b-alternatives-portugal-hqa');
+}
+
+const title = 'H-1B Alternatives & Portugal HQA Program | Press Release';
+const headline =
+  "H-1B Alternatives: New Guide Reveals Why Qualified Professionals Are Choosing Portugal's Highly Qualified Activity Visa Over U.S. Employer Sponsorship";
+const metaDescription =
+  "On October 1, 2026, Portugal HQA Residency published a guide examining the HQA residence route for professionals evaluating alternatives to H-1B visas.";
+const path = release.href;
+const canonical = canonicalUrl(path);
+const crumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/press', label: 'Press Room' },
+  { label: headline },
+];
+
+function formatPublished(iso: string) {
+  const [year, month, day] = iso.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+---
+
+<Layout title={title} description={metaDescription} noindex={!release.indexable} breadcrumbs={crumbs}>
+  {
+    release.indexable && (
+      <Fragment slot="head">
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonical} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={metaDescription} />
+        <JsonLd data={newsArticleJsonLd(headline, release.published, path)} />
+      </Fragment>
+    )
+  }
+
+  <article>
+    <header class="bg-background">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <Breadcrumb items={crumbs} />
+        <p class="card-eyebrow mt-8">Press release</p>
+        <h1 class="mt-4">{headline}</h1>
+        <p class="mt-6">
+          Portugal HQA Residency examines the HQA residence route as a credible European alternative for experienced professionals in technology, engineering, finance, healthcare, and research facing H-1B instability.
+        </p>
+        <p class="mt-6 font-sans text-sm text-text-secondary">
+          <time datetime={release.published}>{formatPublished(release.published)}</time>
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <p>
+          H-1B alternatives are drawing serious attention from professionals in the United States, and a new guide published by Portugal HQA Residency identifies Portugal's Highly Qualified Activity residence route as one option for experienced professionals, founders, and researchers seeking a European residence pathway based on credentials and qualifying activity rather than continued dependence on U.S. employer sponsorship or passive investment.
+        </p>
+
+        <section class="mt-24">
+          <h2>Why H-1B Professionals Are Actively Searching for Alternatives</h2>
+          <p class="mt-6">
+            H-1B status is tied to qualifying U.S. employment. When employment ends, a discretionary grace period of up to 60 consecutive calendar days may apply, subject to the worker's authorized validity period and applicable immigration requirements.
+          </p>
+          <p class="mt-4">
+            Recent U.S. immigration developments have added new considerations for professionals evaluating long-term options. A September 2026 presidential proclamation introduced a $100,000 payment requirement affecting certain H-1B petitions and entry for workers outside the United States, subject to specified exceptions.
+          </p>
+          <p class="mt-4">
+            Employment-based green card backlogs also remain an important consideration for many Indian professionals. The September 2026 Department of State Visa Bulletin continued to show heavily backlogged employment-based priority dates for India.
+          </p>
+          <p class="mt-4">
+            These conditions may lead some H-1B professionals to evaluate additional residence options that do not depend exclusively on a single U.S. employer or the employment-based U.S. permanent-residence process.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>What the Portugal HQA Visa Actually Is</h2>
+          <p class="mt-6">
+            The guide clarifies that the Portugal HQA Visa is a commercial program name, not a distinct visa category under Portuguese law.
+          </p>
+          <p class="mt-4">
+            The underlying legal route involves a residence visa for highly qualified activity and, where applicable, a residence permit under Article 90 of Portugal's immigration framework.
+          </p>
+          <p class="mt-4">
+            Certain commercial HQA programs may pair a qualifying professional with a research and development project and Portuguese university partner. These commercial arrangements are separate from the statutory immigration requirements.
+          </p>
+          <p class="mt-4">
+            Portuguese authorities independently determine eligibility based on the applicable legal requirements, including evidence of highly qualified activity and appropriate professional qualifications and arrangements.
+          </p>
+          <p class="mt-4">H-1B status does not itself confer eligibility.</p>
+          <p class="mt-4">Professionals must independently meet Portugal's requirements.</p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Who This H-1B Alternative May Be Relevant For</h2>
+          <p class="mt-6">
+            The Portugal HQA pathway may be particularly relevant to qualifying professionals working in technology, engineering, finance, healthcare, research, and other specialized fields that may align with highly qualified activity in Portugal.
+          </p>
+          <p class="mt-4">
+            The route may suit an experienced professional, founder, researcher, executive, or technical specialist with credible qualifying activity and the necessary professional background and resources.
+          </p>
+          <p class="mt-4">
+            The guide also notes that the route may not be appropriate for someone seeking a low-cost passive investment or immediate Portuguese citizenship.
+          </p>
+          <p class="mt-4">
+            Under changes to Portugal's nationality law that entered into force on May 19, 2026, the residence requirement for naturalization is generally 10 years for nationals of countries outside the European Union and Portuguese-speaking countries, subject to the applicable nationality requirements and transitional rules.
+          </p>
+          <p class="mt-4">Citizenship is not automatic.</p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Costs, Process, and Timeline</h2>
+          <p class="mt-6">
+            Commercial HQA programs may charge separate fees for services including project development, university collaboration, business support, and application assistance.
+          </p>
+          <p class="mt-4">
+            These commercial program fees are separate from Portuguese government immigration requirements.
+          </p>
+          <p class="mt-4">
+            The process generally involves defining the qualifying professional or research activity, preparing the required documentation, applying for the appropriate residence visa, entering Portugal following issuance of the visa, and completing the applicable residence authorization process with AIMA.
+          </p>
+          <p class="mt-4">
+            Portugal's government currently states a 30-day decision period for the residence visa for research or highly qualified activity and says this visa receives maximum priority.
+          </p>
+          <p class="mt-4">
+            This stated decision period should not be interpreted as a guarantee that every individual application will be completed within exactly 30 days.
+          </p>
+          <p class="mt-4">
+            Actual processing of subsequent residence authorization stages may vary by case and administrative circumstances.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>How It Compares to Portugal's Golden Visa and Other H-1B Alternatives</h2>
+          <p class="mt-6">
+            Unlike Portugal's Golden Visa, formally the Residence Permit for Investment Activity (ARI), the highly qualified route is based primarily on qualifying professional or research activity rather than satisfying an investment-based residence requirement.
+          </p>
+          <p class="mt-4">
+            Portugal's Golden Visa contains multiple qualifying investment routes and should not be characterized as a single universal investment threshold.
+          </p>
+          <p class="mt-4">
+            For professionals who independently satisfy the applicable requirements, Portuguese residence may provide a longer-term pathway toward permanent residence and potentially Portuguese citizenship, subject to the legal requirements in effect at the relevant time.
+          </p>
+          <p class="mt-4">
+            H-1B professionals interested in evaluating whether their background and goals align with Portugal's HQA pathway can read the <a href="/alternatives-to-h1b-visas-portugal-hqa" class="inline-link">full guide to alternatives to H-1B visas</a>.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>About Portugal HQA Residency</h2>
+          <p class="mt-6">
+            Portugal HQA Residency provides information about Portugal's Highly Qualified Activity residence route and related residence options for internationally mobile professionals.
+          </p>
+          <p class="mt-4">
+            Content is for general informational purposes only and does not constitute legal, immigration, investment, or tax advice.
+          </p>
+          <p class="mt-4">
+            Applicants should consult qualified Portuguese and U.S. immigration and tax professionals before making filing, investment, or relocation decisions.
+          </p>
+        </section>
+      </div>
+    </div>
+  </article>
+</Layout>

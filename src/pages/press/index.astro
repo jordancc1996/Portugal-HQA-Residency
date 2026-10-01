@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { pressReleasesByDate } from '../../data/press';
+import { SITE_NAME, canonicalUrl, collectionPageJsonLd } from '../../lib/seo';
+
+const title = 'Portugal HQA Residency Press Room';
+const metaTitle = `${title} | ${SITE_NAME}`;
+const metaDescription =
+  "News, announcements, and media resources from Portugal HQA Residency on Portugal's highly qualified residence pathway.";
+const path = '/press';
+const canonical = canonicalUrl(path);
+const crumbs = [
+  { href: '/', label: 'Home' },
+  { href: path, label: 'Press Room' },
+];
+
+const collectionLd = collectionPageJsonLd(
+  title,
+  metaDescription,
+  path,
+  pressReleasesByDate.map((release) => ({ href: release.href, name: release.title })),
+);
+
+function formatPublished(iso: string) {
+  const [year, month, day] = iso.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+---
+
+<Layout title={metaTitle} description={metaDescription} breadcrumbs={crumbs}>
+  <Fragment slot="head">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <JsonLd data={collectionLd} />
+  </Fragment>
+
+  <article>
+    <header class="bg-background">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <Breadcrumb items={crumbs} />
+        <p class="card-eyebrow mt-8">Press room</p>
+        <h1 class="mt-4">{title}</h1>
+        <p class="mt-8">
+          News, announcements, and media resources from Portugal HQA Residency covering Portugal's highly qualified residence pathway, international mobility, and residency options for highly skilled professionals.
+        </p>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <h2>Latest releases</h2>
+        <ul class="mt-10">
+          {
+            pressReleasesByDate.map((release) => (
+              <li class="border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0">
+                <div class="insights-card-media">
+                  <img
+                    src={release.previewImage}
+                    alt={release.previewAlt}
+                    width="1200"
+                    height="630"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <p class="card-eyebrow mt-6">Press release</p>
+                <h3 class="mt-4">{release.title}</h3>
+                <p class="mt-3 font-sans text-sm text-text-secondary">
+                  <time datetime={release.published}>{formatPublished(release.published)}</time>
+                </p>
+                <p class="mt-4">{release.description}</p>
+                <a href={release.href} class="text-link mt-6">
+                  Read release <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .insights-card-media {
+    aspect-ratio: 1200 / 630;
+    overflow: hidden;
+    background-color: #121314;
+  }
+
+  .insights-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

@@ -105,4 +105,8 @@ export const megaMenuColumns: { title: string; links: SitemapLink[] }[] = [
       { href: '/portugal-hqa-visa-citizenship', label: 'Citizenship', role: 'spoke' },
     ],
   },
+  {
+    title: 'Media',
+    links: [{ href: '/press', label: 'Press Room', role: 'hub' }],
+  },
 ];

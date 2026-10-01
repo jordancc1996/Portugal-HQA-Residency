@@ -374,6 +374,31 @@ export const insightGroups: InsightGroup[] = [
 
 export const insightArticles = insightGroups.flatMap((group) => group.articles);
 
+function publicationTimestamp(iso: string): number {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) {
+    throw new Error(`Insights article is missing a valid date: ${iso}`);
+  }
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const time = Date.UTC(year, month - 1, day);
+  const check = new Date(time);
+  if (check.getUTCFullYear() !== year || check.getUTCMonth() !== month - 1 || check.getUTCDate() !== day) {
+    throw new Error(`Insights article has an invalid date: ${iso}`);
+  }
+  return time;
+}
+
+/** Newest publication date first. Same dates keep the existing source order. */
+export const insightArticlesByPublication = insightArticles
+  .map((article, index) => ({ article, index }))
+  .sort((a, b) => {
+    const delta = publicationTimestamp(b.article.updated) - publicationTimestamp(a.article.updated);
+    return delta !== 0 ? delta : a.index - b.index;
+  })
+  .map(({ article }) => article);
+
 export function insightByHref(href: string): InsightArticle | undefined {
   const path = href.replace(/\/+$/, '') || '/';
   return insightArticles.find((article) => article.href === path);

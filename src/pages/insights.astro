@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { insightArticles, insightGroups } from '../data/insights';
+import { insightArticles, insightArticlesByPublication } from '../data/insights';
 import { SITE_NAME, canonicalUrl, collectionPageJsonLd } from '../lib/seo';
 
 const title = 'Portugal HQA Visa Insights & Guides';
@@ -75,39 +75,34 @@ function formatUpdated(iso: string) {
 
     <div class="bg-background-alt">
       <div class="site-container max-w-3xl py-24 md:py-32">
-        {
-          insightGroups.map((group) => (
-            <section class="mt-24 first:mt-0">
-              <h2>{group.heading}</h2>
-              <ul class="mt-10">
-                {group.articles.map((article) => (
-                  <li class="border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0">
-                    <div class="insights-card-media">
-                      <img
-                        src={article.previewImage}
-                        alt={article.previewAlt}
-                        width="1200"
-                        height="630"
-                        decoding="async"
-                        loading="lazy"
-                      />
-                    </div>
-                    <p class="card-eyebrow mt-6">{article.category}</p>
-                    <h3 class="mt-4">{article.title}</h3>
-                    <p class="mt-3 font-sans text-sm text-text-secondary">
-                      Updated
-                      <time datetime={article.updated}>{formatUpdated(article.updated)}</time>
-                    </p>
-                    <p class="mt-4">{article.description}</p>
-                    <a href={article.href} class="text-link mt-6">
-                      Read more <span aria-hidden="true">→</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))
-        }
+        <ul>
+          {
+            insightArticlesByPublication.map((article) => (
+              <li class="border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0">
+                <div class="insights-card-media">
+                  <img
+                    src={article.previewImage}
+                    alt={article.previewAlt}
+                    width="1200"
+                    height="630"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <p class="card-eyebrow mt-6">{article.category}</p>
+                <h3 class="mt-4">{article.title}</h3>
+                <p class="mt-3 font-sans text-sm text-text-secondary">
+                  Updated
+                  <time datetime={article.updated}>{formatUpdated(article.updated)}</time>
+                </p>
+                <p class="mt-4">{article.description}</p>
+                <a href={article.href} class="text-link mt-6">
+                  Read more <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </article>
