@@ -32,7 +32,7 @@ permanent-residency (later residence status after legal stay) ≠ citizenship (n
 
 Site split for professional support (do not collapse these into one slug):
 
-lawyer (legal advice / representation) ≠ consultant (process and document logistics) | for-americans (US passport and tax overlay; not a separate HQA product) ≠ for-h1b-holders (H-1B status overlay; not a separate HQA product; not the Americans tax page)
+lawyer (legal advice / representation) ≠ consultant (process and document logistics) | for-americans (US passport and tax overlay; not a separate HQA product) ≠ for-h1b-holders (H-1B status overlay; not a separate HQA product; not the Americans tax page) ≠ alternatives-to-h1b-visas (US visa-alternative query; not the H-1B audience overlay)
 
 Site split for comparisons (do not collapse these into one slug):
 
@@ -65,6 +65,7 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-citizenship | Portugal HQA Visa Citizenship - Naturalization After Residence | long-term spoke | Portugal HQA visa citizenship | published |
 | portugal-hqa-visa-for-americans | Portugal HQA Visa for Americans - US Tax and Route Fit | audience | Portugal HQA visa for Americans | published |
 | portugal-hqa-visa-for-h1b-holders | Portugal HQA Visa for H-1B Holders | audience | Portugal HQA visa for H-1B holders | published |
+| alternatives-to-h1b-visas-portugal-hqa | Alternatives to H-1B Visas: The Portugal HQA Program | audience | alternatives to H-1B visas | published |
 | portugal-hqa-visa-lawyer | Portugal HQA Visa Lawyer - When Legal Counsel Helps | professional hub | Portugal HQA visa lawyer | published |
 | portugal-hqa-visa-consultant | Portugal HQA Visa Consultant - Lawyer Versus Process Support | professional spoke | Portugal HQA visa consultant | published |
 | portugal-hqa-visa-vs-golden-visa | Portugal HQA Visa vs Golden Visa - Host Route or Capital Route | comparison hub | Portugal HQA visa vs Golden Visa | published |
@@ -102,6 +103,7 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-citizenship | Residence years are not a passport; What usually sits in a nationality file; Household members file for themselves |
 | portugal-hqa-visa-for-americans | The host test does not change for a US passport; US tax does not end when you receive a Portuguese card; How Americans usually move the file |
 | portugal-hqa-visa-for-h1b-holders | Why the Portugal HQA Visa May Appeal to H-1B Holders; H-1B vs. Portugal HQA Visa; Can You Explore the Portugal HQA Visa While on H-1B?; Explore Whether You Qualify |
+| alternatives-to-h1b-visas-portugal-hqa | What Is the Portugal HQA Visa?; Why H-1B Holders Should Consider Alternatives; Costs, Process, Timeline and Golden Visa Comparison; Who May Be a Fit?; Explore Your Portugal HQA Visa Options |
 | portugal-hqa-visa-lawyer | When legal advice is the right spend; What a lawyer does not replace; How this sits next to the program guide |
 | portugal-hqa-visa-consultant | What a consultant can usefully do; What only legal counsel should answer; Choosing one, the other, or both |
 | portugal-hqa-visa-vs-golden-visa | Side by side; Which is right for you |
@@ -138,7 +140,8 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | portugal-hqa-visa-permanent-residency | Portugal HQA visa permanent residency | HQA legal stay period; HQA long-term residence | Portugal HQA visa renewal (primary); Portugal HQA visa citizenship (primary) |
 | portugal-hqa-visa-citizenship | Portugal HQA visa citizenship | HQA naturalization; Portuguese nationality after HQA | Portugal HQA visa permanent residency (primary); passport (primary) |
 | portugal-hqa-visa-for-americans | Portugal HQA visa for Americans | HQA US tax overlay; Americans HQA host test | Portugal HQA visa tax (primary); Golden Visa (primary); Portugal HQA visa for H-1B holders (primary) |
-| portugal-hqa-visa-for-h1b-holders | Portugal HQA visa for H-1B holders | H-1B Portugal residence; Indian and Chinese H-1B Portugal | Portugal HQA visa for Americans (primary); H-1B (as a US employment product primary); Golden Visa (primary) |
+| portugal-hqa-visa-for-h1b-holders | Portugal HQA visa for H-1B holders | H-1B Portugal residence; Indian and Chinese H-1B Portugal | Portugal HQA visa for Americans (primary); H-1B (as a US employment product primary); Golden Visa (primary); alternatives to H-1B visas (primary) |
+| alternatives-to-h1b-visas-portugal-hqa | alternatives to H-1B visas | H-1B visa alternatives Portugal; Portugal residence for H-1B professionals; highly qualified activity for H-1B holders | Portugal HQA visa for H-1B holders (primary); Portugal HQA visa (primary); Golden Visa (primary); Portugal HQA visa processing time (primary); Portugal HQA visa citizenship (primary) |
 | portugal-hqa-visa-lawyer | Portugal HQA visa lawyer | HQA legal counsel; when to instruct an HQA lawyer | Portugal HQA visa consultant (primary); free consultation |
 | portugal-hqa-visa-consultant | Portugal HQA visa consultant | HQA process support; lawyer versus consultant | Portugal HQA visa lawyer (primary); Portugal HQA visa application (primary) |
 | portugal-hqa-visa-vs-golden-visa | Portugal HQA visa vs Golden Visa | host versus capital ticket; HQA not a Golden Visa | Portugal HQA visa investment (primary); Portugal HQA visa cost (primary); D7 (primary) |
@@ -158,3 +161,4 @@ vs-golden-visa ≠ vs-d7 ≠ vs-d2 ≠ vs-digital-nomad-visa ≠ vs-tech-visa �
 | 2026-09-16 | Registered six comparison pages (OUTCOME A). Each vs-slug is a distinct heading; overlap with eligibility, investment, cost, university, and permanent-residency stays below 30 as those pages do not own the other-route primary. |
 | 2026-09-17 | Registered `/portugal-hqa-visa-for-h1b-holders` (OUTCOME A). Distinct from `/portugal-hqa-visa-for-americans` (tax/passport overlay). Specificity token is h1b-holders. |
 | 2026-09-29 | Registered `/insights` (OUTCOME A). Editorial index hub. Does not own any existing article primary. Specificity token is insights. |
+| 2026-09-30 | Registered `/alternatives-to-h1b-visas-portugal-hqa` (OUTCOME B). Overlap with `/portugal-hqa-visa-for-h1b-holders` scored 42: same audience, different primary (alternatives to H-1B visas versus Portugal HQA visa for H-1B holders). Specificity token is alternatives. Cross-linked. H2 "Why H-1B Holders Should Consider Alternatives" overlaps the audience page's appeal section; kept and linked rather than merged. |

@@ -273,6 +273,17 @@ export const insightGroups: InsightGroup[] = [
         previewAlt: 'Clérigos Tower rising above the rooftops of Porto at sunset',
       },
       {
+        href: '/alternatives-to-h1b-visas-portugal-hqa',
+        title: 'Alternatives to H-1B Visas: The Portugal HQA Program',
+        description:
+          "Explore alternatives to H-1B visas and how Portugal's HQA pathway may provide a European residence option for qualifying professionals, with a 30-day decision.",
+        category: 'Audience',
+        updated: '2026-09-30',
+        previewImage: '/images/alternatives-to-h1b-visas-portugal-hqa-preview.webp',
+        previewAlt:
+          'Hillside of cream buildings with terracotta roofs rising to a white clock-tower building, above a river and a bridge',
+      },
+      {
         href: '/portugal-hqa-visa-lawyer',
         title: 'Portugal HQA Visa Lawyer - When Legal Counsel Helps',
         description:

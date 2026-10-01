@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import IntakeForm from '../components/IntakeForm.astro';
+import { usImmigrationStatusField } from '../lib/intake-context';
+import { SITE_NAME, canonicalUrl } from '../lib/seo';
+
+const title = 'Alternatives to H-1B Visas: The Portugal HQA Program';
+const metaTitle = 'Alternatives to H-1B Visas | Portugal HQA Program';
+const metaDescription =
+  "Explore alternatives to H-1B visas and learn how Portugal's HQA pathway may provide qualifying highly skilled professionals with a European residence option.";
+const path = '/alternatives-to-h1b-visas-portugal-hqa';
+const canonical = canonicalUrl(path);
+const crumbs = [
+  { href: '/', label: 'Home' },
+  { label: title },
+];
+---
+
+<Layout title={metaTitle} description={metaDescription} breadcrumbs={crumbs}>
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+  </Fragment>
+
+  <article>
+    <header>
+      <HeroBanner
+        image="/images/portugal-hqa-residency-highly-qualified-activity.jpg"
+        alt="Hillside of cream buildings with terracotta roofs rising to a white clock-tower building, above a river and a bridge"
+        title={title}
+        items={crumbs}
+        width={1024}
+        height={682}
+        position="object-[center_42%]"
+      />
+      <div class="bg-background">
+        <div class="site-container py-24 md:py-32">
+          <p class="max-w-3xl">
+            For professionals exploring alternatives to H-1B visas, the <a href="/portugal-hqa-visa" class="inline-link">Portugal HQA Program</a> may offer another long-term residence option through highly qualified work, business, or a research project. Certain commercial HQA programs pair an R&amp;D project with a Portuguese university. Compared with Portugal's Golden Visa, the HQA pathway follows a different application and processing route and allows qualifying applicants to leverage their specialized professional skills and experience rather than relying primarily on an investment-based residence pathway.
+          </p>
+          <p class="mt-4 max-w-3xl">
+            For H-1B professionals considering alternatives outside the United States, Portugal may therefore provide another residence option worth exploring.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="bg-background-alt">
+      <div class="site-container max-w-3xl py-24 md:py-32">
+        <section>
+          <h2>What Is the Portugal HQA Visa?</h2>
+          <p class="mt-6">
+            The Portugal HQA Visa is a commercial program name and not a distinct visa category under Portuguese law. The underlying legal route involves a residence visa for highly qualified activity and, where applicable, a <a href="/portugal-article-90-residence-permit" class="inline-link">residence permit under Article 90</a>.
+          </p>
+          <p class="mt-4">
+            Commercial HQA providers may screen applicants for professional achievement, project leadership, available funds, and other qualifications and may arrange an R&amp;D project, university partner, and business support for the applicant.
+          </p>
+          <p class="mt-4">
+            These commercial arrangements should be distinguished from the legal immigration requirements themselves. Article 90 requires evidence of qualifying highly qualified activity and appropriate credentials, together with applicable evidence of employment, professional services, independent activity, or other qualifying arrangements.
+          </p>
+        </section>
+
+        <section class="mt-24">
+          <h2>Why H-1B Holders Should Consider Alternatives</h2>
+          <p class="mt-6">
+            H-1B status is tied to qualifying U.S. employment and is generally granted for up to three years initially, with extensions generally available for another three years and certain circumstances permitting extensions beyond the usual six-year period.
+          </p>
+          <p class="mt-4">
+            When qualifying H-1B employment ends, an individual may be eligible for a discretionary grace period of up to 60 consecutive days, or until the end of the authorized validity period, whichever is shorter. The grace period does not itself provide unrestricted authorization to begin working for another employer.
+          </p>
+          <p class="mt-4">
+            For professionals whose ability to remain in the United States depends heavily on continued employer sponsorship, establishing a separate residence option abroad may provide additional flexibility.
+          </p>
+          <p class="mt-4">
+            Many H-1B professionals work in specialized fields such as technology, engineering, finance, healthcare, and research. Those qualifications may also align with Portugal's concept of highly qualified activity, although H-1B status itself does not qualify someone for a Portuguese visa.
+          </p>
+          <p class="mt-4">
+            A professional must independently satisfy Portugal's <a href="/portugal-hqa-visa-requirements" class="inline-link">applicable requirements</a>.
+          </p>
+          <figure class="mt-10">
+            <img
+              src="/images/portugal-hqa-residency-h1b-alternatives.jpg"
+              alt="A person walks across a sunlit cobblestone plaza toward a clock-tower building, beside a wall labeled Departamento de Física"
+              width="819"
+              height="1024"
+              decoding="async"
+              loading="lazy"
+              class="h-auto w-full"
+            />
+          </figure>
+        </section>
+
+        <section class="mt-24">
+          <h2>Costs, Process, Timeline and Golden Visa Comparison</h2>
+          <p class="mt-6">
+            The Portugal HQA pathway is fundamentally different from Portugal's Golden Visa.
+          </p>
+          <p class="mt-4">
+            The standard highly qualified route is based primarily on qualifying professional activity rather than satisfying an investment-based residence requirement. <a href="/portugal-hqa-visa-vs-golden-visa" class="inline-link">Portugal's Golden Visa</a>, formally the Residence Permit for Investment Activity (ARI), instead provides several qualifying investment routes, including certain €500,000 investment options and other qualifying routes.
+          </p>
+          <p class="mt-4">
+            Commercial HQA programs may charge separate program fees for services such as project development, university collaboration, business support, and application assistance. These commercial fees are separate from the requirements imposed by Portuguese immigration law.
+          </p>
+          <p class="mt-4">
+            The process generally involves defining the qualifying professional or research activity, preparing the required documentation, applying for the appropriate residence visa, entering Portugal following issuance of the visa, and completing the applicable residence authorization process with AIMA.
+          </p>
+          <p class="mt-4">
+            Portugal's government currently states a <a href="/portugal-hqa-visa-processing-time" class="inline-link">30-day decision deadline</a> for the residence visa for highly qualified or research activity and says these applications receive maximum priority. This is an official decision timeframe and should not be interpreted as a guarantee that every individual application will be completed within exactly 30 days.
+          </p>
+          <p class="mt-4">
+            The residence visa generally permits two entries and is intended to allow the applicant to enter Portugal and pursue the subsequent residence authorization process.
+          </p>
+          <figure class="mt-10">
+            <img
+              src="/images/portugal-hqa-residency-h1b-visa.jpg"
+              alt="Black-and-white view of a stone building with a tiled roof, carved pediment, arched openings, iron balconies, and scaffolding"
+              width="1024"
+              height="576"
+              decoding="async"
+              loading="lazy"
+              class="h-auto w-full"
+            />
+          </figure>
+        </section>
+
+        <section class="mt-24">
+          <h2>Who May Be a Fit?</h2>
+          <p class="mt-6">
+            The HQA pathway may suit an experienced professional, founder, researcher, executive, or technical specialist with a credible qualifying activity and the necessary professional background and resources.
+          </p>
+          <p class="mt-4">
+            It may not fit someone seeking a low-cost passive investment or immediate Portuguese citizenship.
+          </p>
+          <figure class="mt-10">
+            <img
+              src="/images/portugal-hqa-residency-visa-alternatives.jpg"
+              alt="Limestone Gothic facade with standing statues in side niches, a sculpted group above the central window, and carved arches under a crenellated parapet"
+              width="1024"
+              height="679"
+              decoding="async"
+              loading="lazy"
+              class="h-auto w-full"
+            />
+          </figure>
+          <p class="mt-10">
+            The Portugal HQA pathway may be particularly relevant to qualifying <a href="/portugal-hqa-visa-for-h1b-holders" class="inline-link">H-1B professionals</a> because many work in specialized fields such as technology, engineering, finance, healthcare, and research that may align with Portugal's definition of highly qualified activity.
+          </p>
+          <p class="mt-4">
+            H-1B status itself does not provide eligibility for a Portuguese visa, but professionals who independently meet Portugal's requirements may be able to pursue Portuguese residence rather than relying exclusively on another temporary U.S. work status.
+          </p>
+          <p class="mt-4">
+            The highly qualified residence visa may also offer relatively fast processing, with the Portuguese government currently stating a 30-day decision deadline and maximum priority for qualifying applications, although this should not be interpreted as a guarantee that every application will be processed within 30 days.
+          </p>
+          <p class="mt-4">
+            Unlike investment-based residence programs, the standard highly qualified route is based primarily on qualifying professional activity rather than satisfying a Golden Visa investment requirement.
+          </p>
+          <p class="mt-4">
+            For eligible professionals seeking a longer-term alternative, Portuguese residence may also provide a potential pathway toward <a href="/portugal-hqa-visa-permanent-residency" class="inline-link">permanent residence</a> or <a href="/portugal-hqa-visa-citizenship" class="inline-link">Portuguese citizenship</a> if the applicable requirements are subsequently met. Citizenship is not automatic and remains subject to the nationality laws and eligibility requirements in effect when an individual applies.
+          </p>
+          <p class="mt-4">This page is informational and does not constitute legal, tax, or immigration advice.</p>
+        </section>
+      </div>
+    </div>
+
+    <section class="bg-cta-tint">
+      <div class="site-container flex flex-col items-start gap-6 py-24 md:py-32">
+        <h2 class="max-w-3xl">Explore Your Portugal HQA Visa Options</h2>
+        <p class="max-w-2xl">
+          If you're an H-1B professional exploring long-term residence opportunities in Europe, discover how your professional background and goals may align with Portugal's HQA pathway.
+        </p>
+        <p class="max-w-2xl">
+          This page is informational. It is not legal, tax, or immigration advice. US work authorization and Portuguese residence are separate systems. A licensed professional should read both against the facts of the file.
+        </p>
+        {/* TODO: no backend yet */}
+        <IntakeForm source="/alternatives-to-h1b-visas-portugal-hqa" contextField={usImmigrationStatusField} />
+      </div>
+    </section>
+  </article>
+</Layout>
