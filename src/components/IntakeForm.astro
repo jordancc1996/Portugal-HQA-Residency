@@ -32,10 +32,10 @@ const endpoint =
   import.meta.env.PUBLIC_INQUIRY_ENDPOINT?.trim() || 'https://formcarry.com/s/yernDIKc320';
 
 const fieldClass = integrated
-  ? 'inquiry-field inquiry-field-cta mt-2 box-border h-14 w-full min-w-0 rounded-lg px-4 font-sans text-base text-text-primary'
+  ? 'inquiry-field inquiry-field-cta mt-2 box-border h-12 w-full min-w-0 rounded px-4 font-sans text-base text-text-primary'
   : flush
-    ? 'inquiry-field mt-2 box-border h-14 w-full min-w-0 rounded-lg border border-border bg-white px-4 font-sans text-base text-text-primary'
-    : 'inquiry-field mt-2 w-full min-w-0 rounded-lg border border-border bg-white px-4 py-3 font-sans text-base text-text-primary';
+    ? 'inquiry-field mt-2 box-border h-12 w-full min-w-0 rounded border border-border bg-white px-4 font-sans text-base text-text-primary'
+    : 'inquiry-field mt-2 box-border h-12 w-full min-w-0 rounded border border-border bg-white px-4 font-sans text-base text-text-primary';
 
 const lookingFor = [
   'An alternative long-term residency option',
@@ -133,7 +133,7 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
             />
           </p>
           <div class="sm:col-span-2">
-            <button type="submit" class="btn-cta box-border h-14 w-full px-6 sm:w-fit">
+            <button type="submit" class="btn-cta w-full sm:w-fit">
               {submitLabel}
             </button>
           </div>
@@ -157,14 +157,14 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
             type="submit"
             class:list={[
               'btn-cta w-full shrink-0 sm:w-fit',
-              unboxed && 'box-border h-14 px-6 sm:w-auto',
+              unboxed && 'sm:w-auto',
             ]}
           >
             {submitLabel}
           </button>
         </div>
       ) : (
-        <div class:list={['grid grid-cols-1 md:grid-cols-2', integrated ? 'gap-6' : 'gap-4']}>
+        <div class:list={['grid grid-cols-1 md:grid-cols-2', integrated ? 'gap-4' : 'gap-4']}>
           <p class="min-w-0">
             <label for={`${idBase}-name`} class="font-sans text-sm font-semibold text-text-primary">
               Name <span aria-hidden="true">*</span>

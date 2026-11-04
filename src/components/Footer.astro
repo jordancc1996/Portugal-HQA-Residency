@@ -11,13 +11,13 @@ const socialLinks = [
 ---
 
 <footer id="footer" class="site-footer border-t border-stone-800 bg-stone-950 text-stone-100">
-  <div class="site-container py-24 md:py-32">
-    <div class="border-b border-stone-800 pb-16 md:pb-20">
-      <h2 class="max-w-3xl text-stone-100">Stay Informed</h2>
-      <p class="mt-6 max-w-2xl font-sans text-stone-400">
+  <div class="site-container py-12 md:py-16">
+    <div class="border-b border-stone-800 pb-8">
+      <h2 class="measure text-stone-100">Stay Informed</h2>
+      <p class="measure mt-4 font-sans text-stone-400">
         Short notes on HQA residence, university hosts, and research-route filings. This is an updates list, not an advisory request.
       </p>
-      <form id="footer-newsletter" class="mt-8 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-start" novalidate>
+      <form id="footer-newsletter" class="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-start" novalidate>
         {/* TODO: connect this form to an actual email service (Mailchimp/ConvertKit/etc.) before launch — currently non-functional. */}
         <label class="sr-only" for="footer-newsletter-email">Email address</label>
         <input
@@ -27,14 +27,14 @@ const socialLinks = [
           autocomplete="email"
           required
           placeholder="Email address"
-          class="inquiry-field mt-0 min-w-0 flex-1 rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 font-sans text-base text-stone-100 placeholder:text-stone-500"
+          class="inquiry-field mt-0 box-border h-12 min-w-0 flex-1 rounded border border-stone-700 bg-stone-900 px-4 font-sans text-base text-stone-100 placeholder:text-stone-500"
         />
         <button type="submit" class="btn-primary w-full shrink-0 sm:w-fit">Subscribe</button>
       </form>
       <p id="footer-newsletter-status" class="mt-4 font-sans text-sm text-stone-400" role="status" aria-live="polite"></p>
     </div>
 
-    <div class="grid grid-cols-1 gap-10 pt-16 md:grid-cols-12 md:pt-20">
+    <div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-12">
       <div class="col-span-full min-w-0 md:col-span-4">
         <p class="inline-block font-serif text-4xl leading-none md:text-5xl">
           <Wordmark variant="footer" class="font-serif text-4xl leading-none text-stone-100 md:text-5xl" />
@@ -45,7 +45,7 @@ const socialLinks = [
       </div>
       <div class="col-span-full md:col-span-3">
         <h3 class="text-stone-400">Program</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-4 space-y-2">
           <li>
             <a
               href="/insights"
@@ -98,7 +98,7 @@ const socialLinks = [
       </div>
       <div class="col-span-full md:col-span-2">
         <h3 class="text-stone-400">By Situation</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-4 space-y-2">
           <li>
             <a
               href="/portugal-hqa-visa-for-americans"
@@ -125,7 +125,7 @@ const socialLinks = [
             href="/contact"
             class="font-sans font-semibold text-stone-100 transition-colors duration-150 ease-out hover:text-white focus-visible:text-white"
           >
-            Discuss Your Residency Options <span aria-hidden="true">→</span>
+            Discuss your residency options <span aria-hidden="true">→</span>
           </a>
         </p>
         <p class="mt-4">
@@ -139,7 +139,7 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="mt-16 border-t border-stone-800 pt-10">
+    <div class="mt-8 border-t border-stone-800 pt-6">
       {/* TODO: replace with real social profile URLs before launch. */}
       <ul class="flex flex-wrap items-center gap-5" aria-label="Social media">
         {
@@ -199,6 +199,16 @@ const socialLinks = [
 
   .site-footer :global(h3) {
     color: #a8a29e !important;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .site-footer :global(a) {
+    font-size: 14px;
   }
 </style>
 

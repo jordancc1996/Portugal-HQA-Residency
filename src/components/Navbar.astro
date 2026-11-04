@@ -24,23 +24,18 @@ const { overlay = false } = Astro.props;
   class:list={['site-header relative sticky top-0 z-50', overlay ? 'site-header--overlay' : 'bg-background']}
   data-overlay-nav={overlay ? 'true' : undefined}
 >
-  <div class="site-header__utility hidden border-b border-stone-200 bg-stone-100 lg:block">
-    <div class="site-container flex h-9 items-center justify-end">
-      <LanguageSwitcher id="lang-switch-desktop" />
-    </div>
-  </div>
   <div class="site-header__bar border-b border-border bg-background">
-    <div class="site-container flex min-w-0 items-center justify-between gap-3 py-4 sm:py-6">
+    <div class="site-container flex min-h-20 min-w-0 items-center justify-between gap-3 py-3">
       <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5 text-[#1C1917] no-underline hover:text-[#1C1917] visited:text-[#1C1917]">
         <svg class="h-5 w-5 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path d="M5 3.2h8.4L7.8 10l5.6 6.8H5L10.2 10 5 3.2Z"></path>
         </svg>
         <Wordmark variant="nav" class="font-serif text-base leading-none sm:text-lg lg:text-xl" />
       </a>
-      <nav aria-label="Primary" class="hidden items-center gap-6 lg:flex lg:gap-8">
+      <nav aria-label="Primary" class="hidden shrink-0 items-center gap-5 lg:flex">
         {
           links.map((item) => (
-            <a href={item.href} class="nav-link font-sans text-sm font-normal">
+            <a href={item.href} class="nav-link whitespace-nowrap font-sans text-sm font-normal">
               {item.label}
             </a>
           ))
@@ -59,9 +54,9 @@ const { overlay = false } = Astro.props;
           </svg>
         </button>
       </nav>
-      <div class="hidden items-center lg:flex">
-        <a href="/contact" class="btn-cta w-fit font-semibold">Speak with our advisory team</a>
-      </div>
+      <div class="flex items-center gap-3 lg:gap-4">
+        <LanguageSwitcher id="lang-switch-header" variant="header" />
+        <a href="/contact" class="btn-cta btn-compact hidden w-fit whitespace-nowrap lg:inline-flex">Speak with our advisory team</a>
       <button
         type="button"
         id="mobile-nav-open"
@@ -74,6 +69,7 @@ const { overlay = false } = Astro.props;
           <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
         </svg>
       </button>
+      </div>
     </div>
   </div>
 
@@ -151,7 +147,7 @@ const { overlay = false } = Astro.props;
     </button>
   </div>
 
-  <a href="/contact" class="btn-cta mt-6 w-fit">Discuss Your Residency Options</a>
+  <a href="/contact" class="btn-cta mt-6 w-fit">Discuss your residency options</a>
 
   <nav aria-label="Mobile primary" class="mt-8">
     {

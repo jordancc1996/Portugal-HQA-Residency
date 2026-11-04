@@ -29,25 +29,25 @@ const glance = [
   {
     ...glanceSpokes[0],
     eyebrow: 'Eligibility',
-    cta: 'Explore Your Eligibility',
+    cta: 'Explore your eligibility',
     summary: 'A qualifying role, supporting qualifications, and a Portuguese host. Nationality, criminal-record, and subsistence rules also apply.',
   },
   {
     ...glanceSpokes[1],
     eyebrow: 'Costs',
-    cta: 'Discuss Your Residency Options',
+    cta: 'Discuss your residency options',
     summary: 'State fees plus a salary at or above the legal floor. This is not a capital-investment visa and has no Golden Visa subscription amount.',
   },
   {
     ...glanceSpokes[2],
     eyebrow: 'Timeline',
-    cta: 'Discuss Your Residency Options',
+    cta: 'Discuss your residency options',
     summary: 'Often measured in months at the consulate and at AIMA. Queues change. Confirm the current timeline before you resign a post or move household goods.',
   },
   {
     ...glanceSpokes[3],
     eyebrow: 'Long-term',
-    cta: 'Discuss Your Residency Options',
+    cta: 'Discuss your residency options',
     summary: 'Renewal, permanent residence, and naturalization follow the statutes in force after a period of legal stay. They are separate filings, not automatic upgrades.',
   },
 ];
@@ -73,8 +73,8 @@ const glance = [
               items={[{ href: '/', label: 'Home' }, { label: 'Portugal HQA Visa' }]}
             />
           </div>
-          <div class="site-container flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center">
-            <h1 class="hero-headline mx-auto w-full min-w-0 max-w-4xl text-center font-serif font-bold text-white">
+          <div class="site-container flex min-h-0 w-full min-w-0 flex-1 flex-col items-start justify-center">
+            <h1 class="hero-headline w-full min-w-0 max-w-4xl text-start font-serif font-medium text-white">
               {title}
             </h1>
           </div>
@@ -124,9 +124,9 @@ const glance = [
           </section>
         </div>
 
-        <aside class="col-span-full hidden min-w-0 lg:col-span-4 lg:block">
+        <aside class="col-span-full min-w-0 lg:col-span-4">
           <div class="card sticky top-8 p-8">
-            <h3>Cluster hubs</h3>
+            <h3>Related guides</h3>
             <ul class="mt-6 space-y-3">
               {
                 clusterHubs.map((item) => (
@@ -159,26 +159,21 @@ const glance = [
             <p class="mt-6" data-scroll-reveal>
               Use these summaries as a map. Each item opens the full page for tests, figures, and caveats. Figures change. Confirm current AIMA and consular instructions before you file.
             </p>
-            <dl class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {
                 glance.map((item) => (
-                  <div class="card flex h-full flex-col p-8" data-scroll-reveal>
+                  <a href={item.href} class="card flex h-full flex-col p-8" data-scroll-reveal>
                     <p class="card-eyebrow">{item.eyebrow}</p>
-                    <dt>
-                      <a href={item.href} class="mt-4 block font-serif text-2xl font-medium text-text-primary">
-                        {item.label}
-                      </a>
-                    </dt>
-                    <dd class="mt-4 flex-1">{item.summary}</dd>
-                    <dd class="mt-auto pt-6">
-                      <a href={item.href} class="btn-primary w-full">
-                        {item.cta}
-                      </a>
-                    </dd>
-                  </div>
+                    <p class="mt-4 font-serif text-2xl font-medium text-text-primary">{item.label}</p>
+                    <p class="mt-4 flex-1">{item.summary}</p>
+                    <span class="text-link mt-6">
+                      {item.cta} <span aria-hidden="true">→</span>
+                    </span>
+                  </a>
                 ))
               }
-            </dl>
+            </div>
+            <a href="/contact" class="btn-cta mt-12">Discuss your residency options</a>
           </section>
 
           <section class="mt-24">
@@ -219,40 +214,7 @@ const glance = [
             </p>
           </section>
 
-          <nav class="mt-16 lg:hidden" aria-label="Cluster hubs">
-            <div class="card p-8" data-scroll-reveal>
-              <h3>Cluster hubs</h3>
-              <ul class="mt-6 space-y-3">
-                {
-                  clusterHubs.map((item) => (
-                    <li>
-                      <a href={item.href} class="text-link">
-                        {item.label} <span aria-hidden="true">→</span>
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </nav>
         </div>
-
-        <aside class="col-span-full hidden min-w-0 lg:col-span-4 lg:block">
-          <div class="card sticky top-8 p-8">
-            <h3>Cluster hubs</h3>
-            <ul class="mt-6 space-y-3">
-              {
-                clusterHubs.map((item) => (
-                  <li>
-                    <a href={item.href} class="text-link">
-                      {item.label} <span aria-hidden="true">→</span>
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </aside>
       </div>
     </div>
 

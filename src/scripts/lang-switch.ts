@@ -18,8 +18,13 @@ function paintSwitchers(): void {
 
   document.querySelectorAll<HTMLButtonElement>('.lang-switch [data-lang]').forEach((button) => {
     const active = button.dataset.lang === lang;
-    button.setAttribute('aria-current', active ? 'true' : 'false');
+    if (active) button.setAttribute('aria-current', 'true');
+    else button.removeAttribute('aria-current');
     button.classList.toggle('is-active', active);
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-lang-current]').forEach((label) => {
+    label.textContent = lang.toUpperCase();
   });
 }
 
@@ -34,6 +39,7 @@ function bindSwitchers(): void {
         window.Weglot.switchTo(code);
       }
       paintSwitchers();
+      button.closest('details')?.removeAttribute('open');
     });
 
     button.addEventListener('keydown', (event) => {

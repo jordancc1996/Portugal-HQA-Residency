@@ -8,28 +8,28 @@ const clusters = [
     description:
       'Role, qualifications, and host-entity tests that AIMA and consular posts use to decide whether an activity counts as highly qualified.',
     href: '/portugal-hqa-visa-requirements',
-    linkLabel: 'Explore Your Eligibility',
+    linkLabel: 'Explore your eligibility',
   },
   {
     title: 'Costs & Investment',
     description:
       'Government fees, salary floors, and professional costs. This route is not a capital-investment visa and does not use Golden Visa subscription amounts.',
     href: '/portugal-hqa-visa-cost',
-    linkLabel: 'Discuss Your Residency Options',
+    linkLabel: 'Discuss your residency options',
   },
   {
     title: 'Application Process',
     description:
       'Document assembly, consular or in-country filing, biometrics, and residence-card issuance, in the order most files actually move.',
     href: '/portugal-hqa-visa-application',
-    linkLabel: 'Discuss Your Residency Options',
+    linkLabel: 'Discuss your residency options',
   },
   {
     title: 'Bringing Your Family',
     description:
       'How a spouse and dependent children can be included, what proof of family relationship is required, and when they receive their own residence cards.',
     href: '/portugal-hqa-visa-family',
-    linkLabel: 'Discuss Your Residency Options',
+    linkLabel: 'Discuss your residency options',
   },
 ];
 ---
@@ -44,7 +44,7 @@ const clusters = [
   <section class="bg-surface-dark">
     <div class="flex min-h-[85vh] min-w-0 flex-col lg:grid lg:grid-cols-[minmax(0,60%)_minmax(0,40%)]">
       <div class="hero-panel order-2 flex min-w-0 flex-1 flex-col justify-center bg-surface-dark px-5 py-12 sm:px-8 lg:order-1 lg:px-16 lg:py-24">
-        <h1 class="hero-headline min-w-0 w-full font-serif font-bold text-white">
+        <h1 class="hero-headline min-w-0 w-full font-serif font-medium text-white">
           <span>Residence in Portugal</span>
           <span>for highly qualified work</span>
         </h1>
@@ -52,8 +52,8 @@ const clusters = [
           The Portugal HQA Residency provides qualified professionals with a pathway to Portuguese residency based on their professional role, the organization supporting them, and the strength of their application.
         </p>
         <div class="mt-10 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          <a href="/contact" class="btn-cta w-full sm:w-fit">Discuss Your Residency Options</a>
-          <a href="/portugal-hqa-visa" class="btn-on-dark w-full sm:w-fit">Explore Your Eligibility</a>
+          <a href="/contact" class="btn-cta w-full sm:w-fit">Discuss your residency options</a>
+          <a href="/portugal-hqa-visa" class="btn-on-dark w-full sm:w-fit">Explore your eligibility</a>
         </div>
       </div>
       <div class="order-1 flex h-[45vh] min-h-[16rem] min-w-0 w-full p-4 sm:p-6 lg:order-2 lg:h-auto lg:min-h-[85vh] lg:p-8">
@@ -93,19 +93,18 @@ const clusters = [
       <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {
           clusters.map((item) => (
-            <article class="card cluster-card flex h-full flex-col p-8 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[5px] hover:border-brand hover:shadow-[0_12px_32px_rgba(28,25,23,0.10)]" data-scroll-reveal>
+            <a href={item.href} class="card cluster-card flex h-full flex-col p-8" data-scroll-reveal>
               <h3>{item.title}</h3>
               <p class="mt-4 flex-1">{item.description}</p>
-              <a href={item.href} class="btn-primary mt-auto w-full gap-2">
+              <span class="text-link mt-6">
                 {item.linkLabel}
-                <span class="cluster-card-arrow" aria-hidden="true">
-                  →
-                </span>
-              </a>
-            </article>
+                <span class="cluster-card-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
           ))
         }
       </div>
+      <a href="/contact" class="btn-cta mt-12">Discuss your residency options</a>
     </div>
   </section>
 
@@ -170,7 +169,7 @@ const clusters = [
   <section class="bg-cta-tint">
     <div class="site-container flex flex-col items-start gap-8 py-24 md:py-32">
       <h2 class="max-w-3xl" data-scroll-reveal>Discuss whether the HQA route fits the role and the household</h2>
-      <a href="/contact" class="btn-cta">Discuss Your Residency Options</a>
+      <a href="/contact" class="btn-cta">Discuss your residency options</a>
     </div>
   </section>
 </Layout>
