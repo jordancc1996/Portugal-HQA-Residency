@@ -17,18 +17,30 @@ const socialLinks = [
       <p class="measure mt-4 font-sans text-stone-400">
         Short notes on HQA residence, university hosts, and research-route filings. This is an updates list, not an advisory request.
       </p>
-      <form id="footer-newsletter" class="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-start" novalidate>
+      <form id="footer-newsletter" class="mt-6 flex max-w-xl flex-col gap-3" novalidate>
         {/* TODO: connect this form to an actual email service (Mailchimp/ConvertKit/etc.) before launch — currently non-functional. */}
-        <label class="sr-only" for="footer-newsletter-email">Email address</label>
-        <input
-          id="footer-newsletter-email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-          placeholder="Email address"
-          class="inquiry-field mt-0 box-border h-12 min-w-0 flex-1 rounded border border-stone-700 bg-stone-900 px-4 font-sans text-base text-stone-100 placeholder:text-stone-500"
-        />
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-start">
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input
+            id="footer-newsletter-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="Email address"
+            class="inquiry-field mt-0 box-border h-12 min-w-0 flex-1 rounded border border-stone-700 bg-stone-900 px-4 font-sans text-base text-stone-100 placeholder:text-stone-500"
+          />
+          <label class="sr-only" for="footer-newsletter-linkedin">LinkedIn URL</label>
+          <input
+            id="footer-newsletter-linkedin"
+            name="linkedin"
+            type="url"
+            inputmode="url"
+            autocomplete="url"
+            placeholder="LinkedIn URL"
+            class="inquiry-field mt-0 box-border h-12 min-w-0 flex-1 rounded border border-stone-700 bg-stone-900 px-4 font-sans text-base text-stone-100 placeholder:text-stone-500"
+          />
+        </div>
         <button type="submit" class="btn-primary w-full shrink-0 sm:w-fit">Subscribe</button>
       </form>
       <p id="footer-newsletter-status" class="mt-4 font-sans text-sm text-stone-400" role="status" aria-live="polite"></p>
@@ -36,8 +48,8 @@ const socialLinks = [
 
     <div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-12">
       <div class="col-span-full min-w-0 md:col-span-4">
-        <p class="inline-block font-serif text-4xl leading-none md:text-5xl">
-          <Wordmark variant="footer" class="font-serif text-4xl leading-none text-stone-100 md:text-5xl" />
+        <p class="inline-block leading-none">
+          <Wordmark variant="footer" />
         </p>
         <p class="mt-4 max-w-md text-stone-400">
           Information on Portugal's Highly Qualified Activity residence route. This site does not provide legal, tax, or immigration advice. Speak with a licensed professional about your circumstances.
@@ -187,8 +199,7 @@ const socialLinks = [
 </footer>
 
 <style>
-  .site-footer :global(.wordmark),
-  .site-footer :global(.wordmark [data-wordmark-part]) {
+  .site-footer :global(.wordmark) {
     color: #f5f5f4 !important;
     -webkit-text-fill-color: #f5f5f4 !important;
   }
@@ -199,7 +210,7 @@ const socialLinks = [
 
   .site-footer :global(h3) {
     color: #a8a29e !important;
-    font-family: Inter, system-ui, sans-serif;
+    font-family: Inter, "Helvetica Neue", sans-serif;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -216,6 +227,7 @@ const socialLinks = [
   const form = document.getElementById('footer-newsletter') as HTMLFormElement | null;
   const status = document.getElementById('footer-newsletter-status');
   const email = document.getElementById('footer-newsletter-email') as HTMLInputElement | null;
+  const linkedin = document.getElementById('footer-newsletter-linkedin') as HTMLInputElement | null;
 
   if (form && status && email && form.dataset.bound !== 'true') {
     form.dataset.bound = 'true';
@@ -224,6 +236,11 @@ const socialLinks = [
       if (!email.validity.valid) {
         status.textContent = 'Enter a valid email address.';
         email.reportValidity();
+        return;
+      }
+      if (linkedin && linkedin.value.trim() && !linkedin.validity.valid) {
+        status.textContent = 'Enter a full LinkedIn URL, including https://.';
+        linkedin.reportValidity();
         return;
       }
       // TODO: connect this form to an actual email service (Mailchimp/ConvertKit/etc.) before launch — currently non-functional.

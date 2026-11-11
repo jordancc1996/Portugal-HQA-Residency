@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Amp from '../components/Amp.astro';
+import EditorialHeading from '../components/EditorialHeading.astro';
 ---
 
 <BaseLayout
@@ -11,8 +12,15 @@ import Amp from '../components/Amp.astro';
   <main class="site-container py-24 md:py-32">
     <h1>Portugal HQA Residency style guide</h1>
     <p class="mt-6 max-w-2xl">
-      Temporary token board for visual QA. Brand coral (#C1453B) is the general accent. CTA and text-link blue (#0A66C2) is the filled button color and the standard in-page link color.
+      Temporary token board for visual QA. Filled buttons use #4673BD, adjusted from #4A77C1 so white text clears WCAG AA. In-page links use #315DA4. Headings and body stay near-black on white.
     </p>
+
+    <section class="mt-24">
+      <h2>Layout</h2>
+      <p class="mt-6 max-w-2xl">
+        The page frame is 1440px. Reading sections use site-container with max-w-3xl, which resolves to a centered 720px column. Card grids, figures, and wide-container sections resolve to 1200px. Editorial headings fill that same container, with the rules and the following paragraph sharing one width. Paragraphs stay left-aligned. Section padding is 48px, and 64px from 768px. Do not add a second max-width on a paragraph inside these containers.
+      </p>
+    </section>
 
     <section class="mt-24">
       <h2>Type scale</h2>
@@ -21,7 +29,7 @@ import Amp from '../components/Amp.astro';
         <h2>Application, documents, and family coverage</h2>
         <h3>What the Highly Qualified Activity route requires</h3>
         <div>
-          <h2>Eligibility & Requirements</h2>
+          <EditorialHeading>Eligibility & Requirements</EditorialHeading>
           <p class="mt-3">
             Manual helper when a span is required: Costs <Amp /> Investment
           </p>
@@ -49,7 +57,7 @@ import Amp from '../components/Amp.astro';
         <p class="card-eyebrow">Example</p>
         <h3 class="mt-4">Card surface</h3>
         <p class="mt-3 max-w-xl">
-          White background, 16px radius, hairline border, and a soft card shadow.
+          White background, 4px radius, and a hairline border.
         </p>
         <a href="/" class="btn-primary mt-8 w-full">Open this surface</a>
       </div>

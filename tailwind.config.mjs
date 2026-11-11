@@ -5,32 +5,31 @@ export default {
       colors: {
         background: {
           DEFAULT: '#FFFFFF',
-          alt: '#FAFAF9',
+          alt: '#F7F8FA',
         },
-        'text-primary': '#1C1917',
-        'text-secondary': '#57534E',
-        'text-muted': '#A8A29E',
+        'text-primary': '#111111',
+        'text-secondary': '#666666',
+        'text-muted': '#666666',
         brand: {
-          DEFAULT: '#C1453B',
-          hover: '#A53A31',
-          tint: '#FDF1F0',
+          DEFAULT: '#315DA4',
+          hover: '#294D89',
+          tint: '#EEF3FA',
         },
         cta: {
-          DEFAULT: '#0A66C2',
-          hover: '#084E96',
-          active: '#063D77',
-          tint: '#FEE2E2',
+          // #4A77C1 is 4.47:1 with white. #4673BD is the nearest fill that clears WCAG AA at 4.72:1.
+          DEFAULT: '#4673BD',
+          hover: '#365FA5',
+          active: '#294D89',
+          tint: '#F7F8FA',
         },
-        border: '#E7E5E4',
+        border: '#D6D6D6',
         surface: {
           dark: '#1C1917',
         },
       },
       fontFamily: {
-        // PLACEHOLDER: Playfair Display is a working Google Font. Swap for a licensed editorial serif (Canela, Tiempos, or Freight Display) before launch.
-        serif: ['CleanAmpersand', '"Playfair Display"', 'Georgia', 'serif'],
-        // PLACEHOLDER: Inter is a working Google Font for body and UI. Swap if the client specifies a licensed sans.
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Inter', '"Helvetica Neue"', 'sans-serif'],
+        sans: ['Inter', '"Helvetica Neue"', 'sans-serif'],
       },
       borderRadius: {
         sm: '6px',

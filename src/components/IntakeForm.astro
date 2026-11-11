@@ -132,6 +132,20 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
               class={fieldClass}
             />
           </p>
+          <p class="min-w-0 sm:col-span-2">
+            <label for={`${idBase}-linkedin`} class="font-sans text-sm font-semibold text-text-primary">
+              LinkedIn URL
+            </label>
+            <input
+              id={`${idBase}-linkedin`}
+              name="linkedin"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://"
+              class={fieldClass}
+            />
+          </p>
           <div class="sm:col-span-2">
             <button type="submit" class="btn-cta w-full sm:w-fit">
               {submitLabel}
@@ -150,6 +164,20 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
               type="email"
               autocomplete="email"
               required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0 flex-1">
+            <label for={`${idBase}-linkedin`} class="font-sans text-sm font-semibold text-text-primary">
+              LinkedIn URL
+            </label>
+            <input
+              id={`${idBase}-linkedin`}
+              name="linkedin"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://"
               class={fieldClass}
             />
           </p>
@@ -188,6 +216,20 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
               type="email"
               autocomplete="email"
               required
+              class={fieldClass}
+            />
+          </p>
+          <p class="min-w-0 md:col-span-2">
+            <label for={`${idBase}-linkedin`} class="font-sans text-sm font-semibold text-text-primary">
+              LinkedIn URL
+            </label>
+            <input
+              id={`${idBase}-linkedin`}
+              name="linkedin"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://"
               class={fieldClass}
             />
           </p>
@@ -243,14 +285,14 @@ const idBase = instanceSlug ? `intake-${sourceSlug}-${instanceSlug}` : `intake-$
 
 <style>
   .intake-cta-form :global(.inquiry-field-cta) {
-    background-color: #f8efe9;
-    border: 1px solid #e3c3bc;
-    color: #1c1917;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    color: #252525;
   }
 
   .intake-cta-form :global(.inquiry-field-cta:focus-visible) {
-    outline: 2px solid #c1453b;
+    outline: 2px solid #111111;
     outline-offset: 2px;
-    border-color: #c1453b;
+    border-color: #315da4;
   }
 </style>

@@ -35,10 +35,10 @@ const compact = size === 'compact';
   />
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/15" aria-hidden="true"></div>
   <div class:list={['relative z-10 flex h-full min-h-0 w-full flex-col', compact ? 'py-6 md:py-8' : 'py-10 md:py-14']}>
-    <div class="site-container shrink-0">
+    <div class="site-container max-w-3xl shrink-0">
       <Breadcrumb tone="on-dark" items={items} />
     </div>
-    <div class="site-container flex min-h-0 w-full min-w-0 flex-1 flex-col items-start justify-center">
+    <div class="site-container max-w-3xl flex min-h-0 w-full min-w-0 flex-1 flex-col items-start justify-center">
       <h1 class="hero-headline w-full min-w-0 max-w-4xl text-start font-serif font-medium text-white">
         {title}
       </h1>

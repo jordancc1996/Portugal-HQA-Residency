@@ -14,7 +14,7 @@ const inHeader = variant === 'header';
   {
     inHeader && (
       <details class="lang-switch__dropdown relative">
-        <summary class="lang-switch__current flex cursor-pointer list-none items-center gap-1 font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none">
+        <summary class="lang-switch__current flex min-h-11 min-w-11 cursor-pointer list-none items-center gap-1 px-3 font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none">
           <span data-lang-current>EN</span>
           <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.25"></path>
@@ -32,7 +32,7 @@ const inHeader = variant === 'header';
                 role="menuitem"
                 data-lang={language.code}
                 aria-current={language.code === 'en' ? 'true' : undefined}
-                class="block w-full px-2 py-2 text-start font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 transition-colors duration-150 ease-out hover:text-stone-800 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none aria-[current=true]:text-brand"
+                class="block min-h-11 w-full px-3 text-start font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 transition-colors duration-150 ease-out hover:text-stone-800 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none aria-[current=true]:text-brand"
               >
                 {language.label}
               </button>
@@ -58,7 +58,7 @@ const inHeader = variant === 'header';
           data-lang={language.code}
           aria-current={language.code === 'en' ? 'true' : undefined}
           class:list={[
-            'px-3 py-2 font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 transition-colors duration-150 ease-out hover:text-stone-800 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none aria-[current=true]:text-brand',
+            'inline-flex min-h-11 items-center px-3 font-sans text-xs font-semibold uppercase tracking-wide text-stone-600 transition-colors duration-150 ease-out hover:text-stone-800 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none aria-[current=true]:text-brand',
             index > 0 && 'border-s border-stone-300',
           ]}
         >

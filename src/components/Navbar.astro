@@ -25,17 +25,14 @@ const { overlay = false } = Astro.props;
   data-overlay-nav={overlay ? 'true' : undefined}
 >
   <div class="site-header__bar border-b border-border bg-background">
-    <div class="site-container flex min-h-20 min-w-0 items-center justify-between gap-3 py-3">
-      <a href="/" class="site-wordmark flex min-w-0 items-center gap-2.5 text-[#1C1917] no-underline hover:text-[#1C1917] visited:text-[#1C1917]">
-        <svg class="h-5 w-5 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path d="M5 3.2h8.4L7.8 10l5.6 6.8H5L10.2 10 5 3.2Z"></path>
-        </svg>
-        <Wordmark variant="nav" class="font-serif text-base leading-none sm:text-lg lg:text-xl" />
+    <div class="site-header__inner">
+      <a href="/" class="site-wordmark site-header__brand inline-flex shrink-0 items-center whitespace-nowrap no-underline">
+        <Wordmark variant="nav" />
       </a>
-      <nav aria-label="Primary" class="hidden shrink-0 items-center gap-5 lg:flex">
+      <nav aria-label="Primary" class="site-header__nav">
         {
           links.map((item) => (
-            <a href={item.href} class="nav-link whitespace-nowrap font-sans text-sm font-normal">
+            <a href={item.href} class="nav-link whitespace-nowrap">
               {item.label}
             </a>
           ))
@@ -43,7 +40,7 @@ const { overlay = false } = Astro.props;
         <button
           type="button"
           id="resources-mega-trigger"
-          class="nav-link inline-flex items-center gap-1 font-sans text-sm font-normal focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+          class="nav-link inline-flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
           aria-haspopup="true"
           aria-expanded="false"
           aria-controls="resources-mega"
@@ -54,13 +51,13 @@ const { overlay = false } = Astro.props;
           </svg>
         </button>
       </nav>
-      <div class="flex items-center gap-3 lg:gap-4">
+      <div class="site-header__tools">
         <LanguageSwitcher id="lang-switch-header" variant="header" />
-        <a href="/contact" class="btn-cta btn-compact hidden w-fit whitespace-nowrap lg:inline-flex">Speak with our advisory team</a>
+        <a href="/contact" class="header-cta">Speak with an Advisor</a>
       <button
         type="button"
         id="mobile-nav-open"
-        class="inline-flex h-10 w-10 shrink-0 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none lg:hidden"
+        class="site-header__menu inline-flex shrink-0 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
         aria-expanded="false"
         aria-controls="mobile-nav-drawer"
         aria-label="Open menu"
@@ -127,7 +124,7 @@ const { overlay = false } = Astro.props;
 
 <div
   id="mobile-nav-drawer"
-  class="mobile-nav-drawer fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background p-6 lg:hidden"
+  class="mobile-nav-drawer fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background p-6 xl:hidden"
   role="dialog"
   aria-modal="true"
   aria-label="Menu"
@@ -138,7 +135,7 @@ const { overlay = false } = Astro.props;
     <button
       type="button"
       id="mobile-nav-close"
-      class="inline-flex h-10 w-10 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+      class="inline-flex h-11 w-11 items-center justify-center text-text-primary focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
       aria-label="Close menu"
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -147,7 +144,7 @@ const { overlay = false } = Astro.props;
     </button>
   </div>
 
-  <a href="/contact" class="btn-cta mt-6 w-fit">Discuss your residency options</a>
+  <a href="/contact" class="header-cta mt-6">Speak with an Advisor</a>
 
   <nav aria-label="Mobile primary" class="mt-8">
     {
@@ -271,7 +268,7 @@ const { overlay = false } = Astro.props;
     });
 
     window.addEventListener('resize', () => {
-      if (window.matchMedia('(min-width: 1024px)').matches) {
+      if (window.matchMedia('(min-width: 1280px)').matches) {
         setOpen(false);
       }
     });
@@ -281,7 +278,7 @@ const { overlay = false } = Astro.props;
   const megaBtn = document.getElementById('resources-mega-trigger');
 
   if (mega && megaBtn) {
-    const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+    const isDesktop = () => window.matchMedia('(min-width: 1280px)').matches;
 
     const setMegaOpen = (open: boolean) => {
       const next = open && isDesktop();
